@@ -1,0 +1,10 @@
+.App {
+  background-color:#666666ff;
+  min-height: 100vh;
+}
+
+.App-Main {
+  min-height: 87vh;
+  color: #FCFFCF;
+  display: flex;
+}
