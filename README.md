@@ -1,7 +1,7 @@
 # Namespace
 
 ### Now A Restful API, Now Reactive
-A restart on my namespace personal Spring boot Dungeons and Dragons augment project, originally made to help me keep track of the Herbology mini game my professor came up for us. 
+A restart on my namespace personal Spring boot Dungeons and Dragons augment project, originally made to help me keep track of the Herbology mini game my dungeon master made for me. 
 My desire to have build the same service cross platform meant i needed to build an API and my ambitions to have my learn react lead me to start wholly again
 
 ### Intention
