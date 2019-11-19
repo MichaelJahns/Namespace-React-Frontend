@@ -9,12 +9,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-Header">
-        <Navbar />
         <Head />
+
       </header>
       <main className="App-Main">
-        <SignIn />
-
+        <Navbar />
       </main>
     </div>
   );

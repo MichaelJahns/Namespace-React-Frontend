@@ -1,9 +1,24 @@
 import React, { Component } from "react";
 import '../resources/css/navbar.css';
+import SignIn from '../components/SignIn'
 
 
 export default class Navbar extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { isAccountFocused: false };
+    }
+
+    handleFocus() {
+        this.setState(state => ({
+            isAccountFocusedOn: !state.isAccountFocused
+        }));
+    }
+
     render() {
+        const isAccountFocused = this.state.isAccountFocused;
+
         return (
             <nav class="navbar">
 
@@ -19,10 +34,13 @@ export default class Navbar extends Component {
 
                 <div id="accountControls">
                     <a href="/account"> Account </a>
-                    <a href="/perform_logout"> Logout </a>
-
+                    <p onClick={this.handleFocus}> Login </p>
                 </div>
+                <SignIn></SignIn>
+
+
             </nav>
-        )
+
+        );
     }
 }

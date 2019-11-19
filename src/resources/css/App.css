@@ -1,10 +1,17 @@
 .App {
   background-color:#666666ff;
   min-height: 100vh;
+
 }
 
 .App-Main {
-  min-height: 87vh;
+  /* min-height: 80vh; */
+  /* max-height: 60vh; */
   color: #FCFFCF;
   display: flex;
+  z-index: -2;
+}
+
+.hidden{
+  display: none;
 }

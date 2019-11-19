@@ -1,20 +1,22 @@
 .signIn{
     background-color:inherit;
     min-height: 40vh;
-    width: 40%;
-    outline:#282c34 solid 2px;
+    width: 24%;
+    order: 5;
+    z-index: 1;
 
-    margin: auto;
-    margin-top: 50px;
+    align-self: right;
+    margin-top: 21px;
+    font-family: garamond;
 }
 
 .signIn h2{
     padding-top: 10px;
+
     text-decoration: underline;
 
     font-size:2em;
     font-weight: bolder;
-    font-family: garamond;
     text-align: center;
     color: #331102;
 }
@@ -23,30 +25,41 @@
     clear:both;
     background-color:  #ff9800;
     height: 50px;
+
+    z-index: 1;
 }
 .signIn label{
-    font-size: 1.2em;
+    color: #ff9900ff;
+    font-size: 1.33em;
+    padding-left: 15px;
     left: 0;    
 }
 .signIn input{
-    padding: 8px 0px 8px 0px;
+    padding: 8px 5px 8px 5px;
+    margin: 0px 5px;
     display:block;
     border:none;
-    border-bottom:1px solid #777777;
-    font-size: 1.75em;
-    width:100%;
+    border-bottom:1px solid #ff9800;
+    color: #ff9800;
+    font-size: 1.1em;
+    width:94%;
     background-color: inherit;
+}
+.signIn input:focus{
+    background-color: #555;
+    border: 3px solid #ff9800;
+    outline: none;
 }
 .signIn button{
     display: block;
-    margin: auto;
-    padding: 16px 32px;
+    margin: 15px auto;
+    padding: 8px 16px;
 
     color:#331102;
     background-color: #ff9800;
     border: 2px solid #ff9800;
 
-    font-size: 16px;
+    font-size: 1.33em;
     text-align: center;
     text-decoration: none;
 
@@ -57,5 +70,22 @@
 }
 
 .signIn button:hover{
-    background-color: white;
+    color: #ff9800;
+    background-color: #282c34;
+}
+
+.signIn ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #555555;
+    opacity: 1; /* Firefox */
+}
+
+#remember-me{
+    display: relative;
+    width: auto;
+    margin: 0px 5px;
+}
+
+.tester{
+    margin-top: 10px;
+    display: flex;
 }

@@ -14,14 +14,21 @@ export default class signIn extends Component {
 
                 <form>
                     <p>
-                        <input type="text" />
+                        <input placeholder="Username or e-mail.." type="text" />
                         {/* TODO: how to do two in one? */}
                         {/* <label>Username or Email Address</label> */}
                         <label> Username </label>
                     </p>
                     <p>
-                        <input type="text" />
+                        <input placeholder="Password.." type="text" />
                         <label> Password</label>
+                    </p>
+                    <p class="tester">
+                        <label for="remember-me">
+                            Remember me?
+                        </label>
+                        <input id="remember-me" type="checkbox" name="remember-me" />
+
                     </p>
                     <button>
                         Sign in
