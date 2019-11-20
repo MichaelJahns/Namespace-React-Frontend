@@ -3,11 +3,17 @@ import '../resources/css/signin.css';
 
 
 export default class signIn extends Component {
+    _getClassNames = () => {
+        let signShown = this.props.signShown;
+
+        let output = "signIn " + signShown;
+        return output;
+    };
+
     render() {
         // TODO: State that tells this component to display as either a sign in or a sign up form
         return (
-            <div class="signIn">
-
+            <div className={this._getClassNames()}>
                 <div>
                     <h2> Sign In </h2>
                 </div>
@@ -20,11 +26,11 @@ export default class signIn extends Component {
                         <label> Username </label>
                     </p>
                     <p>
-                        <input placeholder="Password.." type="text" />
+                        <input placeholder="Password.." type="password" />
                         <label> Password</label>
                     </p>
-                    <p class="tester">
-                        <label for="remember-me">
+                    <p className="tester">
+                        <label htmlFor="remember-me">
                             Remember me?
                         </label>
                         <input id="remember-me" type="checkbox" name="remember-me" />
@@ -34,8 +40,7 @@ export default class signIn extends Component {
                         Sign in
                     </button>
                 </form>
-            </div>
-
+            </div >
         )
     }
 }

@@ -1,8 +1,3 @@
-.navbar a{
-    color: #ff9900ff;
-    text-decoration: none;
-    font-size: 1.15em;
-}
 .navbar{
     width:100%;
     height: 50px;
@@ -13,7 +8,6 @@
     padding-top: 25px;
     z-index: 2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 #navBarItems{
@@ -23,11 +17,18 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 #spacer{
     width: 6%;
 }
+
+.navbar a{
+    color: #ff9900ff;
+    text-decoration: none;
+    font-size: 1.15em;
+}
+
+/* IDS */
 #accountControls{
     width: 24%;
     background-color: inherit;

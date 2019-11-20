@@ -1,15 +1,15 @@
 .signIn{
-    background-color:inherit;
+    background-color: #282c34;
     min-height: 40vh;
-    width: 24%;
+    width: 350px;
     order: 5;
     z-index: 1;
 
-    align-self: right;
-    margin-top: 21px;
+    /* align-self: center; */
     font-family: garamond;
+    margin: auto;
+    margin-top: 4.25%;
 }
-
 .signIn h2{
     padding-top: 10px;
 
@@ -20,11 +20,11 @@
     text-align: center;
     color: #331102;
 }
-
 .signIn div{
     clear:both;
     background-color:  #ff9800;
     height: 50px;
+    margin-bottom: 10px;
 
     z-index: 1;
 }
@@ -36,7 +36,7 @@
 }
 .signIn input{
     padding: 8px 5px 8px 5px;
-    margin: 0px 5px;
+    margin: 5px 5px;
     display:block;
     border:none;
     border-bottom:1px solid #ff9800;
@@ -68,23 +68,19 @@
     transition-duration: 0.4s;
     cursor: pointer;
 }
-
 .signIn button:hover{
     color: #ff9800;
     background-color: #282c34;
 }
-
 .signIn ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #555555;
     opacity: 1; /* Firefox */
 }
-
 #remember-me{
     display: relative;
     width: auto;
     margin: 0px 5px;
 }
-
 .tester{
     margin-top: 10px;
     display: flex;

@@ -1,26 +1,31 @@
 import React, { Component } from "react";
 import '../resources/css/navbar.css';
-import SignIn from '../components/SignIn'
 
 
 export default class Navbar extends Component {
     constructor(props) {
         super(props);
-
-        this.state = { isAccountFocused: false };
+        this.state = {
+            signShown: "visible"
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.updateFocus = this.updateFocus.bind(this);
     }
+    handleChange() {
+        console.log("I am")
+        let signShown = this.state.signShown;
+        signShown === "hidden" ? (signShown = "visible") : (signShown = "hidden");
 
-    handleFocus() {
-        this.setState(state => ({
-            isAccountFocusedOn: !state.isAccountFocused
-        }));
+        this.setState({ signShown: signShown }, this.updateFocus);
+    };
+
+    updateFocus() {
+        console.log("Getting")
+        this.props.handleFocus(this.state);
     }
-
     render() {
-        const isAccountFocused = this.state.isAccountFocused;
-
         return (
-            <nav class="navbar">
+            <nav className="navbar">
 
                 <div id="navBarItems">
                     <h1 id="titleCard"> Namespace </h1>
@@ -33,12 +38,8 @@ export default class Navbar extends Component {
                 </div>
 
                 <div id="accountControls">
-                    <a href="/account"> Account </a>
-                    <p onClick={this.handleFocus}> Login </p>
+                    <p onClick={this.handleChange}> Account </p>
                 </div>
-                <SignIn></SignIn>
-
-
             </nav>
 
         );
