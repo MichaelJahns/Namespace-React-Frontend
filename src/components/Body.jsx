@@ -17,7 +17,6 @@ export default class Body extends Component {
     }
 
     handleFocus(_State) {
-        console.log('Annoyed')
         console.log(_State);
         let signShown = _State.signShown;
         this.setState({ signShown })

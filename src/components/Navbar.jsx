@@ -6,7 +6,7 @@ export default class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            signShown: "visible"
+            signShown: "hidden"
         }
         this.handleChange = this.handleChange.bind(this);
         this.updateFocus = this.updateFocus.bind(this);
@@ -29,16 +29,16 @@ export default class Navbar extends Component {
 
                 <div id="navBarItems">
                     <h1 id="titleCard"> Namespace </h1>
-                    <a href="/"> Placeholder </a>
-                    <a href="/"> Placeholder </a>
+                    <p> Placeholder </p>
+                    <p> Placeholder </p>
                 </div>
 
                 <div id="spacer">
-
                 </div>
 
                 <div id="accountControls">
                     <p onClick={this.handleChange}> Account </p>
+                    {/* I want to display a unique message here when no user is logged in */}
                 </div>
             </nav>
 

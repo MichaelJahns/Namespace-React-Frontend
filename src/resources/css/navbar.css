@@ -22,7 +22,7 @@
     width: 6%;
 }
 
-.navbar a{
+.navbar p{
     color: #ff9900ff;
     text-decoration: none;
     font-size: 1.15em;
@@ -36,13 +36,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-
-#titleCard{
-    color: #ff9900ff;
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.8em;
-    text-decoration: underline;
 }
 
 
