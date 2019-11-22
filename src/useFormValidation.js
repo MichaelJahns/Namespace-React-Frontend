@@ -25,10 +25,12 @@ function useFormValidation(initialState, validate) {
     }
 
     function handleChange(event) {
+        // console.log(event)
         setValues({
             ...values,
             [event.target.name]: event.target.value
         });
+        console.log(values)
     }
 
     function handleBlur(event) {

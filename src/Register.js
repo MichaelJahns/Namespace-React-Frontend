@@ -22,11 +22,14 @@ function Register() {
 
     return (
         <React.Fragment>
+            <div>
+                <h2> Sign In </h2>
+            </div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='emailInput'>
+                <label htmlFor='email'>
                     <input
                         type="text"
-                        name='emailInput'
+                        name='email'
                         placeholder="E-mail.."
                         autoComplete='off'
                         onChange={handleChange}
@@ -38,10 +41,10 @@ function Register() {
                         {errors.email && <p className="error-text"> {errors.email} </p>}
                 </label>
 
-                <label htmlFor='passwordInput'>
+                <label htmlFor='password'>
 
                     <input
-                        name='passwordInput'
+                        name='password'
                         type="password"
                         placeholder="Password.."
                         onChange={handleChange}
@@ -63,6 +66,7 @@ function Register() {
                     </button>
             </form>
         </React.Fragment>
+
     );
 }
 
