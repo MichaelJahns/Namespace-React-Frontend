@@ -6,17 +6,17 @@ My desire to build the same service cross platform meant i needed to build an AP
 
 ### Intention
 * Create tools that can help players and dungeon masters to think about their campaign in different ways
-* Create tools that can help players and dungeon masters break out of narrative slumps, and keep track of important information
+* Create tools that can help players and dungeon masters break out of narrative slumps
+* Create tools that can help players and dungeon masters keep track of important information and characters
 * Create a fluid flowing layout that keeps players the players focus where it needs to be
 * Create for users an experience that adds to the tabletop but doesnt distract from it
 * Create an application that I myself would utilize in my DND games
-* Create an RESTful API that will allow a future android app to use the same server
 * Keep my skills and technologies sharp
 
 ### Future Features(WIP)
 ~* conditionalRendering on signIn component~
 * make a hamburger menu of "Account" in nav bar
-
+* add firebase userAuth
 ~* login failure state messaging~
 * user==null landing page explaining the what
 
