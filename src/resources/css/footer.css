@@ -35,6 +35,10 @@
     align-content: flex-end;
 }
 
+.footer nav div{
+    padding-top: 8px;
+}
+
 .footer nav h3{
     align-self: flex-start;
 }

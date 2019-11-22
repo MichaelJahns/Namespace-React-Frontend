@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 import Test from "./Test";
 import SignIn from "./SignIn";
+import Character from "./Character";
 
 
 export default class Body extends Component {
@@ -34,8 +35,10 @@ export default class Body extends Component {
                 <Navbar
                     handleFocus={this.handleFocus}
                 />
+                <Character />
                 <SignIn
-                    signShown={this.state.signShown} />
+                    signShown={this.state.signShown}
+                />
                 <Test />
             </body>
         )
