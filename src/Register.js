@@ -21,7 +21,7 @@ function Register() {
     // const [password, setPassword] = React.useState("");
 
     return (
-        <div className="container">
+        <React.Fragment>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='emailInput'>
                     <input
@@ -52,18 +52,17 @@ function Register() {
                     Password
                         {errors.password && <p className="error-text"> {errors.password} </p>}
                 </label>
-                <p className="tester">
-                    <label htmlFor="remember-me">
-                        Remember me?
-                        </label>
-                    <input id="remember-me" type="checkbox" name="remember-me" />
+                <label className="tester" htmlFor="remember-me">
+                    Remember me?
+                        <input id="remember-me" type="checkbox" name="remember-me" />
 
-                </p>
+                </label>
+
                 <button disabled={isSubmitting} type='submit'>
                     Sign in
                     </button>
             </form>
-        </div >
+        </React.Fragment>
     );
 }
 

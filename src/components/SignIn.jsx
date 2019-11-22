@@ -17,7 +17,6 @@ export default class signIn extends Component {
                     <h2> Sign In </h2>
                     {/* TODO: add the ability to minimize the sign in component on the component */}
                 </div>
-
                 <Register />
             </div >
 

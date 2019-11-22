@@ -40,10 +40,9 @@
     padding-left: 15px;
     left: 0;    
 }
-.signIn p{
+.signIn form{
     padding: 8px 5px 8px 5px;
-    margin: 5px 10px;
-
+    margin: 5px 5px;
 }
 .signIn input{
     /* padding: 8px 5px 8px 5px; */
@@ -82,10 +81,6 @@
 .signIn button:hover{
     color: #ff9800;
     background-color: #282c34;
-}
-.signIn ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #555555;
-    opacity: 1; /* Firefox */
 }
 #remember-me{
     display: relative;
