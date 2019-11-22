@@ -2,19 +2,10 @@ import React, { Component } from "react";
 import '../resources/css/signin.css';
 
 import useFormValidation from '../useFormValidation';
-import validateAuth from './validateAuth'
+import validateAuth from '../validateAuth'
 
 
 export default class signIn extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            signShown: "hidden"
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.updateFocus = this.updateFocus.bind(this);
-    }
-
     _getClassNames = () => {
         let signShown = this.props.signShown;
         return "signIn " + signShown;
@@ -26,16 +17,15 @@ export default class signIn extends Component {
             password: ""
         }
 
-        function Register() {
-            const {
-                handleSubmit,
-                handleChange,
-                handleBlur,
-                values,
-                errors,
-                isSubmitting
-            } = useFormValidation(INITIAL_STATE, validateAuth)
-        }
+        const {
+            handleSubmit,
+            handleChange,
+            handleBlur,
+            values,
+            errors,
+            isSubmitting
+        } = useFormValidation(INITIAL_STATE, validateAuth)
+
         return (
             <div className={this._getClassNames()}>
                 <div>
@@ -43,7 +33,7 @@ export default class signIn extends Component {
                     {/* TODO: add the ability to minimize the sign in component on the component */}
                 </div>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <p>
                         <label htmlFor='emailInput'>
                             <input
@@ -90,5 +80,6 @@ export default class signIn extends Component {
             </div >
 
         )
+
     }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-function useFormValidation(initialState, validation) {
+function useFormValidation(initialState, validate) {
     const [values, setValues] = React.useState(initialState);
     const [errors, setErrors] = React.useState({});
     const [isSubmitting, setSubmitting] = React.useState(false);
@@ -15,9 +15,9 @@ function useFormValidation(initialState, validation) {
                 setSubmitting(false);
             }
         }
-    }, [errors]);
+    }, [values, errors, isSubmitting]);
 
-    funciton handleSubmit(event){
+    function handleSubmit(event) {
         event.preventDefault();
         const validationErrors = validate(values);
         setErrors(validationErrors);
