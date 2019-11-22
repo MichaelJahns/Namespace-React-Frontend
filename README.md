@@ -17,7 +17,7 @@ My desire to build the same service cross platform meant i needed to build an AP
 ~* conditionalRendering on signIn component~
 * make a hamburger menu of "Account" in nav bar
 
-* login failure state messaging
+~* login failure state messaging~
 * user==null landing page explaining the what
 
 
