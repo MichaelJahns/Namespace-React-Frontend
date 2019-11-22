@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import '../resources/css/signin.css';
 
-import useFormValidation from '../useFormValidation';
-import validateAuth from '../validateAuth'
+import Register from '../Register';
 
 
 export default class signIn extends Component {
@@ -12,20 +11,6 @@ export default class signIn extends Component {
     };
 
     render() {
-        const INITIAL_STATE = {
-            email: "",
-            password: ""
-        }
-
-        const {
-            handleSubmit,
-            handleChange,
-            handleBlur,
-            values,
-            errors,
-            isSubmitting
-        } = useFormValidation(INITIAL_STATE, validateAuth)
-
         return (
             <div className={this._getClassNames()}>
                 <div>
@@ -33,50 +18,7 @@ export default class signIn extends Component {
                     {/* TODO: add the ability to minimize the sign in component on the component */}
                 </div>
 
-                <form onSubmit={handleSubmit}>
-                    <p>
-                        <label htmlFor='emailInput'>
-                            <input
-                                type="text"
-                                name='emailInput'
-                                placeholder="E-mail.."
-                                autoComplete='off'
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.email}
-                                className={errors.email && "error-input"}
-                            />
-                            Email
-                        {errors.email && <p className="error-text"> {errors.email} </p>}
-                        </label>
-                    </p>
-                    <p>
-                        <label htmlFor='passwordInput'>
-
-                            <input
-                                name='passwordInput'
-                                type="password"
-                                placeholder="Password.."
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.password}
-                                className={errors.password && "error-input"}
-                            />
-                            Password
-                        {errors.password && <p className="error-text"> {errors.password} </p>}
-                        </label>
-                    </p>
-                    <p className="tester">
-                        <label htmlFor="remember-me">
-                            Remember me?
-                        </label>
-                        <input id="remember-me" type="checkbox" name="remember-me" />
-
-                    </p>
-                    <button disabled={isSubmitting} type='submit'>
-                        Sign in
-                    </button>
-                </form>
+                <Register />
             </div >
 
         )
