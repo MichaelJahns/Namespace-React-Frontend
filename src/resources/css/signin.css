@@ -13,7 +13,7 @@
     left: 0;
     right: 0;
    
-
+    -webkit-box-shadow:0 24px 38px 3px rgba(0,0,0,0.14),0 9px 46px 8px rgba(0,0,0,0.12),0 11px 15px -7px rgba(0,0,0,0.2);box-shadow:0 24px 38px 3px rgba(0,0,0,0.14);
     font-family: garamond;
 }
 .signIn h2{
@@ -40,15 +40,20 @@
     padding-left: 15px;
     left: 0;    
 }
-.signIn input{
+.signIn p{
     padding: 8px 5px 8px 5px;
-    margin: 5px 5px;
+    margin: 5px 10px;
+
+}
+.signIn input{
+    /* padding: 8px 5px 8px 5px; */
+    /* margin: 5px 5px; */
     display:block;
     border:none;
     border-bottom:1px solid #ff9800;
     color: #ff9800;
     font-size: 1.1em;
-    width:94%;
+    width:100%;
     background-color: inherit;
 }
 .signIn input:focus{

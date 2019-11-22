@@ -25,8 +25,10 @@ export default class Footer extends Component {
                     <nav>
                         <h3> Namespace </h3>
 
-                        <p> Made by Michael Jahns </p>
-                        <a href="https://github.com/MichaelJahns"> Github </a>
+                        <div>
+                            <p> By Michael Jahns </p>
+                            <a href="https://github.com/MichaelJahns"> Github </a>
+                        </div>
                     </nav>
                 </main>
             </footer >
