@@ -1,13 +1,18 @@
-#root {
-  background-color:#F2EFC4;
-  min-height: 100vh;
+:root {
+  --component-bg-color:#282c34;
+  --component-text-color:#ff9900ff;
+  --component-border-color: #666666ff;
+  --main-bg-color: #F2EFC4;
+  --main-text-color:#66380f;
+}
 
+#root {
+  background-color:var(--main-bg-color);
+  min-height: 100vh;
 }
 
 .App-Main {
-  /* min-height: 80vh; */
-  /* max-height: 60vh; */
-  color: #66380f;
+  color: var(--main-text-color);
   z-index: -2;
 }
 

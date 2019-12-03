@@ -35,7 +35,6 @@ export default class Body extends Component {
                 <Navbar
                     handleFocus={this.handleFocus}
                 />
-                <Character />
                 <SignIn
                     signShown={this.state.signShown}
                 />

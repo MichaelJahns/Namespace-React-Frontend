@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import '../resources/css/signin.css';
 
-import Register from '../Register';
+import Register from '../utils/Register';
 
 
 export default class signIn extends Component {

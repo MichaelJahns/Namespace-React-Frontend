@@ -17,8 +17,6 @@ function Register() {
         errors,
         isSubmitting
     } = useFormValidation(INITIAL_STATE, validateAuth);
-    // const [email, setEmail] = React.useState("");
-    // const [password, setPassword] = React.useState("");
 
     return (
         <React.Fragment>

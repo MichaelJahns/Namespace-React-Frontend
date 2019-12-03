@@ -1,23 +1,23 @@
 h1{
-    color: #F89406;
+    color: var(--component-text-color);
     font-family: 'Cinzel Decorative', cursive;
     font-size: 1.8em;
     text-decoration: underline;
 }
 h3{
-    color: #F89406;
+    color: var(--component-text-color);
     font-family: 'Cinzel Decorative', cursive;
     font-size: 1.5em;
     text-decoration: underline;
 }
 h4{
-    color: #F89406;
+    color: var(--component-text-color);
     font-family: 'Cinzel Decorative', cursive;
     font-size: 1.12em;
     border-bottom: solid #666666ff 1px;
 }
 a{
-    color: #F89406;
+    color: var(--component-text-color);
     text-decoration: none;
 }
 a:visited{

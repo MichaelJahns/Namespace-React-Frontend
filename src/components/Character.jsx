@@ -6,9 +6,17 @@ export default class Character extends Component {
 
     render() {
         return (
-            <form>
-                <h3> I am here </h3>
-            </form>
+            <div className='characterReference'>
+                <h2> Character Quick Reference </h2>
+
+                <div className='characterContainer'>
+                    <form>
+                        Add Player
+                        <button type="submit"> </button>
+                    </form>
+                </div>
+            </div>
+
         );
     }
 }
