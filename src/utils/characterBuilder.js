@@ -5,8 +5,6 @@ import validateAuth from "./validateAuth";
 
 
 const INITIAL_STATE = {
-    email: "McKenster@proguides.gg",
-    password: "BigDickEnergy"
 };
 
 function Register() {
@@ -24,10 +22,10 @@ function Register() {
     return (
         <React.Fragment>
             <div>
-                <h2> Sign In </h2>
+                <h2> Character Builder </h2>
             </div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='email'>
+                {/* <label htmlFor='email'>
                     <input
                         type="text"
                         name='email'
@@ -65,7 +63,7 @@ function Register() {
 
                 <button disabled={isSubmitting} type='submit'>
                     Sign in
-                    </button>
+                    </button> */}
             </form>
         </React.Fragment>
 

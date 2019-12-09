@@ -12,7 +12,6 @@ export default class Navbar extends Component {
         this.updateFocus = this.updateFocus.bind(this);
     }
     handleChange() {
-        console.log("I am")
         let signShown = this.state.signShown;
         signShown === "hidden" ? (signShown = "visible") : (signShown = "hidden");
 
@@ -20,7 +19,6 @@ export default class Navbar extends Component {
     };
 
     updateFocus() {
-        console.log("Getting")
         this.props.handleFocus(this.state);
     }
     render() {

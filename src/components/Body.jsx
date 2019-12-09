@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 import Test from "./Test";
 import SignIn from "./SignIn";
-import Character from "./Character";
 
 
 export default class Body extends Component {
@@ -18,7 +17,6 @@ export default class Body extends Component {
     }
 
     handleFocus(_State) {
-        console.log(_State);
         let signShown = _State.signShown;
         this.setState({ signShown })
     }
