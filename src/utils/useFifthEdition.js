@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
-import FirebaseContext from './firebase';
+import React from "react";
 
-
-function useFifthEdition(initialState, validate) {
+export default function useFifthEdition(initialState, validate) {
     const [values, setValues] = React.useState(initialState);
     const [errors, setErrors] = React.useState({});
     const [isSubmitting, setSubmitting] = React.useState(false);
-    const [firebaseError, setFirebaseError] = React.useState(null);
 
     React.useEffect(() => {
         if (isSubmitting) {
@@ -20,7 +17,7 @@ function useFifthEdition(initialState, validate) {
         }
     }, [values, errors, isSubmitting]);
 
-    async function handleSubmit(event) {
+    function handleSubmit(event) {
         const validationErrors = validate(values);
         setErrors(validationErrors);
         setSubmitting(true);
@@ -39,8 +36,11 @@ function useFifthEdition(initialState, validate) {
     }
 
     return {
-
+        handleSubmit,
+        handleChange,
+        handleBlur,
+        values,
+        errors,
+        isSubmitting
     }
 }
-
-export default useFormValidation;

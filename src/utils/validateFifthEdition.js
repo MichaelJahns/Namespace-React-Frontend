@@ -1,16 +1,18 @@
 export default function validateFifthEdition(values) {
     let errors = {};
-    // Email Errors
-    if (!values.email) {
-        errors.email = "Required Email";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-        errors.email = "Invalid email address";
+    // Name
+    if (!values.name) {
+        errors.name = "Required Name";
     }
-    // Password Errors
-    if (!values.password) {
-        errors.password = "Required Password";
-    } else if (values.password.length < 6) {
-        errors.password = "Password must be at least 6 characters";
+    if (values.title.length >= 200) {
+        errors.title = "Title is way too long"
     }
+    // Missing Fields Errors
+    if (!values.description) {
+        errors.description = "Required Field";
+    }
+    // regex can be used here
+    // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+
     return errors;
 }

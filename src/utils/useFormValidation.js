@@ -21,7 +21,7 @@ function useFormValidation(initialState, validate) {
                 setSubmitting(false);
             }
         }
-    }, [values, errors, isSubmitting, handleSubmit]);
+    }, [values, errors, isSubmitting]);
 
 
     // i do not need to to update my dom after the button is clicked, validation errors are 

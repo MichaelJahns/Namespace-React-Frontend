@@ -1,73 +1,56 @@
 import React from "react";
-
-import useFormValidation from "./useFormValidation";
-import validateAuth from "./validateAuth";
+import '../resources/css/character.css'
+import useFifthEdition from './useFifthEdition'
+import validateFifthEdition from "./validateFifthEdition";
 
 
 const INITIAL_STATE = {
+    name: '',
+    // title: 'Spectral Thief',
+    // description: 'Wind Worn Man of moderate height, Black hair and tired features.',
+    // allegiance: null,
 };
 
-function Register() {
+export default function CharacterBuilder() {
     const {
         handleSubmit,
         handleChange,
         handleBlur,
         values,
         errors,
-        firebaseError,
         isSubmitting
-    } = useFormValidation(INITIAL_STATE, validateAuth);
+    } = useFifthEdition(INITIAL_STATE, validateFifthEdition);
 
 
     return (
-        <React.Fragment>
-            <div>
-                <h2> Character Builder </h2>
-            </div>
-            <form onSubmit={handleSubmit}>
-                {/* <label htmlFor='email'>
-                    <input
-                        type="text"
-                        name='email'
-                        placeholder="E-mail.."
-                        autoComplete='off'
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.email}
-                        className={errors.email && "error-input"}
-                    />
-                    Email
-                        {errors.email && <p className="error-text"> {errors.email} </p>}
-                </label>
+        <div className="characterBuilder">
+            <h2> Character Builder </h2>
+            <form>
+                <input
+                    type="text"
+                    name='name'
+                    placeholder="Character Name.. "
+                    autoComplete='off'
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.name}
+                    className={errors.name && "error-input"}
+                />
+                {errors.name && <p className="error-text"> {errors.name} </p>}
+                <input
+                    type="text"
+                    name='title'
+                    placeholder="Character's Title or Role.. "
+                    autoComplete='off'
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.title}
+                    className={errors.title && "error-input"}
+                />
+                {errors.title && <p className="error-text"> {errors.title} </p>}
 
-                <label htmlFor='password'>
-
-                    <input
-                        name='password'
-                        type="password"
-                        placeholder="Password.."
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.password}
-                        className={errors.password && "error-input"}
-                    />
-                    Password
-                    {errors.password && <p className="error-text"> {errors.password} </p>}
-                    {firebaseError && <p className="error-text"> {firebaseError} </p>}
-                </label>
-                <label className="tester" htmlFor="remember-me">
-                    Remember me?
-                        <input id="remember-me" type="checkbox" name="remember-me" />
-
-                </label>
-
-                <button disabled={isSubmitting} type='submit'>
-                    Sign in
-                    </button> */}
             </form>
-        </React.Fragment>
+        </div>
 
     );
 }
-
-export default Register;
