@@ -1,9 +1,17 @@
 .characterBuilder {
   margin: auto;
   min-height: 445px;
-  border: 2px solid var(--component-bg-color);
-
+  /* border: 2px solid var(--component-bg-color); */
+  background-color: var(--main-alt-bg-color);
   display: flex;
+  flex-direction: column;
+}
+
+.characterBuilder main{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
 }
 
 .characterBuilder h2 {
@@ -36,29 +44,20 @@
 
 .characterBuilder section {
   width: 100%;
-  padding: 10px;
   overflow-y: scroll;
-}
-
-.characterBuilder section div{
-  background-color: var(--main-alt-bg-color);
-  margin: 5px;
-  padding: 5px;
-
+  background-color: var(--main-bg-color);
 }
 
 .characterBuilder .characterCardUpper{
   display: flex;
   justify-content: flex-start;
-  margin: 5px;
-  padding: 5px;
+
 }
 .characterBuilder .characterCardLower{
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  margin: 5px;
-  padding: 5px;
+
 
 }
 .characterBuilder .characterDemographics{
@@ -72,7 +71,7 @@
 }
 .characterBuilder .characterPortrait{
   background-color: var(--component-bg-color);
-
+  border-radius: 5%;
 }
 .characterBuilder li {
   padding: 20px;

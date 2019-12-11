@@ -28,3 +28,36 @@ a{
 a:visited{
     color: #FFD700;
 }
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+    width: 12.5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2.5px grey; 
+    border-radius: 10px;
+    background: var(--main-bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--component-bg-color); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--component-text-color); 
+}
+
+scrollbar {
+    width: 12.5px;
+}
+scrollbar-track {
+    box-shadow: inset 0 0 2.5px grey; 
+    border-radius: 10px;
+    background: var(--main-bg-color);
+}
+scrollbar-thumb {
+    background: var(--component-bg-color); 
+    border-radius: 10px;
+}
+scrollbar-thumb:hover {
+    background: var(--component-text-color); 
+}
