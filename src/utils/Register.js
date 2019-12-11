@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import useFormValidation from "./useFormValidation";
 import validateAuth from "./validateAuth";
+import { FirebaseContext } from "./firebase";
 
 
 const INITIAL_STATE = {
@@ -10,6 +11,7 @@ const INITIAL_STATE = {
 };
 
 function Register() {
+    const firebase = useContext(FirebaseContext);
     const {
         handleSubmit,
         handleChange,
@@ -18,7 +20,9 @@ function Register() {
         errors,
         firebaseError,
         isSubmitting
-    } = useFormValidation(INITIAL_STATE, validateAuth);
+    } = useFormValidation(INITIAL_STATE, validateAuth, firebase);
+
+
 
 
     return (

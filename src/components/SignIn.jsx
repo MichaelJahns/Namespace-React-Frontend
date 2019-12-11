@@ -3,8 +3,6 @@ import '../resources/css/signin.css';
 import Register from '../utils/Register';
 
 export default class signIn extends Component {
-
-
     _getClassNames = () => {
         let signShown = this.props.signShown;
         return "signIn " + signShown;

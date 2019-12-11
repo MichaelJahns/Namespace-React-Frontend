@@ -1,15 +1,11 @@
-import React, { useContext } from "react";
-import FirebaseContext from './firebase';
+import React from "react";
 
 
-function useFormValidation(initialState, validate) {
+function useFormValidation(initialState, validate, firebase) {
     const [values, setValues] = React.useState(initialState);
     const [errors, setErrors] = React.useState({});
     const [isSubmitting, setSubmitting] = React.useState(false);
     const [firebaseError, setFirebaseError] = React.useState(null);
-
-    const firebase = useContext(FirebaseContext);
-
 
     React.useEffect(() => {
         if (isSubmitting) {
