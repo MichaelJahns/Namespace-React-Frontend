@@ -4,8 +4,8 @@ import React from "react";
 function useFormValidation(initialState, validate, firebase) {
     const [values, setValues] = React.useState(initialState);
     const [errors, setErrors] = React.useState({});
-    const [isSubmitting, setSubmitting] = React.useState(false);
     const [firebaseError, setFirebaseError] = React.useState(null);
+    const [isSubmitting, setSubmitting] = React.useState(false);
 
     React.useEffect(() => {
         if (isSubmitting) {
@@ -17,24 +17,26 @@ function useFormValidation(initialState, validate, firebase) {
                 setSubmitting(false);
             }
         }
-    }, [values, errors, isSubmitting]);
+    }, [values, errors, firebaseError, isSubmitting]);
 
 
     // i do not need to to update my dom after the button is clicked, validation errors are 
     // being rendered in real time so theres no need. All i need done when the button is hit, 
     // credentials sent  to firebase, and an auth state returned. 
     async function handleSubmit(event) {
-        console.log(event)
         const validationErrors = validate(values);
         setErrors(validationErrors);
         setSubmitting(true);
-        const { email, password } = event;
-        console.log(email, password)
-        try {
-            await firebase.auth().createUserWithEmailAndPassword(email, password);
-        } catch (error) {
-            setFirebaseError(error.message)
-        }
+        const { email, password } = values;
+
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(email, password)
+            .catch(function (error) {
+                // Handle Errors here.
+                console.log(error);
+                setFirebaseError(error);
+            });
     }
 
     function handleChange(event) {

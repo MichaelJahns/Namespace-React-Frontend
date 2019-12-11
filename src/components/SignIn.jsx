@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import '../resources/css/signin.css';
-import Register from '../utils/Register';
+import Register from '../utils/functionalComponent/Register';
 
 export default class signIn extends Component {
     _getClassNames = () => {

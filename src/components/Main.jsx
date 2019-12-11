@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import Test from "./Test";
 import SignIn from "./SignIn";
 
-
 export default class Body extends Component {
     state = { signShown: "hidden" };
     constructor(props) {
@@ -13,7 +12,6 @@ export default class Body extends Component {
         }
 
         this.handleFocus = this.handleFocus.bind(this);
-
     }
 
     handleFocus(_State) {
@@ -29,7 +27,7 @@ export default class Body extends Component {
 
     render() {
         return (
-            <body>
+            <main>
                 <Navbar
                     handleFocus={this.handleFocus}
                 />
@@ -37,7 +35,7 @@ export default class Body extends Component {
                     signShown={this.state.signShown}
                 />
                 <Test />
-            </body>
+            </main>
         )
     }
 }

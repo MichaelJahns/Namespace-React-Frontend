@@ -4,8 +4,8 @@ import './resources/css/index.css';
 import './resources/css/reset.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
 import FirebaseProvider from './utils/firebase';
+require('dotenv').config();
 
 ReactDOM.render(
     <FirebaseProvider>

@@ -1,25 +1,27 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { FirebaseContext } from './firebase';
 
-// export const useAuth = auth => {
-//     const [authenticated, setAuthenticated] = useState(null);
-//     const [user, setUser] = useState(null);
+export const useAuth = auth => {
+    const [user, setUser] = useState(null);
+    const [authenticated, setAuthenticated] = useState(null);
 
-//     useEffect(() => {
-//         auth.isAuthenticated().then(isAuthenticated => {
-//             if (isAuthenticated !== authenticated) {
-//                 setAuthenticated(isAuthenticated);
-//             }
-//         });
-//     });
+    const firebase = useContext(FirebaseContext)
 
-//     useEffect(() => {
-//         if (authenticated) {
-//             auth.getUser().then(setUser);
-//         } else {
-//             setUser(null);
-//         }
-//     }, [authenticated]);
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            setUser(user);
+            setAuthenticated(true);
+        } else {
+            setUser(null);
+            setAuthenticated(false);
+        }
+    });
 
-//     return [authenticated, user];
-// };
-// I imagine I will need a hook that preforms similarly to this one
+    useEffect(() => {
+
+    });
+
+    return [user, authenticated];
+};
+
+export default useAuth;

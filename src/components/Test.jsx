@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import '../resources/css/test.css';
-import CharacterBuilder from '../utils/CharacterBuilder';
+import CharacterBuilder from '../utils/functionalComponent/CharacterBuilder';
 
 
 export default class Test extends Component {

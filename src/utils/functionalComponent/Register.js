@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
-import useFormValidation from "./useFormValidation";
-import validateAuth from "./validateAuth";
-import { FirebaseContext } from "./firebase";
+import useFormValidation from "../useFormValidation";
+import validateAuth from "../validateAuth";
+import { FirebaseContext } from "../firebase";
 
 
 const INITIAL_STATE = {
@@ -21,9 +21,6 @@ function Register() {
         firebaseError,
         isSubmitting
     } = useFormValidation(INITIAL_STATE, validateAuth, firebase);
-
-
-
 
     return (
         <React.Fragment>

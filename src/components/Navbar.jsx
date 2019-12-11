@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import '../resources/css/navbar.css';
+import AccountNavigation from '../utils/functionalComponent/AccountNavigation'
+
 
 
 export default class Navbar extends Component {
@@ -38,6 +40,7 @@ export default class Navbar extends Component {
                     <p onClick={this.handleChange}> Account </p>
                     {/* I want to display a unique message here when no user is logged in */}
                 </div>
+                <AccountNavigation />
             </nav>
 
         );

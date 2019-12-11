@@ -1,7 +1,7 @@
 import React from "react";
-import "../resources/css/character.css";
-import useFifthEdition from "./useFifthEdition";
-import validateFifthEdition from "./validateFifthEdition";
+import "../../resources/css/character.css";
+import useFifthEdition from "../useFifthEdition";
+import validateFifthEdition from "../validateFifthEdition";
 
 const INITIAL_STATE = {
   name: ""
