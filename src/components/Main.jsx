@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-import Test from "./Test";
+import Dashboard from "../utils/functionalComponent/Dashboard";
 import SignIn from "./SignIn";
 
 export default class Body extends Component {
@@ -34,7 +34,7 @@ export default class Body extends Component {
                 <SignIn
                     signShown={this.state.signShown}
                 />
-                <Test />
+                <Dashboard />
             </main>
         )
     }

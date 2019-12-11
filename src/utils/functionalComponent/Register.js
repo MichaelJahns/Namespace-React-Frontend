@@ -19,7 +19,6 @@ function Register() {
         handleBlur,
         values,
         errors,
-        firebaseError,
         isSubmitting
     } = useFormValidation(INITIAL_STATE, validateAuth, firebase);
 

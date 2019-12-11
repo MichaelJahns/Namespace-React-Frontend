@@ -21,6 +21,6 @@
   display: none;
 }
 
-.visible{
-  display: visible;
+.invisible{
+  visibility: hidden;
 }
