@@ -4,8 +4,10 @@ export default function validateFifthEdition(values) {
     if (!values.name) {
         errors.name = "Required Name";
     }
-    if (values.title.length >= 200) {
-        errors.title = "Title is way too long"
+    if (values.title) {
+        if (values.title.length >= 200) {
+            errors.title = "Title is way too long"
+        }
     }
     // Missing Fields Errors
     if (!values.description) {

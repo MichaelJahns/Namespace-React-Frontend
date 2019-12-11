@@ -4,6 +4,11 @@ h1{
     font-size: 1.8em;
     text-decoration: underline;
 }
+h2{
+    color: var(--component-text-color);
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.25em;
+}
 h3{
     color: var(--component-text-color);
     font-family: 'Cinzel Decorative', cursive;
