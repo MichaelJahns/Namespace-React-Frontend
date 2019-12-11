@@ -27,9 +27,12 @@ export const useAuth = () => {
 
 function useProvideAuth() {
     const [user, setUser] = useState(null)
+    const [firebaseError, setFirebaseError] = React.useState(null);
+
 
     useEffect(() => {
         const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+            setFirebaseError(null);
             if (user) {
                 setUser(user);
             } else {
@@ -41,7 +44,6 @@ function useProvideAuth() {
     }, []);
 
     const signin = (email, password) => {
-        console.log("no justice no peace")
         return firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
@@ -50,12 +52,12 @@ function useProvideAuth() {
                 return response.user;
             })
             .catch((error) => {
+                setFirebaseError(error);
                 return error
             });
     };
 
     const signup = (email, password) => {
-        console.log("let me in")
         return firebase
             .auth()
             .createUserWithEmailAndPassword(email, password)
@@ -63,24 +65,28 @@ function useProvideAuth() {
                 setUser(response.user);
                 return response.user;
             })
-            .catch((error) =>
-                console.log(error));
+            .catch((error) => {
+                setFirebaseError(error);
+                return error
+            });
     };
 
     const signout = () => {
-        console.log("bazinga")
         return firebase
             .auth()
             .signOut()
             .then(() => {
                 setUser(false);
             })
-            .catch((error) =>
-                console.log(error));
+            .catch((error) => {
+                setFirebaseError(error);
+                return error;
+            })
     };
 
     return {
         user,
+        firebaseError,
         signin,
         signup,
         signout

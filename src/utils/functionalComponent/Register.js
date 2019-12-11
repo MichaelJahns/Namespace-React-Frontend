@@ -13,7 +13,8 @@ const INITIAL_STATE = {
 function Register() {
     const firebase = useAuth();
     const {
-        handleSubmit,
+        handleSignIn,
+        handleSignUp,
         handleChange,
         handleBlur,
         values,
@@ -27,7 +28,7 @@ function Register() {
             <div>
                 <h2> Sign In </h2>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <label htmlFor='email'>
                     <input
                         type="text"
@@ -56,15 +57,16 @@ function Register() {
                     />
                     Password
                     {errors.password && <p className="error-text"> {errors.password} </p>}
-                    {firebaseError && <p className="error-text"> {firebaseError} </p>}
+                    {firebase.firebaseError && <p className="error-text"> {firebase.firebaseError.message} </p>}
                 </label>
-                <label className="tester" htmlFor="remember-me">
-                    Remember me?
-                        <input id="remember-me" type="checkbox" name="remember-me" />
 
-                </label>
-                <p onClick={() => firebase.signout()}> Test </p>
-                <button disabled={isSubmitting} onClick={handleSubmit} type="submit">
+                <p onClick={() => firebase.signout()}> signout </p>
+                <p onClick={() => firebase.signup(values.email, values.password)}> signup </p>
+
+                <button disabled={isSubmitting} onClick={handleSignIn}>
+                    Sign in
+                </button>
+                <button disabled={isSubmitting} onClick={handleSignUp}>
                     Sign up
                 </button>
             </form>
