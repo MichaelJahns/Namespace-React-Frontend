@@ -1,18 +1,13 @@
-import React, { useContext } from "react";
-import useAuth from '../useAuth'
-import FirebaseContext from '../firebase'
+import React from "react";
+import { useAuth } from '../firebase';
 
 function AccountNavigation() {
-    const firebase = useContext(FirebaseContext);
-    const {
-        user,
-        authenticated,
-    } = useAuth(firebase);
-
+    const firebase = useAuth();
+    const { signin, signout } = firebase;
     return (
         <React.Fragment>
-            {user && <h2> Farts </h2>}
-            {authenticated && <h2> Queefs </h2>}
+            {firebase.user ? <button onClick={signout}> click </button> : <h4> Welcome </h4>}
+            {firebase.user ? <h4> {firebase.user.email} </h4> : <h4> Traveler </h4>}
         </React.Fragment>
 
     );

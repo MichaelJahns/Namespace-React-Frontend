@@ -29,14 +29,13 @@ function useFormValidation(initialState, validate, firebase) {
         setSubmitting(true);
         const { email, password } = values;
 
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(email, password)
+        const xxx = await firebase
+            .signin(email, password)
             .catch(function (error) {
-                // Handle Errors here.
                 console.log(error);
                 setFirebaseError(error);
             });
+        console.log("xxx", xxx);
     }
 
     function handleChange(event) {

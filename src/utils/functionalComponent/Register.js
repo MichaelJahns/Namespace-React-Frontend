@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import useFormValidation from "../useFormValidation";
 import validateAuth from "../validateAuth";
-import { FirebaseContext } from "../firebase";
+import { useAuth } from '../firebase'
 
 
 const INITIAL_STATE = {
@@ -11,7 +11,7 @@ const INITIAL_STATE = {
 };
 
 function Register() {
-    const firebase = useContext(FirebaseContext);
+    const firebase = useAuth();
     const {
         handleSubmit,
         handleChange,
@@ -63,10 +63,10 @@ function Register() {
                         <input id="remember-me" type="checkbox" name="remember-me" />
 
                 </label>
-
-                <button disabled={isSubmitting} type='submit'>
-                    Sign in
-                    </button>
+                <p onClick={() => firebase.signout()}> Test </p>
+                <button disabled={isSubmitting} onClick={handleSubmit} type="submit">
+                    Sign up
+                </button>
             </form>
         </React.Fragment>
 
