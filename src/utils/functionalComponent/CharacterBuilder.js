@@ -57,7 +57,7 @@ export default function CharacterBuilder() {
           {/* eventually will render from a collection pulled from firebase as part of a loop */}
           <li>
             <div></div>
-            <p> Frann Fars </p>
+            <p> Remaford </p>
           </li>
           <li>
             <div></div>
@@ -75,12 +75,45 @@ export default function CharacterBuilder() {
             <div></div>
             <p> Frann Fars </p>
           </li>
+
+
+          <li>
+            <div></div>
+            <p> Frann Fars </p>
+          </li>
+
         </ul>
       </aside>
-      {/* <Form /> */}
       <section>
-        <img src="http://via.placeholder.com/150" alt="characterPortrait" />
-        <h3> Remaford </h3>
+        <article className="characterCardUpper">
+          <div className="characterPortrait">
+            <img
+              src="https://img.fireden.net/tg/image/1448/74/1448748623668.png"
+              alt="characterPortrait"
+            />
+          </div>
+          <div className="characterDemographics">
+            <h3> Remaford </h3>
+          </div>
+        </article>
+        <article className="characterCardLower">
+          <div>
+            <h4>Quirks and Fun Facts </h4>
+            <ul>
+              <li> Secretly Percival Personson </li>
+              <li> Speaks quickly in attempts to be convincing </li>
+            </ul>
+          </div>
+          <div>
+            <h4>Relationships</h4>
+            <ul>
+              <li> Best Friend to Tamlin </li>
+              <li> </li>
+            </ul>
+          </div>
+
+        </article>
+
       </section>
     </div>
   );

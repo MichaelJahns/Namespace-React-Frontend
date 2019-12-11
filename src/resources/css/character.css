@@ -1,6 +1,6 @@
 .characterBuilder {
   margin: auto;
-
+  min-height: 445px;
   border: 2px solid var(--component-bg-color);
 
   display: flex;
@@ -12,6 +12,11 @@
   padding: 8px;
   border-bottom: 2px solid var(--component-border-color);
 }
+.characterBuilder h3{
+  color: var(--component-text-color);
+  background-color: var(--main-alt-bg-color);
+  text-decoration: underline var(--component-bg-color);
+}
 
 .characterBuilder p {
   color: var(--component-text-color);
@@ -19,24 +24,56 @@
 
 .characterBuilder aside {
   align-self: flex-start;
-
   background-color: var(--main-alt-bg-color);
   border-top: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* overflow-y: scroll; */
+
 }
 
 .characterBuilder section {
   width: 100%;
   padding: 10px;
-}
-.characterBuilder form {
-  padding: 5px 0px 5px 5px;
-  width: 100%;
-}
-.characterBuilder input {
-  background-color: var(--main-bg-color);
-  border: 1px solid var(--component-border-color);
+  overflow-y: scroll;
 }
 
+.characterBuilder section div{
+  background-color: var(--main-alt-bg-color);
+  margin: 5px;
+  padding: 5px;
+
+}
+
+.characterBuilder .characterCardUpper{
+  display: flex;
+  justify-content: flex-start;
+  margin: 5px;
+  padding: 5px;
+}
+.characterBuilder .characterCardLower{
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 5px;
+  padding: 5px;
+
+}
+.characterBuilder .characterDemographics{
+  width: 100%;
+}
+
+.characterBuilder img{
+  width: 150px;
+  height: 150px;
+  border-radius: 30%;
+}
+.characterBuilder .characterPortrait{
+  background-color: var(--component-bg-color);
+
+}
 .characterBuilder li {
   padding: 20px;
   display: flex;
