@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
-import { useAuth } from "./firebase";
+import { useAuth } from "./useAuth";
 
 
-function useSelectiveFocus() {
+export default function useSelectiveFocus() {
     const [isPortalVisible, setPortalVisible] = React.useState(false);
     const firebase = useAuth();
 
@@ -19,5 +19,3 @@ function useSelectiveFocus() {
         toggleFocus
     }
 }
-
-export default useSelectiveFocus;

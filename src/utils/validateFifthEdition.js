@@ -10,8 +10,8 @@ export default function validateFifthEdition(values) {
         }
     }
     // Missing Fields Errors
-    if (!values.description) {
-        errors.description = "Required Field";
+    if (!values.notes) {
+        errors.notes = "Required Field";
     }
     // regex can be used here
     // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {

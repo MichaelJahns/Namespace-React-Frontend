@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext, createContext } from 'react'
 import * as firebase from 'firebase';
 import app from 'firebase/app'
+import 'firebase/firestore'
+require("firebase/firestore");
 
 if (!app.apps.length) {
     firebase.initializeApp({
@@ -13,7 +15,6 @@ if (!app.apps.length) {
         messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
     })
 }
-
 const FirebaseContext = createContext()
 
 export function ProvideFirebaseAuth({ children }) {

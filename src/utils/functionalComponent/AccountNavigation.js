@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuth } from '../firebase';
+import { useAuth } from '../useAuth';
 import useSelectiveFocus from "../useSelectiveFocus";
 import Register from "./Register";
 import '../../resources/css/signin.css'

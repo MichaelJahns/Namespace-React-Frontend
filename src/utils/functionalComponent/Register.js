@@ -2,12 +2,12 @@ import React from "react";
 
 import useFormValidation from "../useFormValidation";
 import validateAuth from "../validateAuth";
-import { useAuth } from '../firebase'
+import { useAuth } from '../useAuth'
 
 
 const INITIAL_STATE = {
-    email: "",
-    password: ""
+    email: "admin@admin.com",
+    password: "troubleshoot"
 };
 
 function Register() {

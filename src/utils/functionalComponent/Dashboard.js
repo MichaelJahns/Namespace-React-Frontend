@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuth } from '../firebase';
+import { useAuth } from '../useAuth';
 import CharacterBuilder from './CharacterBuilder';
 import '../../resources/css/dashboard.css'
 
