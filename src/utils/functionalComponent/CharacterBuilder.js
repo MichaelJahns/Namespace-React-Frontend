@@ -76,13 +76,10 @@ export default function CharacterBuilder() {
               <div></div>
               <p> Frann Fars </p>
             </li>
-
-
             <li>
               <div></div>
               <p> Frann Fars </p>
             </li>
-
           </ul>
         </aside>
         <section className="scrollable">
@@ -94,12 +91,12 @@ export default function CharacterBuilder() {
               />
             </div>
             <div className="characterDemographics">
-              <h3> Remaford </h3>
+              <h3> Remaford Juliar Berbeaxeon </h3>
             </div>
           </article>
           <article className="characterCardLower">
             <div>
-              <h4>Quirks and Fun Facts </h4>
+              <h4> Notes </h4>
               <ul>
                 <li> Secretly Percival Personson </li>
                 <li> Speaks quickly in attempts to be convincing </li>

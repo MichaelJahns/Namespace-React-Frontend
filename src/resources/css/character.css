@@ -21,12 +21,13 @@
 }
 .characterBuilder h3{
   color: var(--component-text-color);
-  background-color: var(--main-alt-bg-color);
   text-decoration: underline var(--component-bg-color);
 }
 
 .characterBuilder p {
-  color: var(--component-text-color);
+  font-size: 1.1em;
+  font-family: var(--fancy-font);
+  color: var(--main-alt-text-color);
 }
 
 .characterBuilder aside {
@@ -55,8 +56,6 @@
 .characterBuilder .characterCardLower{
   display: flex;
   justify-content: flex-start;
-  align-items: stretch;
-
 
 }
 .characterBuilder .characterDemographics{
@@ -79,14 +78,12 @@
 .characterBuilder li:hover {
   background-color: lightslategrey;
 }
-.characterBuilder span {
-  background-color: pink;
-}
 
 .characterBuilder li div {
   border-radius: 50%;
-  background-color: lightblue;
+  background-color: var(--component-text-color);
+
   height: 25px;
   width: 25px;
-  margin-right: 20px;
+  margin-right: 10px;
 }

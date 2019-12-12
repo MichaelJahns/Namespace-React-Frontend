@@ -5,6 +5,10 @@
   --main-bg-color: #F2EFC4;
   --main-alt-bg-color: #DBD2A7;
   --main-text-color:#66380f;
+  --main-alt-text-color: #551700;
+
+  --fancy-font: 'Cinzel Decorative', cursive;
+
 }
 
 #root {

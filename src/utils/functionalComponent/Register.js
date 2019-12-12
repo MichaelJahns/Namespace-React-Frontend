@@ -26,6 +26,9 @@ function Register() {
         <div className="signIn">
 
             <form>
+                <div>
+                    <h2> Sign In </h2>
+                </div>
                 <label htmlFor='email'>
                     <input
                         type="text"
@@ -67,9 +70,7 @@ function Register() {
                     Sign up
                 </button>
             </form>
-            <div>
-                <h2> Sign In </h2>
-            </div>
+
         </div>
 
     );
