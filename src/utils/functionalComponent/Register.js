@@ -6,8 +6,8 @@ import { useAuth } from '../firebase'
 
 
 const INITIAL_STATE = {
-    email: "McKenster@proguides.gg",
-    password: "BigDickEnergy"
+    email: "",
+    password: ""
 };
 
 function Register() {
@@ -23,10 +23,8 @@ function Register() {
     } = useFormValidation(INITIAL_STATE, validateAuth, firebase);
 
     return (
-        <React.Fragment>
-            <div>
-                <h2> Sign In </h2>
-            </div>
+        <div className="signIn">
+
             <form>
                 <label htmlFor='email'>
                     <input
@@ -69,7 +67,10 @@ function Register() {
                     Sign up
                 </button>
             </form>
-        </React.Fragment>
+            <div>
+                <h2> Sign In </h2>
+            </div>
+        </div>
 
     );
 }

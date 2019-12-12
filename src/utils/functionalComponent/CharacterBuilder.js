@@ -85,7 +85,7 @@ export default function CharacterBuilder() {
 
           </ul>
         </aside>
-        <section>
+        <section className="scrollable">
           <article className="characterCardUpper">
             <div className="characterPortrait">
               <img
@@ -117,6 +117,7 @@ export default function CharacterBuilder() {
 
         </section>
       </main>
+      <h2> Footer </h2>
     </div>
   );
 }
