@@ -6,9 +6,7 @@ export default class Body extends Component {
     render() {
         return (
             <main>
-                <Navbar
-                    handleFocus={this.handleFocus}
-                />
+                <Navbar />
                 <Dashboard />
             </main>
         )

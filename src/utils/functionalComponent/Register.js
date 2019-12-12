@@ -24,7 +24,6 @@ function Register() {
 
     return (
         <div className="signIn">
-
             <form>
                 <div>
                     <h2> Sign In </h2>

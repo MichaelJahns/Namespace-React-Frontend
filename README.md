@@ -14,8 +14,6 @@ My desire to build the same service cross platform meant i needed to build an AP
 * Keep my skills and technologies sharp
 
 ### Future Features(WIP)
-* conditionalRendering on signIn component
-* login failure state messaging
 * user==null landing page explaining the what
 * make a hamburger menu of "Account" in nav bar
 
