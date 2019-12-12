@@ -2,8 +2,9 @@ import React from 'react';
 import './resources/css/App.css';
 import './resources/css/Main.css'
 import Head from './components/Head';
-import Body from './components/Body'
+import Main from './components/Main'
 import Footer from './components/Footer'
+// Required for side-effects
 
 
 function App() {
@@ -13,10 +14,10 @@ function App() {
         <Head />
       </header>
 
-      <main className="App-Main">
-        <Body />
+      <div className="App-Body">
+        <Main />
         <Footer />
-      </main>
+      </div>
 
     </React.Fragment>
   );

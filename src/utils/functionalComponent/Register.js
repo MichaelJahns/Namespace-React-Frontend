@@ -1,31 +1,33 @@
 import React from "react";
 
-import useFormValidation from "./useFormValidation";
-import validateAuth from "./validateAuth";
+import useFormValidation from "../useFormValidation";
+import validateAuth from "../validateAuth";
+import { useAuth } from '../useAuth'
+
 
 const INITIAL_STATE = {
-    email: "",
-    password: ""
+    email: "admin@admin.com",
+    password: "troubleshoot"
 };
 
 function Register() {
+    const firebase = useAuth();
     const {
-        handleSubmit,
+        handleSignIn,
+        handleSignUp,
         handleChange,
         handleBlur,
         values,
         errors,
         isSubmitting
-    } = useFormValidation(INITIAL_STATE, validateAuth);
-    // const [email, setEmail] = React.useState("");
-    // const [password, setPassword] = React.useState("");
+    } = useFormValidation(INITIAL_STATE, validateAuth, firebase);
 
     return (
-        <React.Fragment>
-            <div>
-                <h2> Sign In </h2>
-            </div>
-            <form onSubmit={handleSubmit}>
+        <div className="signIn">
+            <form>
+                <div>
+                    <h2> Sign In </h2>
+                </div>
                 <label htmlFor='email'>
                     <input
                         type="text"
@@ -53,19 +55,22 @@ function Register() {
                         className={errors.password && "error-input"}
                     />
                     Password
-                        {errors.password && <p className="error-text"> {errors.password} </p>}
-                </label>
-                <label className="tester" htmlFor="remember-me">
-                    Remember me?
-                        <input id="remember-me" type="checkbox" name="remember-me" />
-
+                    {errors.password && <p className="error-text"> {errors.password} </p>}
+                    {firebase.firebaseError && <p className="error-text"> {firebase.firebaseError.message} </p>}
                 </label>
 
-                <button disabled={isSubmitting} type='submit'>
+                <p onClick={() => firebase.signout()}> signout </p>
+                <p onClick={() => firebase.signup(values.email, values.password)}> signup </p>
+
+                <button disabled={isSubmitting} onClick={handleSignIn}>
                     Sign in
-                    </button>
+                </button>
+                <button disabled={isSubmitting} onClick={handleSignUp}>
+                    Sign up
+                </button>
             </form>
-        </React.Fragment>
+
+        </div>
 
     );
 }

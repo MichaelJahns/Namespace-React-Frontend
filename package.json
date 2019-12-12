@@ -1,11 +1,14 @@
 {
-  "name": "my-app",
+  "name": "namespace",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "env": "0.0.2",
+    "firebase": "^7.5.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "typescript": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +30,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "### Now A Restful API, Now Reactive A restart on my namespace personal Spring boot Dungeons and Dragons augment project, originally made to help me keep track of the Herbology mini game my dungeon master made for me.  My desire to build the same service cross platform meant i needed to build an API and my ambitions to have my learn react lead me to start wholly again",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelJahns/Namespace-Frontend.git"
+  },
+  "author": "Michael Jahns",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelJahns/Namespace-Frontend/issues"
+  },
+  "homepage": "https://github.com/MichaelJahns/Namespace-Frontend#readme"
 }

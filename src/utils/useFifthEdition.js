@@ -1,42 +1,39 @@
-import React from "react";
+import React, { useCallback } from "react";
 
-function useFormValidation(initialState, validate) {
+export default function useFifthEdition(initialState, validate) {
     const [values, setValues] = React.useState(initialState);
     const [errors, setErrors] = React.useState({});
     const [isSubmitting, setSubmitting] = React.useState(false);
 
-    React.useEffect(() => {
-        if (isSubmitting) {
-            const noErrors = Object.keys(errors).length === 0;
-            if (noErrors) {
-                console.log("Registered", values.email, values.password);
-                setSubmitting(false)
-            } else {
-                setSubmitting(false);
-            }
-        }
-    }, [values, errors, isSubmitting]);
-
-    function handleSubmit(event) {
-        event.preventDefault();
+    const handleSubmit = useCallback((event) => {
         const validationErrors = validate(values);
         setErrors(validationErrors);
         setSubmitting(true);
-    }
+    }, [values, validate])
 
     function handleChange(event) {
-        // console.log(event)
         setValues({
             ...values,
             [event.target.name]: event.target.value
         });
-        console.log(values)
     }
 
     function handleBlur(event) {
         const validationErrors = validate(values);
         setErrors(validationErrors);
     }
+
+    React.useEffect(() => {
+        if (isSubmitting) {
+            const noErrors = Object.keys(errors).length === 0;
+            if (noErrors) {
+                handleSubmit();
+                setSubmitting(false)
+            } else {
+                setSubmitting(false);
+            }
+        }
+    }, [values, errors, isSubmitting, handleSubmit]);
 
     return {
         handleSubmit,
@@ -47,5 +44,3 @@ function useFormValidation(initialState, validate) {
         isSubmitting
     }
 }
-
-export default useFormValidation;

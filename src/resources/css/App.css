@@ -1,13 +1,23 @@
-#root {
-  background-color:#F2EFC4;
-  min-height: 100vh;
+:root {
+  --component-bg-color:#282c34;
+  --component-text-color:#ff9900ff;
+  --component-border-color: #666666ff;
+  --main-bg-color: #F2EFC4;
+  --main-alt-bg-color: #DBD2A7;
+  --main-text-color:#66380f;
+  --main-alt-text-color: #551700;
+
+  --fancy-font: 'Cinzel Decorative', cursive;
 
 }
 
+#root {
+  background-color:var(--main-bg-color);
+  min-height: 100vh;
+}
+
 .App-Main {
-  /* min-height: 80vh; */
-  /* max-height: 60vh; */
-  color: #66380f;
+  color: var(--main-text-color);
   z-index: -2;
 }
 
@@ -15,6 +25,6 @@
   display: none;
 }
 
-.visible{
-  display: visible;
+.invisible{
+  visibility: hidden;
 }
