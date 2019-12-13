@@ -2,3 +2,25 @@
     min-height: 150vh;
     margin: 0px 120px;
 }
+
+.dashboard{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+
+    align-items: stretch;
+    min-height: 445px;
+    flex-wrap: wrap;
+
+}
+.dashboardNavigation{
+    background-color: var(--component-bg-color);
+    color: var(--component-text-color);
+    
+
+    min-width: 60px;
+    order: 1;
+}
+.dashboardFooter{
+    order: 4;
+}
