@@ -3,7 +3,7 @@ import CharacterCardUpper from '../../components/CharacterCardUpper'
 import CharacterCardLower from '../../components/CharacterCardLower'
 import { useSelectiveFocus } from "../useSelectiveFocus";
 export default function CharacterFocus(props) {
-    const { printView } = useSelectiveFocus();
+    const { characterView, printView } = useSelectiveFocus();
     useEffect(() => {
     }, [])
 
@@ -11,8 +11,11 @@ export default function CharacterFocus(props) {
         <section className="scrollable">
             <button onClick={printView} />
 
-            <CharacterCardUpper />
-            <CharacterCardLower />
+            <CharacterCardUpper
+                name={characterView.name} />
+            <CharacterCardLower
+                notes={characterView.notes}
+                relationships={characterView.relationships} />
         </section>
     )
 }

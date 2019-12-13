@@ -10,7 +10,7 @@ export default function CharacterListItem(props) {
                 />
             </div>
             <div className="characterDemographics">
-                <h3> Remaford Juliar Berbeaxeon </h3>
+                <h3> {props.name} </h3>
             </div>
         </article>
     );
