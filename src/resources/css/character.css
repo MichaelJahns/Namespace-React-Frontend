@@ -44,6 +44,7 @@
 
 .characterBuilder section {
   width: 100%;
+  padding: 20px;
   overflow-y: scroll;
   background-color: var(--main-bg-color);
 }
@@ -51,12 +52,14 @@
 .characterBuilder .characterCardUpper{
   display: flex;
   justify-content: flex-start;
-
+  margin-bottom: 20px;;
 }
 .characterBuilder .characterCardLower{
   display: flex;
   justify-content: flex-start;
-
+}
+.characterBuilder .characterCardLower div{
+  margin-right: 20px;
 }
 .characterBuilder .characterDemographics{
   width: 100%;
@@ -70,13 +73,23 @@
 .characterBuilder .characterPortrait{
   background-color: var(--component-bg-color);
   border-radius: 5%;
+  margin-right: 20px;
 }
 .characterBuilder li {
-  padding: 20px;
+  padding: 17px;
   display: flex;
 }
+
+.characterBuilder aside li{
+  border-bottom: 3px solid var(--main-alt-bg-color);
+}
+.characterBuilder section li {
+  border-bottom: 3px solid var(--main-bg-color);
+}
 .characterBuilder li:hover {
-  background-color: lightslategrey;
+  background: lightslategray;
+  border-bottom: 3px solid var(--component-text-color)
+
 }
 
 .characterBuilder li div {

@@ -4,7 +4,6 @@ import 'firebase/firestore'
 require("firebase/firestore");
 
 var db = firebase.firestore();
-
 const FireStoreContext = createContext()
 
 export function ProvideFirestore({ children }) {
@@ -30,7 +29,6 @@ function useProvideFireStore() {
                 setCharacters(characters);
             });
     }
-
 
     useEffect(() => {
         setUpListeners();
@@ -64,7 +62,6 @@ function useProvideFireStore() {
                     allCharacters.push(doc.data())
                 })
                 setCharacters(allCharacters);
-                console.log(allCharacters);
             })
 
     }
@@ -73,6 +70,6 @@ function useProvideFireStore() {
         characters,
         fireStoreError,
         Test,
-        getAllCharacters
+        getAllCharacters,
     };
 }

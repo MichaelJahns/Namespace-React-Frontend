@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth } from '../useAuth';
-import CharacterBuilder from './CharacterBuilder';
+import CharacterView from './CharacterView';
 import '../../resources/css/dashboard.css'
 
 function Dashboard() {
@@ -10,7 +10,7 @@ function Dashboard() {
         <React.Fragment>
             {firebase.user ?
                 < div className="content" >
-                    <CharacterBuilder />
+                    <CharacterView />
                 </div >
                 :
                 <div className="content">

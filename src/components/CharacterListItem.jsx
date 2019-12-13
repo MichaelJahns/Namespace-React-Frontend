@@ -3,8 +3,8 @@ import CharacterAvatar from './CharacterAvatar'
 
 export default function CharacterListItem(props) {
     return (
-        <li>
-            <div></div>
+        <li onClick={() => props.onClick(props.name)} className={props.name}>
+            <div ></div>
             <p> {props.name} </p>
         </li>
     );

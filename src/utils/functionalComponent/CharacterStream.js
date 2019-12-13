@@ -1,19 +1,24 @@
-import React, { useState, useEffect, useCallback, Suspense } from "react";
-import { useFirestore } from "../useFirestore";
+import React, { useEffect, Suspense } from "react";
 import CharacterListItem from "../../components/CharacterListItem";
+import { useSelectiveFocus } from "../useSelectiveFocus";
+import { useFirestore } from "../useFirestore";
 
 export default function CharacterStream(props) {
     const [rows, setRows] = React.useState([]);
     const { characters } = useFirestore();
+    const { toggleCharacterView } = useSelectiveFocus();
 
     useEffect(() => {
         if (characters) {
-            console.log(characters)
             var rows = [];
             for (var i = 0; i < characters.length; i++) {
-                rows.push(<CharacterListItem
-                    key={i}
-                    name={characters[i].name} />);
+                rows.push(
+                    <CharacterListItem
+                        key={i}
+                        name={characters[i].name}
+                        onClick={toggleCharacterView}
+                    />
+                );
             }
             setRows(rows)
         }
