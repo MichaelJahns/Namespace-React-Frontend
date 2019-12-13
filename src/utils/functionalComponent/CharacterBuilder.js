@@ -121,7 +121,6 @@ export default function CharacterBuilder() {
               values.relationships
             )}> TEST ME </p>
 
-            <p onClick={() => firestore.getAllCharacters()}> GET ALL CHARACTERS </p>
 
           </form>
         </section>

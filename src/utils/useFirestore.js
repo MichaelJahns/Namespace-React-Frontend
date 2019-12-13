@@ -20,7 +20,20 @@ function useProvideFireStore() {
     const [fireStoreError, setFireStoreError] = React.useState(null);
     const [characters, setCharacters] = React.useState([]);
 
+    const setUpListeners = () => {
+        db.collection("characters").where("campaign", "==", "iqNOydMMd4hJY5uxmveW")
+            .onSnapshot(function (querySnapshot) {
+                var characters = [];
+                querySnapshot.forEach(function (character) {
+                    characters.push(character.data());
+                });
+                setCharacters(characters);
+            });
+    }
+
+
     useEffect(() => {
+        setUpListeners();
         getAllCharacters();
     }, []);
 
@@ -29,7 +42,8 @@ function useProvideFireStore() {
             name: name,
             title: title,
             notes: notes,
-            relationships: relationships
+            relationships: relationships,
+            campaign: "iqNOydMMd4hJY5uxmveW"
         })
             .then(function (docRef) {
                 console.log("Document written with ID: ", docRef.id);
@@ -43,7 +57,7 @@ function useProvideFireStore() {
     const getAllCharacters = () => {
         let allCharacters = [];
         db
-            .collection("characters")
+            .collection("characters").where("campaign", "==", "iqNOydMMd4hJY5uxmveW")
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {

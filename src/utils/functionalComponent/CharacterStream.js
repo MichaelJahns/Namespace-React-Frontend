@@ -7,7 +7,6 @@ export default function CharacterStream(props) {
     const { characters } = useFirestore();
 
     useEffect(() => {
-        console.log("place 2")
         if (characters) {
             console.log(characters)
             var rows = [];
