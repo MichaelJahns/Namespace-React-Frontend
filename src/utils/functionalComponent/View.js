@@ -8,7 +8,7 @@ function View() {
         <React.Fragment>
             <Navbar />
             <Main />
-            {/* <Footer /> */}
+            <Footer />
         </React.Fragment>
     );
 }

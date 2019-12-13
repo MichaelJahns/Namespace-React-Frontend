@@ -50,3 +50,19 @@ a:visited{
     min-height: 150vh;
     margin: 0px 120px;
 }
+.characterCardUpper{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+.characterCardLower{
+    display: flex;
+    justify-content: flex-start;
+}
+.characterPortrait{
+    background-color: var(--component-bg-color);
+    border-radius: 5%;
+}
+.characterDemographics{
+    width: 100%;
+}

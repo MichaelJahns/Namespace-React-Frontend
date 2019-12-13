@@ -8,7 +8,7 @@
 .dashboard p {
     font-size: 1.1em;
     font-family: var(--fancy-font);
-    color: var(--main-alt-text-color);
+    color: inherit;
 }
 .dashboard img{
     width: 150px;
@@ -19,11 +19,7 @@
 .dashboard li {
     padding: 17px;
     display: flex;
-  }
-  
-
-.dashboard li:hover{
-    background-color: lightslategray;
+    color: var(--main-alt-text-color);
 }
 .dashboard li div {
     border-radius: 50%;
@@ -63,6 +59,7 @@
 }
 .dashboardNavigation li{
     margin: auto;
+    color: var(--component-text-color);
 }
 
 .dashboardDynamic{
@@ -83,11 +80,21 @@
     min-width: 30%;
     /* overflow-y: scroll; */
 }
+.dashboardView li:hover{
+    color: var(--focus-text-color);
+    background-color: var(--focus-bg-color);
+}
+.dashboardView li:hover div{
+    background-color: var(--focus-text-color);
+}
 .dashboard section{
     width: 100%;
-    background-color: var(--main-bg-color);
-    border-right: 1px solid var(--component-border-color)
+    padding: 10px;
 
+    background-color: var(--main-bg-color);
+    border-right: 1px solid var(--component-border-color);
+
+    overflow-y: scroll;
 }
 .dashboard aside li{
     border-bottom: 3px solid var(--main-alt-bg-color);
