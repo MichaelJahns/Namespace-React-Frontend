@@ -10,3 +10,7 @@
     border-bottom: solid 1px var(--component-border-color);
     color: var(--focus-text-color);
 }
+.characterPortrait{
+    background-color: var(--component-bg-color);
+    border-radius: 5%;
+}

@@ -1,14 +1,16 @@
-import React from "react";
+import React, { Suspense } from "react";
 import CharacterView from './CharacterView';
 
-import '../../resources/css/dashboard.css';
-
-function Dashboard() {
+export default function DashboardView() {
     return (
-        <CharacterView />
+        <Suspense fallback={<h1>Loading characters...</h1>}>
+            <div className='dashboardView'>
+                <CharacterView />
+            </div>
+        </Suspense>
     );
 }
 
-export default Dashboard;
+
 
 

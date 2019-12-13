@@ -1,47 +1,15 @@
 .characterBuilder {
-  margin: auto;
-  min-height: inherit;
-  /* border: 2px solid var(--component-bg-color); */
-  background-color: var(--main-alt-bg-color);
-  display: flex;
-  flex-direction: column;
+  width: inherit;
 }
-
-
-
 .characterBuilder main{
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-.characterBuilder h2 {
-  background-color: var(--component-bg-color);
-  text-align: center;
-  padding: 8px;
-}
-.characterBuilder h3{
-  color: var(--component-text-color);
-  text-decoration: underline var(--component-bg-color);
-}
 
-.characterBuilder p {
-  font-size: 1.1em;
-  font-family: var(--fancy-font);
-  color: var(--main-alt-text-color);
-}
 
-.characterBuilder aside {
-  align-self: flex-start;
-  background-color: var(--main-alt-bg-color);
-  border-top: none;
 
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  /* overflow-y: scroll; */
-
-}
 
 .characterBuilder section {
   width: 100%;
@@ -66,48 +34,20 @@
   width: 100%;
 }
 
-.characterBuilder img{
+.dashboard img{
   width: 150px;
   height: 150px;
   border-radius: 30%;
 }
-.characterBuilder .characterPortrait{
+.dashboard .characterPortrait{
   background-color: var(--component-bg-color);
   border-radius: 5%;
   margin-right: 20px;
 }
+
 .characterBuilder li {
   padding: 17px;
   display: flex;
 }
 
-.characterBuilder aside li{
-  border-bottom: 3px solid var(--main-alt-bg-color);
-}
-.characterBuilder section li {
-  border-bottom: 3px solid var(--main-bg-color);
-}
-.characterBuilder li:hover {
-  background: lightslategray;
-  border-bottom: 3px solid var(--component-text-color)
 
-}
-.characterBuilder li div {
-  border-radius: 50%;
-
-  font-size: 1.1em;
-  font-weight: bold;
-  text-align: center;
-
-  height: 25px;
-  line-height: 25px;
-  width: 25px;
-  margin-right: 10px;
-}
-.characterAvatar div{
-  background-color: var(--component-text-color);
-}
-.newCharacter div{
-  background-color: var(--focus-bg-color);
-  color: var(--focus-text-color);
-}

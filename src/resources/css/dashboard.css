@@ -1,26 +1,109 @@
-.content{
-    min-height: 150vh;
-    margin: 0px 120px;
-}
 
 .dashboard{
     display: flex;
     flex-direction: row;
-    align-self: flex-start;
-
-    align-items: stretch;
-    min-height: 445px;
-    flex-wrap: wrap;
-
+    background-color: var(--component-bg-color);
+    border-radius: 1%;
+}  
+.dashboard p {
+    font-size: 1.1em;
+    font-family: var(--fancy-font);
+    color: var(--main-alt-text-color);
 }
+.dashboard img{
+    width: 150px;
+    height: 150px;
+    border-radius: 30%;
+}
+
+.dashboard li {
+    padding: 17px;
+    display: flex;
+  }
+  
+
+.dashboard li:hover{
+    background-color: lightslategray;
+}
+.dashboard li div {
+    border-radius: 50%;
+  
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+  
+    height: 25px;
+    line-height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+.characterAvatar div{
+    background-color: var(--component-text-color);
+}
+.newCharacter div{
+    background-color: var(--focus-bg-color);
+    color: var(--focus-text-color);
+}
+
 .dashboardNavigation{
     background-color: var(--component-bg-color);
     color: var(--component-text-color);
     
-
     min-width: 60px;
+    order: 0;
+    border-radius: 10%;
+}
+.dashboardNavigation ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* align-content: center; */
+
+    height: 100%;
+}
+.dashboardNavigation li{
+    margin: auto;
+}
+
+.dashboardDynamic{
+    width: 100%;
+}
+.dashboardView{
+    display: flex;
+    background-color: var(--main-alt-bg-color);
+}
+.dashboardView aside {
+    align-self: flex-start;
+    background-color: var(--main-alt-bg-color);
+    border-top: none;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 30%;
+    /* overflow-y: scroll; */
+}
+.dashboard section{
+    width: 100%;
+    background-color: var(--main-bg-color);
+    border-right: 1px solid var(--component-border-color)
+
+}
+.dashboard aside li{
+    border-bottom: 3px solid var(--main-alt-bg-color);
+}
+.dashboard section li {
+    border-bottom: 3px solid var(--main-bg-color);
+}
+.dashboardHeader{
+    padding: 8px;
+    width: 100%;
     order: 1;
 }
+.dashboard h2{
+    text-align: center;
+}
 .dashboardFooter{
+    min-height: 40px;
     order: 4;
 }

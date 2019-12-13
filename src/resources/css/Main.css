@@ -45,3 +45,8 @@ a:visited{
 ::-webkit-scrollbar-thumb:hover {
     background: var(--component-text-color); 
 }
+/* Classes */
+.content{
+    min-height: 150vh;
+    margin: 0px 120px;
+}
