@@ -10,11 +10,11 @@ export default function CharacterView() {
   // can we use webHooks? Does useSelectiveRendering work well?
   return (
     <div className="characterBuilder">
-      <h2> Character </h2>
+      <h2> Character View </h2>
       <main className="characterBuilder">
         <CharacterStream />
-        <CharacterFocus />
-        {/* <CharacterBuilder /> */}
+        {/* <CharacterFocus /> */}
+        <CharacterBuilder />
       </main>
       <h2> Footer </h2>
     </div>

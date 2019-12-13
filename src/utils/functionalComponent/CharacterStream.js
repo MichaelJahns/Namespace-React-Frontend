@@ -2,6 +2,7 @@ import React, { useEffect, Suspense } from "react";
 import CharacterListItem from "../../components/CharacterListItem";
 import { useSelectiveFocus } from "../useSelectiveFocus";
 import { useFirestore } from "../useFirestore";
+import AddListItem from "../../components/AddListItem";
 
 export default function CharacterStream(props) {
     const [rows, setRows] = React.useState([]);
@@ -20,6 +21,12 @@ export default function CharacterStream(props) {
                     />
                 );
             }
+            rows.push(
+                <AddListItem
+                    key={-1}
+                    name="[create]"
+                />
+            );
             setRows(rows)
         }
     }, [characters])

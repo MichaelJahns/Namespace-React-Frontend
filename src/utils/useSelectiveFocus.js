@@ -24,7 +24,6 @@ export default function useProvideSelectiveFocus() {
     const toggleCharacterView = useCallback((desiredCharacter) => {
         characters.forEach(character => {
             if (desiredCharacter === character.name) {
-                console.log(character)
                 setCharacterView(character);
             }
         });

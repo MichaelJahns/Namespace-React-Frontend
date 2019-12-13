@@ -1,0 +1,12 @@
+.FormButton{
+    height: 50px;
+    width: 125px;
+    text-align: center;
+    line-height: 50px;
+    background-color: var(--focus-bg-color);
+}
+.FormButton p{
+    font-size: 1.3em;
+    border-bottom: solid 1px var(--component-border-color);
+    color: var(--focus-text-color);
+}

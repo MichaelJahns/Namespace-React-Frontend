@@ -2,6 +2,7 @@ import React from "react";
 import useFifthEdition from "../useFifthEdition";
 import validateFifthEdition from "../validateFifthEdition";
 import { useFirestore } from "../useFirestore";
+import FormButton from "../../components/FormButton";
 
 const INITIAL_STATE = {
     name: "",
@@ -70,16 +71,18 @@ export default function CharacterView() {
                 />
                 {errors.relationships && <p className="error-text"> {errors.relationships} </p>}
 
-                <p onClick={() => firestore.Test(
-                    values.name,
-                    values.title,
-                    values.notes,
-                    values.relationships
-                )}> TEST ME </p>
+                <FormButton
+                    name="Create"
+                    onClick={() => firestore.Test(
+                        values.name,
+                        values.title,
+                        values.notes,
+                        values.relationships
+                    )}
+                />
 
-
-            </form>
-        </section>
+            </form >
+        </section >
     );
 }
 

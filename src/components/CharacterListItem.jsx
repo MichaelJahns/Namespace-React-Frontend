@@ -1,10 +1,9 @@
 import React from "react";
-import CharacterAvatar from './CharacterAvatar'
 
 export default function CharacterListItem(props) {
     return (
-        <li onClick={() => props.onClick(props.name)} className={props.name}>
-            <div ></div>
+        <li onClick={() => props.onClick(props.name)} className="characterAvatar">
+            <div></div>
             <p> {props.name} </p>
         </li>
     );
