@@ -3,6 +3,7 @@ import "../../resources/css/character.css";
 import useFifthEdition from "../useFifthEdition";
 import validateFifthEdition from "../validateFifthEdition";
 import { useFirestore } from "../useFirestore";
+import CharacterStream from "./CharacterStream";
 
 const INITIAL_STATE = {
   name: "",
@@ -23,11 +24,6 @@ export default function CharacterBuilder() {
 
   const firestore = useFirestore();
 
-  const Form = props => {
-    return (
-      <p>hit</p>
-    );
-  };
 
   const Content = props => {
     return (
@@ -69,36 +65,7 @@ export default function CharacterBuilder() {
     <div className="characterBuilder">
       <h2> Character Builder </h2>
       <main className="characterBuilder">
-        <aside>
-          <ul>
-            {/* eventually will render from a collection pulled from firebase as part of a loop */}
-            <li>
-              <div></div>
-              <p> Remaford </p>
-            </li>
-            <li>
-              <div></div>
-              <p> Frann Fars </p>
-            </li>
-            <li>
-              <div></div>
-              <p> Frann Fars </p>
-            </li>
-            <li>
-              <div></div>
-              <p> Frann Fars </p>
-            </li>
-            <li>
-              <div></div>
-              <p> Frann Fars </p>
-            </li>
-            <li>
-              <div></div>
-              <p> Frann Fars </p>
-            </li>
-          </ul>
-        </aside>
-        {/* <Form></Form> */}
+        <CharacterStream />
         {/* <Content></Content> */}
         <section>
           <form>
@@ -146,12 +113,15 @@ export default function CharacterBuilder() {
               className={errors.relationships && "error-input"}
             />
             {errors.relationships && <p className="error-text"> {errors.relationships} </p>}
+
             <p onClick={() => firestore.Test(
               values.name,
               values.title,
               values.notes,
               values.relationships
             )}> TEST ME </p>
+
+            <p onClick={() => firestore.getAllCharacters()}> GET ALL CHARACTERS </p>
 
           </form>
         </section>

@@ -18,12 +18,14 @@ export const useFirestore = () => {
 
 function useProvideFireStore() {
     const [fireStoreError, setFireStoreError] = React.useState(null);
+    const [characters, setCharacters] = React.useState([]);
 
     useEffect(() => {
+        getAllCharacters();
     }, []);
 
     const Test = (name, title, notes, relationships) => {
-        db.collection("users").add({
+        db.collection("characters").add({
             name: name,
             title: title,
             notes: notes,
@@ -38,8 +40,25 @@ function useProvideFireStore() {
             });
     };
 
+    const getAllCharacters = () => {
+        let allCharacters = [];
+        db
+            .collection("characters")
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    allCharacters.push(doc.data())
+                })
+                setCharacters(allCharacters);
+                console.log(allCharacters);
+            })
+
+    }
+
     return {
+        characters,
         fireStoreError,
-        Test
+        Test,
+        getAllCharacters
     };
 }
