@@ -15,6 +15,7 @@ export const useSelectiveFocus = () => {
 export default function useProvideSelectiveFocus() {
     const { characters } = useFirestore();
     const [isPortalVisible, setPortalVisible] = useState(false);
+    const [isCharacterBuilderVisible, setCharacterBuilderVisible] = useState(false);
     const [characterView, setCharacterView] = useState({});
 
     const togglePortal = useCallback(() => {
@@ -22,6 +23,7 @@ export default function useProvideSelectiveFocus() {
     }, [isPortalVisible]);
 
     const toggleCharacterView = useCallback((desiredCharacter) => {
+        setCharacterBuilderVisible(false);
         characters.forEach(character => {
             if (desiredCharacter === character.name) {
                 setCharacterView(character);
@@ -29,6 +31,9 @@ export default function useProvideSelectiveFocus() {
         });
     }, [characters]);
 
+    const toggleCharacterBuilderVisible = useCallback(() => {
+        setCharacterBuilderVisible(true);
+    })
     const printView = () => {
         console.log(characterView);
     }
@@ -43,8 +48,10 @@ export default function useProvideSelectiveFocus() {
     return {
         characterView,
         isPortalVisible,
+        isCharacterBuilderVisible,
         togglePortal,
         toggleCharacterView,
+        toggleCharacterBuilderVisible,
         printView
     }
 }

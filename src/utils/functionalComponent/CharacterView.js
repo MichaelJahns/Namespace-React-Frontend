@@ -1,16 +1,20 @@
-import React from "react";
-import CharacterStream from "./CharacterStream";
-import CharacterFocus from "./CharacterFocus";
-import CharacterBuilder from "./CharacterBuilder";
-// import "../../resources/css/character.css";
+import React from 'react';
+import CharacterStream from './CharacterStream';
+import CharacterBuilder from './CharacterBuilder'
+import CharacterFocus from './CharacterFocus';
+import { useSelectiveFocus } from '../useSelectiveFocus';
 
 export default function CharacterView() {
+  const { isCharacterBuilderVisible } = useSelectiveFocus();
 
   return (
     <React.Fragment>
       <CharacterStream />
-      <CharacterFocus />
-      {/* <CharacterBuilder /> */}
+      {isCharacterBuilderVisible ?
+        <CharacterBuilder />
+        :
+        <CharacterFocus />
+      }
     </React.Fragment>
   );
 }

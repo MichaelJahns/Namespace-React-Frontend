@@ -7,7 +7,7 @@ import AddListItem from "../../components/AddListItem";
 export default function CharacterStream(props) {
     const [rows, setRows] = React.useState([]);
     const { characters } = useFirestore();
-    const { toggleCharacterView } = useSelectiveFocus();
+    const { toggleCharacterView, toggleCharacterBuilderVisible } = useSelectiveFocus();
 
     useEffect(() => {
         if (characters) {
@@ -25,6 +25,7 @@ export default function CharacterStream(props) {
                 <AddListItem
                     key={-1}
                     name="[create]"
+                    onClick={toggleCharacterBuilderVisible}
                 />
             );
             setRows(rows)
