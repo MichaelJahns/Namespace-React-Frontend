@@ -16,6 +16,12 @@
     border-radius: 30%;
 }
 
+.dashboard input{
+    background-color: var(--main-alt-bg-color);
+    line-height: 2em;
+    max-height: 2em;
+}
+
 .dashboard li {
     padding: 17px;
     display: flex;
@@ -33,6 +39,7 @@
     width: 25px;
     margin-right: 10px;
 }
+
 .characterAvatar div{
     background-color: var(--component-text-color);
 }
@@ -92,7 +99,6 @@
     padding: 10px;
 
     background-color: var(--main-bg-color);
-    border-right: 1px solid var(--component-border-color);
 
     overflow-y: scroll;
 }

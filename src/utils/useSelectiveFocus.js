@@ -22,7 +22,8 @@ export default function useProvideSelectiveFocus() {
         isPortalVisible ? setPortalVisible(false) : setPortalVisible(true);
     }, [isPortalVisible]);
 
-    const toggleCharacterView = useCallback((desiredCharacter) => {
+    const toggleCharacterView = useCallback((desiredCharacter, id) => {
+        console.log(id)
         setCharacterBuilderVisible(false);
         characters.forEach(character => {
             if (desiredCharacter === character.name) {
@@ -34,9 +35,6 @@ export default function useProvideSelectiveFocus() {
     const toggleCharacterBuilderVisible = useCallback(() => {
         setCharacterBuilderVisible(true);
     })
-    const printView = () => {
-        console.log(characterView);
-    }
 
     React.useEffect(() => {
         if (characters.length > 0) {
@@ -52,6 +50,5 @@ export default function useProvideSelectiveFocus() {
         togglePortal,
         toggleCharacterView,
         toggleCharacterBuilderVisible,
-        printView
     }
 }

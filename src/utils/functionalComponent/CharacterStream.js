@@ -7,8 +7,10 @@ import AddListItem from "../../components/AddListItem";
 export default function CharacterStream(props) {
     const [rows, setRows] = React.useState([]);
     const { characters } = useFirestore();
-    const { toggleCharacterView, toggleCharacterBuilderVisible } = useSelectiveFocus();
+    const { characterView, toggleCharacterView, toggleCharacterBuilderVisible } = useSelectiveFocus();
 
+    const _adjustClassNames = () => {
+    }
     useEffect(() => {
         if (characters) {
             var rows = [];
@@ -18,13 +20,14 @@ export default function CharacterStream(props) {
                         key={i}
                         name={characters[i].name}
                         onClick={toggleCharacterView}
+                        className={_adjustClassNames}
                     />
                 );
             }
             rows.push(
                 <AddListItem
                     key={-1}
-                    name="[create]"
+                    name="new character"
                     onClick={toggleCharacterBuilderVisible}
                 />
             );
