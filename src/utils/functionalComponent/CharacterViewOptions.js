@@ -7,6 +7,7 @@ export default function CharacterViewOptions() {
     return (
         <React.Fragment>
             <FormButton name='edit' />
+            <FormButton name='delete' />
         </React.Fragment>
     );
 }

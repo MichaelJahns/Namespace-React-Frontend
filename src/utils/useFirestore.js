@@ -35,7 +35,7 @@ function useProvideFireStore() {
         getAllCharacters();
     }, []);
 
-    const Test = (name, title, notes, relationships) => {
+    const createNewCharacter = (name, title, notes, relationships) => {
         db.collection("characters").add({
             name: name,
             title: title,
@@ -69,7 +69,7 @@ function useProvideFireStore() {
     return {
         characters,
         fireStoreError,
-        Test,
+        createNewCharacter,
         getAllCharacters,
     };
 }
