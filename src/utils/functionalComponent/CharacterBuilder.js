@@ -80,7 +80,7 @@ export default function CharacterView() {
                 </div>
                 <FormButton
                     name="Create"
-                    onClick={() => firestore.createNewCharacterII(
+                    onClick={() => firestore.createNewCharacter(
                         values.name,
                         values.title,
                         values.notes,

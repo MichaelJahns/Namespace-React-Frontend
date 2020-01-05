@@ -1,13 +1,21 @@
 import React from 'react';
-import { useSelectiveFocus } from '../useSelectiveFocus';
 import FormButton from '../../components/FormButton';
+import { useFirestore } from '../useFirestore';
 
-export default function CharacterViewOptions() {
+export default function CharacterViewOptions(props) {
+
+    const firestore = useFirestore();
 
     return (
         <React.Fragment>
             <FormButton name='edit' />
-            <FormButton name='delete' />
+            <FormButton name={props.name} />
+            <FormButton
+                name="delete"
+                onClick={() => firestore.deleteCharacter(
+                    props.name
+                )}
+            />
         </React.Fragment>
     );
 }

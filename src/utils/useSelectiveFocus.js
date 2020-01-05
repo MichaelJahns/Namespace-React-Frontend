@@ -39,7 +39,6 @@ export default function useProvideSelectiveFocus() {
     React.useEffect(() => {
         if (characters.length > 0) {
             setCharacterView(characters[0])
-
         }
     }, [characters]);
 

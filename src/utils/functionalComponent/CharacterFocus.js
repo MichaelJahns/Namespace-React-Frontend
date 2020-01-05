@@ -15,7 +15,8 @@ export default function CharacterFocus(props) {
             <CharacterCardLower
                 notes={characterView.notes}
                 relationships={characterView.relationships} />
-            <CharacterViewOptions />
+            <CharacterViewOptions
+                name={characterView.name} />
         </section>
     )
 }

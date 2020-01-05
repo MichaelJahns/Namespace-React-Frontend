@@ -10,6 +10,7 @@ export default function CharacterStream(props) {
     const { characterView, toggleCharacterView, toggleCharacterBuilderVisible } = useSelectiveFocus();
 
     const _adjustClassNames = () => {
+        //TODO:  I want to have the focused character a class so i can control when to highlight it
     }
     useEffect(() => {
         if (characters) {

@@ -52,6 +52,16 @@ function useProvideFireStore() {
             });
     };
 
+    const deleteCharacter = (name) => {
+        db.collection("characters").doc(name)
+            .delete()
+            .then(() => {
+                console.log(`Document ${name} deleted`);
+            }).catch(function (error) {
+                console.log(`Failed to delete ${name}`)
+            })
+    }
+
     const getAllCharacters = () => {
         let allCharacters = [];
         // TODO: De hardcode the campaign reference
@@ -71,6 +81,7 @@ function useProvideFireStore() {
         characters,
         fireStoreError,
         createNewCharacter,
+        deleteCharacter,
         getAllCharacters,
     };
 }
