@@ -36,7 +36,7 @@ function useProvideFireStore() {
     }, []);
 
     const createNewCharacter = (name, title, notes, relationships) => {
-        db.collection("characters").add({
+        db.collection("characters").doc(name).set({
             name: name,
             title: title,
             notes: notes,
@@ -54,6 +54,7 @@ function useProvideFireStore() {
 
     const getAllCharacters = () => {
         let allCharacters = [];
+        // TODO: De hardcode the campaign reference
         db
             .collection("characters").where("campaign", "==", "iqNOydMMd4hJY5uxmveW")
             .get()
