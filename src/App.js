@@ -2,9 +2,7 @@ import React from 'react';
 import './resources/css/App.css';
 import './resources/css/Main.css'
 import Head from './components/Head';
-import Main from './components/Main'
-import Footer from './components/Footer'
-// Required for side-effects
+import View from './utils/functionalComponent/View'
 
 
 function App() {
@@ -15,8 +13,7 @@ function App() {
       </header>
 
       <div className="App-Body">
-        <Main />
-        <Footer />
+        <View />
       </div>
 
     </React.Fragment>

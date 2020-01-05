@@ -4,7 +4,6 @@ import 'firebase/firestore'
 require("firebase/firestore");
 
 var db = firebase.firestore();
-
 const FireStoreContext = createContext()
 
 export function ProvideFirestore({ children }) {
@@ -18,16 +17,31 @@ export const useFirestore = () => {
 
 function useProvideFireStore() {
     const [fireStoreError, setFireStoreError] = React.useState(null);
+    const [characters, setCharacters] = React.useState([]);
+
+    const setUpListeners = () => {
+        db.collection("characters").where("campaign", "==", "iqNOydMMd4hJY5uxmveW")
+            .onSnapshot(function (querySnapshot) {
+                var characters = [];
+                querySnapshot.forEach(function (character) {
+                    characters.push(character.data());
+                });
+                setCharacters(characters);
+            });
+    }
 
     useEffect(() => {
+        setUpListeners();
+        getAllCharacters();
     }, []);
 
-    const Test = (name, title, notes, relationships) => {
-        db.collection("users").add({
+    const createNewCharacter = (name, title, notes, relationships) => {
+        db.collection("characters").doc(name).set({
             name: name,
             title: title,
             notes: notes,
-            relationships: relationships
+            relationships: relationships,
+            campaign: "iqNOydMMd4hJY5uxmveW"
         })
             .then(function (docRef) {
                 console.log("Document written with ID: ", docRef.id);
@@ -38,8 +52,36 @@ function useProvideFireStore() {
             });
     };
 
+    const deleteCharacter = (name) => {
+        db.collection("characters").doc(name)
+            .delete()
+            .then(() => {
+                console.log(`Document ${name} deleted`);
+            }).catch(function (error) {
+                console.log(`Failed to delete ${name}`)
+            })
+    }
+
+    const getAllCharacters = () => {
+        let allCharacters = [];
+        // TODO: De hardcode the campaign reference
+        db
+            .collection("characters").where("campaign", "==", "iqNOydMMd4hJY5uxmveW")
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    allCharacters.push(doc.data())
+                })
+                setCharacters(allCharacters);
+            })
+
+    }
+
     return {
+        characters,
         fireStoreError,
-        Test
+        createNewCharacter,
+        deleteCharacter,
+        getAllCharacters,
     };
 }

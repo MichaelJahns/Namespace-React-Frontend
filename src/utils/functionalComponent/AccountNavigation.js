@@ -6,16 +6,16 @@ import '../../resources/css/signin.css'
 
 function AccountNavigation() {
     const firebase = useAuth();
-    const { isPortalVisible, toggleFocus } = useSelectiveFocus();
+    const { isPortalVisible, togglePortal } = useSelectiveFocus();
     return (
         <React.Fragment>
             {firebase.user ?
                 <h4
-                    onClick={toggleFocus}
+                    onClick={togglePortal}
                 > {firebase.user.email} </h4>
                 :
                 <h4
-                    onClick={toggleFocus}
+                    onClick={togglePortal}
                 > Account </h4>
             }
             {isPortalVisible &&

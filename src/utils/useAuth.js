@@ -28,7 +28,7 @@ export const useAuth = () => {
 
 function useProvideAuth() {
     const [user, setUser] = useState(null)
-    const [firebaseError, setFirebaseError] = React.useState(null);
+    const [firebaseError, setFirebaseError] = useState(null);
 
 
     useEffect(() => {
