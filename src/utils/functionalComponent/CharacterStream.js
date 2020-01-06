@@ -4,10 +4,12 @@ import { useSelectiveFocus } from "../useSelectiveFocus";
 import { useFirestore } from "../useFirestore";
 import AddListItem from "../../components/AddListItem";
 
+
 export default function CharacterStream(props) {
     const [rows, setRows] = React.useState([]);
     const { characters } = useFirestore();
-    const { characterView, toggleCharacterView, toggleNewCharacterBuilder } = useSelectiveFocus();
+    const { characterView, toggleCharacterView, toggleNewCharacterBuilder, toggleCharacterBuilderVisible } = useSelectiveFocus();
+
 
     const _adjustClassNames = () => {
         //TODO:  I want to have the focused character a class so i can control when to highlight it

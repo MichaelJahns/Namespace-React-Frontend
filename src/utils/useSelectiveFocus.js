@@ -30,7 +30,6 @@ export default function useProvideSelectiveFocus() {
     }, [isPortalVisible]);
 
     const toggleCharacterView = useCallback((desiredCharacter, id) => {
-        console.log(id)
         setCharacterBuilderVisible(false);
         characters.forEach(character => {
             if (desiredCharacter === character.name) {
@@ -41,6 +40,9 @@ export default function useProvideSelectiveFocus() {
 
     const toggleCharacterBuilderVisible = useCallback(() => {
         setCharacterBuilderVisible(true);
+    })
+    const toggleCharacterBuilderHidden = useCallback(() => {
+        setCharacterBuilderVisible(false);
     })
 
     const toggleNewCharacterBuilder = useCallback(() => {
@@ -61,6 +63,7 @@ export default function useProvideSelectiveFocus() {
         togglePortal,
         toggleCharacterView,
         toggleCharacterBuilderVisible,
+        toggleCharacterBuilderHidden,
         toggleNewCharacterBuilder
     }
 }

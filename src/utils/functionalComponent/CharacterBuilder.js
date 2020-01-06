@@ -5,16 +5,8 @@ import { useFirestore } from "../useFirestore";
 import { useSelectiveFocus } from "../useSelectiveFocus";
 import FormButton from "../../components/FormButton";
 
-const INITIAL_STATE = {
-    name: "",
-    title: "",
-    notes: "",
-    relationships: ""
-};
-
-export default function CharacterBuilder() {
-
-    const { characterView } = useSelectiveFocus();
+export default function CharacterView() {
+    const { characterView, toggleCharacterBuilderHidden } = useSelectiveFocus();
     const {
         handleSubmit,
         handleChange,
@@ -23,7 +15,6 @@ export default function CharacterBuilder() {
         errors,
         isSubmitting
     } = useFifthEdition(characterView, validateFifthEdition);
-
     const firestore = useFirestore();
     return (
         <section>
@@ -84,12 +75,15 @@ export default function CharacterBuilder() {
                 </div>
                 <FormButton
                     name="Create"
-                    onClick={() => firestore.createNewCharacter(
-                        values.name,
-                        values.title,
-                        values.notes,
-                        values.relationships
-                    )}
+                    onClick={() => {
+                        toggleCharacterBuilderHidden();
+                        firestore.createNewCharacter(
+                            values.name,
+                            values.title,
+                            values.notes,
+                            values.relationships
+                        )
+                    }}
                     disabled={errors}
                 />
             </form >
