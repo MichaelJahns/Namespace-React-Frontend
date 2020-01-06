@@ -17,6 +17,13 @@ export default function CharacterStream(props) {
     useEffect(() => {
         if (characters) {
             var rows = [];
+            rows.push(
+                <AddListItem
+                    key={-1}
+                    name="new character"
+                    onClick={toggleNewCharacterBuilder}
+                />
+            );
             for (var i = 0; i < characters.length; i++) {
                 rows.push(
                     <CharacterListItem
@@ -27,13 +34,7 @@ export default function CharacterStream(props) {
                     />
                 );
             }
-            rows.push(
-                <AddListItem
-                    key={-1}
-                    name="new character"
-                    onClick={toggleNewCharacterBuilder}
-                />
-            );
+
             setRows(rows)
         }
     }, [characters])
