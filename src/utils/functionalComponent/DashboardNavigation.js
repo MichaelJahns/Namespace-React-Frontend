@@ -1,13 +1,14 @@
 import React from "react";
+import '../../resources/css/signin.css'
+
 
 export default function DashboardNavigation() {
 
     return (
         <div className='dashboardNavigation'>
             <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
+                <li className="charactersIcon"> Character Viewer </li>
+                <li className="campaignIcon"> Campaign Viewer </li>
             </ul>
         </div>
     );

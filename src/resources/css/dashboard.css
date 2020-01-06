@@ -58,6 +58,7 @@
     border-radius: 10%;
 }
 .dashboardNavigation ul{
+    width: 75px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -68,6 +69,11 @@
 .dashboardNavigation li{
     margin: auto;
     color: var(--component-text-color);
+    border-radius: 20px;
+
+    box-shadow: 
+    -4px -4px 4px 0 #414754,
+    4px 4px 4px 0px #14161A;
 }
 
 .dashboardDynamic{
