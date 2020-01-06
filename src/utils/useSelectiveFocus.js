@@ -51,7 +51,10 @@ export default function useProvideSelectiveFocus() {
         setCharacterBuilderVisible(true);
     })
     const toggleCharacterDeleteVisible = useCallback(() => {
-        setCharacterDeleteVisible(true);
+        isCharacterDeleteVisible ?
+            setCharacterDeleteVisible(false)
+            :
+            setCharacterDeleteVisible(true);
     })
 
     React.useEffect(() => {

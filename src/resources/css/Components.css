@@ -18,3 +18,43 @@
     color: var(--focus-text-color);
     background-color: var(--focus-bg-color);
 }
+
+.ComponentButton{
+    height: 30px;
+    line-height: 30px;
+
+    width: 125px;
+    text-align: center;
+    background-color: inherit;
+    border-radius: 0.5em;
+}
+.ComponentButton p{
+    font-size: 1.0em;
+    color: var(--component-text-color);
+}
+.ComponentButton:hover{
+    color: var(--focus-text-color);
+    background-color: var(--focus-bg-color);
+}
+
+.deleteModule{
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    min-width: 100px;
+    max-width: 500px;
+
+    min-height: 100px;
+    max-height: 300px;
+    border: black 2px solid;
+    background-color: var(--main-bg-color);
+}
+
+.deleteModuleTitle{
+    color: var(--component-text-color);
+    background-color: var(--component-bg-color);
+    display: flex;
+    justify-content: space-between;
+}

@@ -19,20 +19,15 @@ export default function CharacterViewOptions(props) {
             <FormButton
                 name='edit'
                 onClick={toggleCharacterBuilderVisible} />
-            {/* <FormButton
-                name="delete"
-                onClick={() => firestore.deleteCharacter(
-                    props.name
-                )}
-            /> */}
             <FormButton
-                name="tester"
+                name="delete"
                 onClick={() => toggleCharacterDeleteVisible()} />
 
-            {isCharacterDeleteVisible ?
-                <DeleteCharacter />
-                :
-                <p> hi </p>}
+            {isCharacterDeleteVisible &&
+                <DeleteCharacter
+                    name={props.name} />
+            }
+
         </div>
     );
 }

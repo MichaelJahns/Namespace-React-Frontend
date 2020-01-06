@@ -1,6 +1,6 @@
 import React from "react";
 
-function useFormValidation(INITIAL_VALUES, validate) {
+function useDeleteValidation(INITIAL_VALUES, validate, reference) {
     const [value, setValue] = React.useState(INITIAL_VALUES);
     const [errors, setErrors] = React.useState({});
     const [isSubmitting, setSubmitting] = React.useState(false);
@@ -17,12 +17,11 @@ function useFormValidation(INITIAL_VALUES, validate) {
     }, [value, errors, isSubmitting]);
 
     function handleSubmit(event) {
-        const validationErrors = validate(value);
+        const validationErrors = validate(value, reference);
         setErrors(validationErrors);
         setSubmitting(true);
 
         console.log("Attempting Delete")
-
     }
 
     function handleChange(event) {
@@ -33,7 +32,7 @@ function useFormValidation(INITIAL_VALUES, validate) {
     }
 
     function handleBlur(event) {
-        const validationErrors = validate(value);
+        const validationErrors = validate(value, reference);
         setErrors(validationErrors);
     }
 
@@ -47,4 +46,4 @@ function useFormValidation(INITIAL_VALUES, validate) {
     }
 }
 
-export default useFormValidation;
+export default useDeleteValidation;

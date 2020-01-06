@@ -4,25 +4,33 @@ import validateDelete from "../validateDelete";
 import { useFirestore } from '../useFirestore';
 import { useSelectiveFocus } from '../useSelectiveFocus';
 import FormButton from "../../components/FormButton";
+import ComponentButton from "../../components/ComponentButton";
 
 const INITIAL_STATE = {
     deleteValidation: ""
 };
 
-export default function DeleteCharacter() {
+export default function DeleteCharacter(props) {
     const firestore = useFirestore();
-    const { characterView } = useSelectiveFocus();
+    const { characterView, toggleCharacterDeleteVisible } = useSelectiveFocus();
     const {
         handleChange,
         handleBlur,
         value,
         errors,
-    } = useDeleteValidation(INITIAL_STATE, validateDelete);
+    } = useDeleteValidation(INITIAL_STATE, validateDelete, characterView.name);
 
     return (
         <div className="deleteModule">
             <form>
-                <h3> ABOUT TO DELETE {characterView.name} </h3>
+                <div className="deleteModuleTitle">
+                    <h3> DELETE </h3>
+                    <ComponentButton
+                        name="X"
+                        onClick={() => toggleCharacterDeleteVisible()}
+                    />
+                </div>
+                <p> This action cannot be done, to delete this character type <span className="focus">{props.name} </span> exactly in the input box.  </p>
                 <input
                     name='deleteValidation'
                     type="text"
@@ -30,13 +38,17 @@ export default function DeleteCharacter() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={value.deleteValidation}
-                // className={errors.confirmDeletion && "error-input"}
+                    className={errors.confirmDeletion && "error-input"}
                 />
-                <FormButton
-                    name="Delete Permenantly"
-                    onClick={() => firestore.deleteCharacter()}
-                    disabled={errors}
-                />
+                {errors.confirmDeletion && <p className="error-text"> {errors.confirmDeletion} </p>}
+
+
+                {value.deleteValidation === props.name &&
+                    <FormButton
+                        name="Delete"
+                        onClick={() => firestore.deleteCharacter(props.name)}
+                    />
+                }
             </form>
         </div>
 

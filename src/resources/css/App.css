@@ -31,3 +31,9 @@
 .invisible{
   visibility: hidden;
 }
+
+.focus{
+  color: var(--component-text-color);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+}
