@@ -7,7 +7,7 @@ export default function DashboardNavigation() {
     return (
         <div className='dashboardNavigation'>
             <ul>
-                <li className="charactersIcon"> Character Viewer </li>
+                <li className="charactersIcon" alt='test'> Character Viewer </li>
                 <li className="campaignIcon"> Campaign Viewer </li>
             </ul>
         </div>

@@ -2,6 +2,7 @@ import React from "react";
 import useFifthEdition from "../useFifthEdition";
 import validateFifthEdition from "../validateFifthEdition";
 import { useFirestore } from "../useFirestore";
+import { useSelectiveFocus } from "../useSelectiveFocus";
 import FormButton from "../../components/FormButton";
 
 const INITIAL_STATE = {
@@ -11,7 +12,9 @@ const INITIAL_STATE = {
     relationships: ""
 };
 
-export default function CharacterView() {
+export default function CharacterBuilder() {
+
+    const { characterView } = useSelectiveFocus();
     const {
         handleSubmit,
         handleChange,
@@ -19,7 +22,8 @@ export default function CharacterView() {
         values,
         errors,
         isSubmitting
-    } = useFifthEdition(INITIAL_STATE, validateFifthEdition);
+    } = useFifthEdition(characterView, validateFifthEdition);
+
     const firestore = useFirestore();
     return (
         <section>

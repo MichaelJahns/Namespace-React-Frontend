@@ -61,7 +61,7 @@
     width: 75px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     /* align-content: center; */
 
     height: 100%;

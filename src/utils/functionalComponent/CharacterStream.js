@@ -7,7 +7,7 @@ import AddListItem from "../../components/AddListItem";
 export default function CharacterStream(props) {
     const [rows, setRows] = React.useState([]);
     const { characters } = useFirestore();
-    const { characterView, toggleCharacterView, toggleCharacterBuilderVisible } = useSelectiveFocus();
+    const { characterView, toggleCharacterView, toggleNewCharacterBuilder } = useSelectiveFocus();
 
     const _adjustClassNames = () => {
         //TODO:  I want to have the focused character a class so i can control when to highlight it
@@ -29,7 +29,7 @@ export default function CharacterStream(props) {
                 <AddListItem
                     key={-1}
                     name="new character"
-                    onClick={toggleCharacterBuilderVisible}
+                    onClick={toggleNewCharacterBuilder}
                 />
             );
             setRows(rows)

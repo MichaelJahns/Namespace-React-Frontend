@@ -12,6 +12,13 @@ export const useSelectiveFocus = () => {
     return useContext(SelectiveContext);
 };
 
+const INITIAL_STATE = {
+    name: "",
+    title: "",
+    notes: "",
+    relationships: ""
+};
+
 export default function useProvideSelectiveFocus() {
     const { characters } = useFirestore();
     const [isPortalVisible, setPortalVisible] = useState(false);
@@ -36,6 +43,11 @@ export default function useProvideSelectiveFocus() {
         setCharacterBuilderVisible(true);
     })
 
+    const toggleNewCharacterBuilder = useCallback(() => {
+        setCharacterView(INITIAL_STATE);
+        setCharacterBuilderVisible(true);
+    })
+
     React.useEffect(() => {
         if (characters.length > 0) {
             setCharacterView(characters[0])
@@ -49,5 +61,6 @@ export default function useProvideSelectiveFocus() {
         togglePortal,
         toggleCharacterView,
         toggleCharacterBuilderVisible,
+        toggleNewCharacterBuilder
     }
 }
