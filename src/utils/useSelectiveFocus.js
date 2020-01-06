@@ -23,6 +23,7 @@ export default function useProvideSelectiveFocus() {
     const { characters } = useFirestore();
     const [isPortalVisible, setPortalVisible] = useState(false);
     const [isCharacterBuilderVisible, setCharacterBuilderVisible] = useState(false);
+    const [isCharacterDeleteVisible, setCharacterDeleteVisible] = useState(false);
     const [characterView, setCharacterView] = useState({});
 
     const togglePortal = useCallback(() => {
@@ -49,6 +50,9 @@ export default function useProvideSelectiveFocus() {
         setCharacterView(INITIAL_STATE);
         setCharacterBuilderVisible(true);
     })
+    const toggleCharacterDeleteVisible = useCallback(() => {
+        setCharacterDeleteVisible(true);
+    })
 
     React.useEffect(() => {
         if (characters.length > 0) {
@@ -60,10 +64,12 @@ export default function useProvideSelectiveFocus() {
         characterView,
         isPortalVisible,
         isCharacterBuilderVisible,
+        isCharacterDeleteVisible,
         togglePortal,
         toggleCharacterView,
         toggleCharacterBuilderVisible,
         toggleCharacterBuilderHidden,
+        toggleCharacterDeleteVisible,
         toggleNewCharacterBuilder
     }
 }

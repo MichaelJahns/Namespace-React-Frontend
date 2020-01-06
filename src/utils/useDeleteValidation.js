@@ -1,8 +1,7 @@
 import React from "react";
 
-
-function useFormValidation(initialState, validate, firebase) {
-    const [values, setValues] = React.useState(initialState);
+function useFormValidation(INITIAL_VALUES, validate) {
+    const [value, setValue] = React.useState(INITIAL_VALUES);
     const [errors, setErrors] = React.useState({});
     const [isSubmitting, setSubmitting] = React.useState(false);
 
@@ -15,46 +14,34 @@ function useFormValidation(initialState, validate, firebase) {
                 setSubmitting(false);
             }
         }
-    }, [values, errors, isSubmitting]);
+    }, [value, errors, isSubmitting]);
 
-    function handleSignIn(event) {
-        const validationErrors = validate(values);
+    function handleSubmit(event) {
+        const validationErrors = validate(value);
         setErrors(validationErrors);
         setSubmitting(true);
-        const { email, password } = values;
 
-        console.log("Attempting signin")
-        firebase.signin(email, password);
-    }
+        console.log("Attempting Delete")
 
-    function handleSignUp(event) {
-        const validationErrors = validate(values);
-        setErrors(validationErrors);
-        setSubmitting(true);
-        const { email, password } = values;
-
-        console.log("Attempting signout")
-        firebase.signup(email, password)
     }
 
     function handleChange(event) {
-        setValues({
-            ...values,
+        setValue({
+            ...value,
             [event.target.name]: event.target.value
         });
     }
 
     function handleBlur(event) {
-        const validationErrors = validate(values);
+        const validationErrors = validate(value);
         setErrors(validationErrors);
     }
 
     return {
-        handleSignIn,
-        handleSignUp,
+        handleSubmit,
         handleChange,
         handleBlur,
-        values,
+        value,
         errors,
         isSubmitting
     }
