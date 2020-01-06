@@ -121,3 +121,8 @@
     min-height: 40px;
     order: 4;
 }
+
+.characterViewOptions{
+    display: flex;
+    justify-content: space-evenly;
+}

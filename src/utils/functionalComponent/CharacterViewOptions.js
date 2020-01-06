@@ -7,16 +7,15 @@ export default function CharacterViewOptions(props) {
     const firestore = useFirestore();
 
     return (
-        <React.Fragment>
+        <div className="characterViewOptions">
             <FormButton name='edit' />
-            <FormButton name={props.name} />
             <FormButton
                 name="delete"
                 onClick={() => firestore.deleteCharacter(
                     props.name
                 )}
             />
-        </React.Fragment>
+        </div>
     );
 }
 

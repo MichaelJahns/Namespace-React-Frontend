@@ -86,6 +86,7 @@ export default function CharacterView() {
                         values.notes,
                         values.relationships
                     )}
+                    disabled={errors}
                 />
             </form >
         </section >

@@ -1,4 +1,6 @@
 import React from "react";
+import '../resources/css/Components.css';
+
 
 export default function FormButton(props) {
     return (

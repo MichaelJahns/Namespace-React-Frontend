@@ -11,7 +11,8 @@ export default function CharacterFocus(props) {
     return (
         <section className="scrollable">
             <CharacterCardUpper
-                name={characterView.name} />
+                name={characterView.name}
+                title={characterView.title} />
             <CharacterCardLower
                 notes={characterView.notes}
                 relationships={characterView.relationships} />
