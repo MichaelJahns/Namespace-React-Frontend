@@ -6,7 +6,7 @@ export default class Footer extends Component {
 
     render() {
         return (
-            <div className='dashboardHeader'>
+            <div className='streamHeader'>
                 <h2> Character </h2>
             </div>
         );

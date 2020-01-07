@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: row;
     background-color: var(--component-bg-color);
-    border-radius: 1%;
 }  
 .dashboard p {
     font-size: 1.1em;
@@ -54,9 +53,9 @@
     background-color: var(--component-bg-color);
     color: var(--component-text-color);
     
-    min-width: 60px;
+    min-width: 6vw;
     order: 0;
-    border-radius: 10%;
+    min-height: 100vh;
 }
 .dashboardNavigation ul{
     width: 75px;
@@ -82,6 +81,7 @@
 }
 .dashboardView{
     display: flex;
+    min-height: 95vh;
     background-color: var(--main-alt-bg-color);
 }
 .dashboardView aside {
@@ -116,10 +116,11 @@
 .dashboard section li {
     border-bottom: 3px solid var(--main-bg-color);
 }
-.dashboardHeader{
+.streamHeader{
     padding: 8px;
     width: 100%;
     order: 1;
+    border-bottom: 1px solid gray;
 }
 .dashboard h2{
     text-align: center;
@@ -127,7 +128,7 @@
 .dashboardFooter{
     border-top: 1px gray solid;
     background-color: var(--main-alt-bg-color);
-    min-height: 40px;
+    min-height: 5vh;
     order: 4;
 }
 
