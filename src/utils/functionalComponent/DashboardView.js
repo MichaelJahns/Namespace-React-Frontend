@@ -1,13 +1,21 @@
-import React, { Suspense } from "react";
+import React from "react";
 import CharacterView from './CharacterView';
+import CampaignView from './CampaignView';
+import Register from './Register';
+import { useView } from '../useView';
 
 export default function DashboardView() {
+
+    const { showingCharacter, showingCampaign, showingUserAccount } = useView();
     return (
-        <Suspense fallback={<h1>Loading characters...</h1>}>
-            <div className='dashboardView'>
-                <CharacterView />
-            </div>
-        </Suspense>
+        <div className='dashboardView'>
+            {showingCharacter &&
+                <CharacterView />}
+            {showingCampaign &&
+                <CampaignView />}
+            {showingUserAccount &&
+                <Register />}
+        </div>
     );
 }
 

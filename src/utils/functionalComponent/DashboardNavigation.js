@@ -1,15 +1,28 @@
 import React from "react";
 import '../../resources/css/signin.css'
-
+import { useView } from './../useView';
 
 export default function DashboardNavigation() {
+    const { showCharacter, showCampaign, showUserAccount } = useView();
 
     return (
         <div className='dashboardNavigation'>
             <ul>
-                <li className="charactersIcon" alt='test'> Character Viewer </li>
-                <li className="campaignIcon"> Campaign Viewer </li>
-                <li className="userIcon"> User Account </li>
+                <p title="Character Viewer"
+                    className="charactersIcon"
+                    onClick={showCharacter}>
+                    Character Viewer </p>
+
+                <li title="Campaign Viewer"
+                    className="campaignIcon"
+                    onClick={showCampaign}>
+                    Campaign Viewer </li>
+
+                <li title="User Account Viewer"
+                    className="userIcon"
+                    onClick={showUserAccount}>
+                    User Account Viewer
+                </li>
             </ul>
         </div>
     );
