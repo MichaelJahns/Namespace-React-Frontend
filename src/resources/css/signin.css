@@ -52,7 +52,6 @@
     border-bottom:1px solid var(--component-text-color);
     color: var(--component-text-color);
     font-size: 1.1em;
-    width:100%;
     background-color: inherit;
 }
 .signIn input:focus{

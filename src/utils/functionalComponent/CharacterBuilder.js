@@ -4,6 +4,8 @@ import validateFifthEdition from "../validateFifthEdition";
 import { useFirestore } from "../useFirestore";
 import { useSelectiveFocus } from "../useSelectiveFocus";
 import FormButton from "../../components/FormButton";
+import FancyInput from '../functionalComponent/FancyInput';
+import "../../resources/css/input.css"
 
 export default function CharacterView() {
     const { characterView, toggleCharacterBuilderHidden } = useSelectiveFocus();
@@ -29,31 +31,45 @@ export default function CharacterView() {
                     <input
                         type="text"
                         name="name"
-                        placeholder="Character Name.. "
                         autoComplete="off"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.name}
-                        className={errors.name && "error-input"}
+                        className={["question", errors.name && "error-input"]}
                     />
+                    <label htmlFor="name"><span>Character Name</span> </label>
                     {errors.name && <p className="error-text"> {errors.name} </p>}
+
                     <input
                         type="text"
                         name="title"
-                        placeholder="Character's Title or Role.. "
                         autoComplete="off"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.title}
-                        className={errors.title && "error-input"}
+                        className={["question", errors.title && "error-input"]}
                     />
+                    <label htmlFor="title"><span>Character Title</span> </label>
+
+                    <FancyInput
+                        name="CharacterName"
+                        type="text"
+                        prompt="What is your characters name"
+                        classes="question"
+                    />
+                    <FancyInput
+                        name="CharacterTitle"
+                        type="text"
+                        prompt="How is your character known?"
+                        classes="question"
+                    />
+
                 </div>
                 {errors.title && <p className="error-text"> {errors.title} </p>}
                 <div className='characterCardLower'>
                     <input
                         type="text"
                         name="notes"
-                        placeholder="Character Notes.."
                         autoComplete="off"
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -64,7 +80,6 @@ export default function CharacterView() {
                     <input
                         type="text"
                         name="relationships"
-                        placeholder="Character Relationships.. "
                         autoComplete="off"
                         onChange={handleChange}
                         onBlur={handleBlur}

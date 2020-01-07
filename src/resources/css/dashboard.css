@@ -17,10 +17,10 @@
 }
 
 .dashboard input{
-    background-color: var(--main-alt-bg-color);
+    /* background-color: var(--main-alt-bg-color);
     color: var(--component-bg-color);
     line-height: 2em;
-    max-height: 2em;
+    max-height: 2em; */
 }
 
 .dashboard li {
