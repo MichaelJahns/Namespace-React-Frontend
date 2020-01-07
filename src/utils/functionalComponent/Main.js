@@ -15,18 +15,6 @@ function Main() {
                 :
                 <Landing />
             }
-            <FancyInput
-                name="CharacterName"
-                type="text"
-                prompt="What is your characters name"
-                classes="question"
-            />
-            <FancyInput
-                name="CharacterTitle"
-                type="text"
-                prompt="How is your character known?"
-                classes="question"
-            />
         </main>
     );
 }
