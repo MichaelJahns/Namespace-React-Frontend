@@ -8,10 +8,10 @@ export default function DashboardNavigation() {
     return (
         <div className='dashboardNavigation'>
             <ul>
-                <p title="Character Viewer"
+                <li title="Character Viewer"
                     className="charactersIcon"
                     onClick={showCharacter}>
-                    Character Viewer </p>
+                    Character Viewer </li>
 
                 <li title="Campaign Viewer"
                     className="campaignIcon"

@@ -48,8 +48,7 @@ a:visited{
 
 /* Classes */
 .content{
-    min-height: 120vh;
-    margin: 0px 120px;
+    /* min-height: 50vh; */
 }
 .characterCardUpper{
     display: flex;

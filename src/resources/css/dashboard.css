@@ -1,5 +1,6 @@
 
 .dashboard{
+    height: 100%;
     display: flex;
     flex-direction: row;
     background-color: var(--component-bg-color);
@@ -124,6 +125,8 @@
     text-align: center;
 }
 .dashboardFooter{
+    border-top: 1px gray solid;
+    background-color: var(--main-alt-bg-color);
     min-height: 40px;
     order: 4;
 }
