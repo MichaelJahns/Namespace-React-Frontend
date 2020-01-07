@@ -88,12 +88,16 @@
     align-self: flex-start;
     background-color: var(--main-alt-bg-color);
     border-top: none;
+    border-right: 1px solid gray;
   
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    min-height: 95vh;
+    max-height: 95vh;
     min-width: 25%;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
+    overflow-x: none;
 }
 .dashboardView li:hover{
     color: var(--focus-text-color);
