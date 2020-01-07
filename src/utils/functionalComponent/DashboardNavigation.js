@@ -9,6 +9,7 @@ export default function DashboardNavigation() {
             <ul>
                 <li className="charactersIcon" alt='test'> Character Viewer </li>
                 <li className="campaignIcon"> Campaign Viewer </li>
+                <li className="userIcon"> User Account </li>
             </ul>
         </div>
     );
