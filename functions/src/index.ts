@@ -6,7 +6,7 @@ import { database } from '../util/admin';
 // // https://firebase.google.com/docs/functions/typescript
 //
 export const helloWorld = functions.https.onRequest((request, response) => {
-    response.send("Hello from Firebase!");
+    response.send("I want a miracle!");
 });
 
 export const getAllCharacters = functions.https.onRequest((request, response) => {
