@@ -6,6 +6,7 @@ require("firebase/firestore");
 var db = firebase.firestore();
 const FireStoreContext = createContext()
 
+
 export function ProvideFirestore({ children }) {
     const firestore = useProvideFireStore();
     return <FireStoreContext.Provider value={firestore}>  {children}  </FireStoreContext.Provider>
@@ -18,6 +19,7 @@ export const useFirestore = () => {
 function useProvideFireStore() {
     const [fireStoreError, setFireStoreError] = React.useState(null);
     const [characters, setCharacters] = React.useState([]);
+
 
     const setUpListeners = () => {
         db.collection("characters").where("campaign", "==", "iqNOydMMd4hJY5uxmveW")
@@ -43,9 +45,6 @@ function useProvideFireStore() {
             relationships: relationships,
             campaign: "iqNOydMMd4hJY5uxmveW"
         })
-            .then(function (docRef) {
-                console.log("Document written with ID: ", docRef.id);
-            })
             .catch(function (error) {
                 console.error("Error adding document: ", error);
                 setFireStoreError(error);

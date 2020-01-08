@@ -1,22 +1,11 @@
-import React from "react";
-import Dashboard from "../../components/Dashboard";
-import Landing from "../../components/Landing"
-import { useAuth } from '../useAuth';
-
-function Main() {
-    const firebase = useAuth();
+import React from 'react';
+export default function CharacterView() {
 
     return (
-        <main className="content">
-            {firebase.user ?
-                <Dashboard />
-                :
-                <Landing />
-            }
+        <main title='this section is still under construction'>
+            <p> Please Log in</p>
+            <img src='https://via.placeholder.com/150' alt='Placeholder hero' />
         </main>
     );
 }
-
-export default Main;
-
 

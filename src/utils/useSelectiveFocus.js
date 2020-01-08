@@ -12,10 +12,18 @@ export const useSelectiveFocus = () => {
     return useContext(SelectiveContext);
 };
 
+const INITIAL_STATE = {
+    name: "",
+    title: "",
+    notes: "",
+    relationships: ""
+};
+
 export default function useProvideSelectiveFocus() {
     const { characters } = useFirestore();
     const [isPortalVisible, setPortalVisible] = useState(false);
     const [isCharacterBuilderVisible, setCharacterBuilderVisible] = useState(false);
+    const [isCharacterDeleteVisible, setCharacterDeleteVisible] = useState(false);
     const [characterView, setCharacterView] = useState({});
 
     const togglePortal = useCallback(() => {
@@ -23,7 +31,6 @@ export default function useProvideSelectiveFocus() {
     }, [isPortalVisible]);
 
     const toggleCharacterView = useCallback((desiredCharacter, id) => {
-        console.log(id)
         setCharacterBuilderVisible(false);
         characters.forEach(character => {
             if (desiredCharacter === character.name) {
@@ -34,6 +41,24 @@ export default function useProvideSelectiveFocus() {
 
     const toggleCharacterBuilderVisible = useCallback(() => {
         setCharacterBuilderVisible(true);
+    })
+    const toggleCharacterBuilderHidden = useCallback(() => {
+        setCharacterBuilderVisible(false);
+    })
+
+    const toggleNewCharacterBuilder = useCallback(() => {
+        setCharacterView(INITIAL_STATE);
+        setCharacterBuilderVisible(true);
+    })
+    const toggleCharacterDeleteVisible = useCallback(() => {
+        isCharacterDeleteVisible ?
+            setCharacterDeleteVisible(false)
+            :
+            setCharacterDeleteVisible(true);
+    })
+
+    const hideCharacterDelete = useCallback(() => {
+        setCharacterDeleteVisible(false);
     })
 
     React.useEffect(() => {
@@ -46,8 +71,13 @@ export default function useProvideSelectiveFocus() {
         characterView,
         isPortalVisible,
         isCharacterBuilderVisible,
+        isCharacterDeleteVisible,
         togglePortal,
         toggleCharacterView,
         toggleCharacterBuilderVisible,
+        toggleCharacterBuilderHidden,
+        toggleCharacterDeleteVisible,
+        toggleNewCharacterBuilder,
+        hideCharacterDelete
     }
 }

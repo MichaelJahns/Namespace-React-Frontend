@@ -1,15 +1,20 @@
 import React from "react";
-import Navbar from '../../components/Navbar';
-import Main from './Main';
-import Footer from '../../components/Footer';
+
+import Landing from './Landing';
+import Dashboard from '../../components/Dashboard';
+import { useAuth } from '../useAuth';
 
 function View() {
+    const firebase = useAuth();
+
     return (
-        <React.Fragment>
-            <Navbar />
-            <Main />
-            <Footer />
-        </React.Fragment>
+        <main className="content">
+            {firebase.user ?
+                <Dashboard />
+                :
+                <Landing />
+            }
+        </main>
     );
 }
 

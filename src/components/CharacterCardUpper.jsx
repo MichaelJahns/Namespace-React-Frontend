@@ -11,6 +11,7 @@ export default function CharacterListItem(props) {
             </div>
             <div className="characterDemographics">
                 <h3> {props.name} </h3>
+                <h5> {props.title} </h5>
             </div>
         </article>
     );

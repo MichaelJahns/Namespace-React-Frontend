@@ -5,6 +5,7 @@ import CharacterFocus from './CharacterFocus';
 import { useSelectiveFocus } from '../useSelectiveFocus';
 
 export default function CharacterView() {
+
   const { isCharacterBuilderVisible } = useSelectiveFocus();
 
   return (

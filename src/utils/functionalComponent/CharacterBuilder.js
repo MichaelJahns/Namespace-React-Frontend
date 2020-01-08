@@ -2,16 +2,13 @@ import React from "react";
 import useFifthEdition from "../useFifthEdition";
 import validateFifthEdition from "../validateFifthEdition";
 import { useFirestore } from "../useFirestore";
+import { useSelectiveFocus } from "../useSelectiveFocus";
 import FormButton from "../../components/FormButton";
-
-const INITIAL_STATE = {
-    name: "",
-    title: "",
-    notes: "",
-    relationships: ""
-};
+import FancyInput from '../functionalComponent/FancyInput';
+import "../../resources/css/input.css"
 
 export default function CharacterView() {
+    const { characterView, toggleCharacterBuilderHidden } = useSelectiveFocus();
     const {
         handleSubmit,
         handleChange,
@@ -19,75 +16,45 @@ export default function CharacterView() {
         values,
         errors,
         isSubmitting
-    } = useFifthEdition(INITIAL_STATE, validateFifthEdition);
+    } = useFifthEdition(characterView, validateFifthEdition);
     const firestore = useFirestore();
     return (
         <section>
             <form>
-                <div className="characterCardUpper">
-                    <div className="characterPortrait">
-                        <img
-                            src="https://img.fireden.net/tg/image/1448/74/1448748623668.png"
-                            alt="characterPortrait"
-                        />
-                    </div>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Character Name.. "
-                        autoComplete="off"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.name}
-                        className={errors.name && "error-input"}
-                    />
-                    {errors.name && <p className="error-text"> {errors.name} </p>}
-                    <input
-                        type="text"
-                        name="title"
-                        placeholder="Character's Title or Role.. "
-                        autoComplete="off"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.title}
-                        className={errors.title && "error-input"}
-                    />
-                </div>
-                {errors.title && <p className="error-text"> {errors.title} </p>}
-                <div className='characterCardLower'>
-                    <input
-                        type="text"
-                        name="notes"
-                        placeholder="Character Notes.."
-                        autoComplete="off"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.notes}
-                        className={errors.notes && "error-input"}
-                    />
-                    {errors.notes && <p className="error-text"> {errors.notes} </p>}
-                    <input
-                        type="text"
-                        name="relationships"
-                        placeholder="Character Relationships.. "
-                        autoComplete="off"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.relationships}
-                        className={errors.relationships && "error-input"}
-                    />
-                    {errors.relationships && <p className="error-text"> {errors.relationships} </p>}
-                </div>
+                <FancyInput
+                    name="name"
+                    type="text"
+                    prompt="What is your characters name"
+                    classes="question"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.name}
+                />
+                <FancyInput
+                    name="title"
+                    type="text"
+                    prompt="How is your character known"
+                    classes="question"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.title}
+                />
+
                 <FormButton
                     name="Create"
-                    onClick={() => firestore.createNewCharacter(
-                        values.name,
-                        values.title,
-                        values.notes,
-                        values.relationships
-                    )}
+                    onClick={() => {
+                        toggleCharacterBuilderHidden();
+                        firestore.createNewCharacter(
+                            values.name,
+                            values.title,
+                            values.notes,
+                            values.relationships
+                        )
+                    }}
+                    disabled={errors}
                 />
-            </form >
+            </form>
+
         </section >
     );
 }

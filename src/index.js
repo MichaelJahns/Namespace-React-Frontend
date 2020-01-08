@@ -7,15 +7,19 @@ import * as serviceWorker from './serviceWorker';
 import { ProvideFirebaseAuth } from './utils/useAuth';
 import { ProvideFirestore } from './utils/useFirestore'
 import { ProvideSelectiveContext } from './utils/useSelectiveFocus'
+import { ProvideView } from './utils/useView'
+
 // Required for side-effects
 require('dotenv').config();
 
 ReactDOM.render(
     <ProvideFirebaseAuth>
         <ProvideFirestore>
-            <ProvideSelectiveContext>
-                <App />
-            </ProvideSelectiveContext>
+            <ProvideView>
+                <ProvideSelectiveContext>
+                    <App />
+                </ProvideSelectiveContext>
+            </ProvideView>
         </ProvideFirestore>
     </ProvideFirebaseAuth>,
     document.getElementById('root'));

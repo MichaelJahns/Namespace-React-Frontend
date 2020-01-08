@@ -1,22 +1,34 @@
 import React from 'react';
 import FormButton from '../../components/FormButton';
+import DeleteCharacter from './DeleteCharacter';
 import { useFirestore } from '../useFirestore';
+import { useSelectiveFocus } from '../useSelectiveFocus';
+import useFifthEdition from '../useFifthEdition';
+import validateDelete from "../validateDelete";
 
 export default function CharacterViewOptions(props) {
 
     const firestore = useFirestore();
+    const {
+        isCharacterDeleteVisible,
+        toggleCharacterBuilderVisible,
+        toggleCharacterDeleteVisible } = useSelectiveFocus();
 
     return (
-        <React.Fragment>
-            <FormButton name='edit' />
-            <FormButton name={props.name} />
+        <div className="characterViewOptions">
+            <FormButton
+                name='edit'
+                onClick={toggleCharacterBuilderVisible} />
             <FormButton
                 name="delete"
-                onClick={() => firestore.deleteCharacter(
-                    props.name
-                )}
-            />
-        </React.Fragment>
+                onClick={() => toggleCharacterDeleteVisible()} />
+
+            {isCharacterDeleteVisible &&
+                <DeleteCharacter
+                    name={props.name} />
+            }
+
+        </div>
     );
 }
 

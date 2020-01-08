@@ -1,12 +1,61 @@
 .FormButton{
-    height: 50px;
+    height: 30px;
+    line-height: 30px;
+
     width: 125px;
     text-align: center;
-    line-height: 50px;
-    background-color: var(--focus-bg-color);
+    background-color: inherit;
+    border-radius: 0.5em;
+    box-shadow: 
+        -4px -4px 4px 0 #FCF9CC,
+        4px 4px 4px 0 rgba(0, 0, 0, 0.3);
 }
 .FormButton p{
-    font-size: 1.3em;
-    border-bottom: solid 1px var(--component-border-color);
+    font-size: 1.0em;
     color: var(--focus-text-color);
+}
+.FormButton:hover{
+    color: var(--focus-text-color);
+    background-color: var(--focus-bg-color);
+}
+
+.ComponentButton{
+    height: 30px;
+    line-height: 30px;
+
+    width: 125px;
+    text-align: center;
+    background-color: inherit;
+    border-radius: 0.5em;
+}
+.ComponentButton p{
+    font-size: 1.0em;
+    color: var(--component-text-color);
+}
+.ComponentButton:hover{
+    color: var(--focus-text-color);
+    background-color: var(--focus-bg-color);
+}
+
+.deleteModule{
+    position:absolute;
+    left:0;
+    right:0;
+    top:150px;
+    margin-left:auto;
+    margin-right:auto;
+    min-width: 100px;
+    max-width: 500px;
+
+    min-height: 100px;
+    max-height: 300px;
+    border: black 2px solid;
+    background-color: var(--main-bg-color);
+}
+
+.deleteModuleTitle{
+    color: var(--component-text-color);
+    background-color: var(--component-bg-color);
+    display: flex;
+    justify-content: space-between;
 }

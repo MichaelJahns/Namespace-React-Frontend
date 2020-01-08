@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function useFormValidation(initialState, validate, firebase) {
     const [values, setValues] = React.useState(initialState);
     const [errors, setErrors] = React.useState({});
@@ -36,8 +35,6 @@ function useFormValidation(initialState, validate, firebase) {
         console.log("Attempting signout")
         firebase.signup(email, password)
     }
-
-
 
     function handleChange(event) {
         setValues({

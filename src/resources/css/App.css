@@ -12,7 +12,6 @@
   
 
   --fancy-font: 'Cinzel Decorative', cursive;
-
 }
 
 #root {
@@ -25,10 +24,64 @@
   z-index: -2;
 }
 
+/* Icons */
+.charactersIcon {
+  background-image: url('../icons/characters-orange.svg');
+  background-size: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  text-indent: -10000px;
+  margin: auto;
+
+}
+.charactersIcon:hover { 
+  background-image: url('../icons/characters-black.svg');
+  background-color: var(--component-text-color);
+}
+
+.campaignIcon {
+  background-image: url('../icons/campaign-orange.svg');
+  background-size: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  text-indent: -10000px;
+  margin: auto;
+}
+.campaignIcon:hover { 
+  background-image: url('../icons/campaign-black.svg');
+  background-color: var(--component-text-color);
+}
+
+.userIcon {
+  background-image: url('../icons/user-orange.svg');
+  background-size: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  text-indent: -10000px;
+  margin: auto;
+}
+.userIcon:hover { 
+  background-image: url('../icons/user-black.svg');
+  background-color: var(--component-text-color);
+}
+
+/* Global Classes */
 .hidden{
   display: none;
 }
 
 .invisible{
   visibility: hidden;
+}
+
+.focus{
+  color: var(--component-text-color);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2em;
 }
