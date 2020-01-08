@@ -17,7 +17,7 @@ export const getAllCharacters = functions.https.onRequest((request, response) =>
         .then((querySnapshot: any) => {
             const characters: any[] = []
             querySnapshot.forEach((doc: any) => {
-                characters.push(doc.data);
+                characters.push(doc.data());
             })
             return response.json(characters);
         })
