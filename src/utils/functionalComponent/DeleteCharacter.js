@@ -1,7 +1,6 @@
 import React from "react";
 import useDeleteValidation from "../useDeleteValidation";
 import validateDelete from "../validateDelete";
-import { useFirestore } from '../useFirestore';
 import { useSelectiveFocus } from '../useSelectiveFocus';
 import FormButton from "../../components/FormButton";
 import ComponentButton from "../../components/ComponentButton";
@@ -11,9 +10,9 @@ const INITIAL_STATE = {
 };
 
 export default function DeleteCharacter(props) {
-    const firestore = useFirestore();
     const { characterView, toggleCharacterDeleteVisible } = useSelectiveFocus();
     const {
+        handleDelete,
         handleChange,
         handleBlur,
         value,
@@ -46,7 +45,9 @@ export default function DeleteCharacter(props) {
                 {value.deleteValidation === props.name &&
                     <FormButton
                         name="Delete"
-                        onClick={() => firestore.deleteCharacter(props.name)}
+                        onClick={() => {
+                            handleDelete(props.name)
+                        }}
                     />
                 }
             </form>

@@ -1,10 +1,8 @@
 export default function validateAuth(value, reference) {
     let errors = {};
     // Email Errors
-    if (value !== `${reference}`) {
-        errors.confirmDeletion = `Type "${reference}" exactly.`;
-    } else {
-        errors.confirmDeletion = false;
+    if (value.deleteValidation !== `${reference}`) {
+        errors.confirmDeletion = `To delete this character type this characters name exactly as it appears above.`;
     }
     return errors;
 }

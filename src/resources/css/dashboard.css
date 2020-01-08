@@ -95,7 +95,7 @@
     align-items: stretch;
     min-height: 95vh;
     max-height: 95vh;
-    min-width: 25%;
+    min-width: 20vw;
     overflow-y: scroll;
     overflow-x: none;
 }
@@ -134,6 +134,9 @@
     background-color: var(--main-alt-bg-color);
     min-height: 5vh;
     order: 4;
+}
+.dashboardFooter h2{
+    text-decoration: underline var(--component-bg-color);
 }
 
 .characterViewOptions{

@@ -57,6 +57,10 @@ export default function useProvideSelectiveFocus() {
             setCharacterDeleteVisible(true);
     })
 
+    const hideCharacterDelete = useCallback(() => {
+        setCharacterDeleteVisible(false);
+    })
+
     React.useEffect(() => {
         if (characters.length > 0) {
             setCharacterView(characters[0])
@@ -73,6 +77,7 @@ export default function useProvideSelectiveFocus() {
         toggleCharacterBuilderVisible,
         toggleCharacterBuilderHidden,
         toggleCharacterDeleteVisible,
-        toggleNewCharacterBuilder
+        toggleNewCharacterBuilder,
+        hideCharacterDelete
     }
 }
