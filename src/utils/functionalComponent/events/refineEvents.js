@@ -7,20 +7,16 @@ export default function useTracery(story) {
     function handleLocationChange(event) {
         setLocations({
             ...locations,
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.checked
         });
     }
 
     useEffect(() => {
-        let stories = [];
-        stories.push(one, two, three);
-        setStories(stories)
-    }, [one, two, three]);
-
-
+        console.log(locations)
+    }, [locations]);
 
     return {
-        stories,
-        resetGrammars
+        locations,
+        handleLocationChange
     }
 }
