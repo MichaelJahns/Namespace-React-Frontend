@@ -13,9 +13,9 @@ export const useView = () => {
 
 export default function useProvideView() {
     const [showingCharacter, setShowingCharacter] = useState(false);
-    const [showingEvent, setShowingEvent] = useState(false);
+    const [showingEvent, setShowingEvent] = useState(true);
     const [showingCampaign, setShowingCampaign] = useState(false);
-    const [showingUserAccount, setShowingUserAccount] = useState(true);
+    const [showingUserAccount, setShowingUserAccount] = useState(false);
 
     const showCharacter = useCallback(() => {
         setShowingCharacter(true);

@@ -9,18 +9,18 @@
     ],
     "restingPlace": "You chance upon #state# #restingPlaces#",
     "restingPlaces": [
-        "a carin",
-        "a stone coffin",
-        "an unmarked grave",
-        "a mausoleum",
-        "a memorial"
+        "carin",
+        "stone coffin",
+        "unmarked grave",
+        "mausoleum",
+        "memorial"
     ],
     "state": [
-        "well-preserved",
-        "timelost",
-        "wind-worn",
-        "antique",
-        "decrepit",
-        "overgrown"
+        "a well-preserved",
+        "a timelost",
+        "a wind-worn",
+        "an antique",
+        "a decrepit",
+        "an overgrown"
     ]
 }
