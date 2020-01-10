@@ -111,10 +111,18 @@
 .selectable div{
   background-color: var(--component-text-color);
 }
-.selectable form{
-  visibility: hidden;
-}
 .selectable:hover{
   color: var(--focus-text-color);
   background-color: var(--focus-bg-color);
+}
+.expandable{
+  color: var(--main-alt-text-color);
+  background-color: var(--main-alt-bg-color); 
+}
+.expandable:hover{
+  color: var(--focus-text-color);
+  background-color: var(--focus-bg-color);
+}
+.expandable form{
+  /* visibility: hidden; */
 }

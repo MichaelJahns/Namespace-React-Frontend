@@ -5,7 +5,7 @@ import refineEvents from '../../utils/functionalComponent/events/refineEvents';
 export default function EventStream(props) {
     const { locations, handleExpansion, handleLocationChange } = refineEvents();
     return (
-        <li className={props.expanded ? "focus" : "selectable"} >
+        <li className={props.expanded ? "focus" : "expandable"} >
             <h4
                 className="optionsBanner"
                 onClick={() => handleExpansion(props.category)}>

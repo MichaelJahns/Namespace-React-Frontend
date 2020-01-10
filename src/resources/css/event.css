@@ -1,0 +1,5 @@
+.eventStream li{
+    height: 1vh;
+    border-bottom: 3px solid var(--main-bg-color);
+
+}

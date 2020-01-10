@@ -2,7 +2,7 @@
 Basic input element using psuedo classes
 */
 
-  input,
+  /* input,
   span,
   label,
   textarea {
@@ -12,14 +12,18 @@ Basic input element using psuedo classes
     padding: 5px;
     border: none;
     font-size: 22px;
-  }
+  } */
   
   input:focus {
     outline: 0;
   }
   /* Checkbox */
   .checkboxForm{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
     background-color: var(--main-bg-color);
+    width: 100%;
   }
   .optionsBanner{
     height: 10%;
@@ -27,7 +31,8 @@ Basic input element using psuedo classes
     color: inherit;
   }
   input.checkbox{
-
+    display: inline-block;
+    width: 100%;
   }
   /* Question */
   input.question{

@@ -15,13 +15,6 @@
     height: 150px;
     border-radius: 30%;
 }
-
-.dashboard input{
-    /* background-color: var(--main-alt-bg-color);
-    color: var(--component-bg-color);
-    line-height: 2em;
-    max-height: 2em; */
-}
 .dashboard li{
     display: flex;
     padding: 17px;
@@ -74,9 +67,6 @@
     background-color: var(--main-bg-color);
 
     overflow-y: scroll;
-}
-.dashboard aside li{
-    border-bottom: 3px solid var(--main-alt-bg-color);
 }
 .dashboard section li {
     border-bottom: 3px solid var(--main-bg-color);
