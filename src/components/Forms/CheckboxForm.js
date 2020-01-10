@@ -1,24 +1,54 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FancyCheckbox from './FancyCheckbox';
 import refineEvents from '../../utils/functionalComponent/events/refineEvents';
+import locationsJSON from '../../resources/events/parameters/locations'
+import nearbyJSON from '../../resources/events/parameters/nearby'
 
 export default function EventStream(props) {
-    const { locations, handleExpansion, handleLocationChange } = refineEvents();
+    const { expanded, handleExpansion } = refineEvents();
+    const parameters = {};
+    parameters.locations = locationsJSON;
+    parameters.nearby = nearbyJSON;
+
+    const forms = []
+
+    const createForm = (parameters) => {
+        for (let categories in parameters) {
+            console.log(parameters[categories]);
+            let category = parameters[categories];
+            for (let constraint in category) {
+                console.log(constraint);
+                forms.push(<FancyCheckbox
+                    name={constraint}
+                    type='checkbox'
+                    prompt={constraint}
+                    classes='checkbox'
+                    onChange={props.onChange}
+                    value={constraint}
+                />
+                )
+            }
+        }
+    }
+    React.useEffect(() => {
+        createForm();
+    }, [forms, parameters]);
     return (
-        <li className={props.expanded ? "focus" : "expandable"} >
+        <li>
             <h4
-                className="optionsBanner"
+                className={"optionsBanner expandable"}
                 onClick={() => handleExpansion(props.category)}>
                 {props.category}
             </h4>
-            {props.expanded}
+            <p onClick={() => createForm(parameters)}> CLick HErE</p>
             <form className="checkboxForm">
+                {createForm}
                 <FancyCheckbox
                     name='city'
                     type='checkbox'
                     prompt='City'
                     classes='checkbox'
-                    onChange={handleLocationChange}
+                    onChange={props.onChange}
                     value="city"
                 />
                 <FancyCheckbox
@@ -26,7 +56,7 @@ export default function EventStream(props) {
                     type='checkbox'
                     prompt='village'
                     classes='checkbox'
-                    onChange={handleLocationChange}
+                    onChange={props.onChange}
                     value="village"
                 />
             </form>

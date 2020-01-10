@@ -95,7 +95,6 @@
 .invisible{
   visibility: hidden;
 }
-
 .focus{
   color: var(--focus-text-color);
   background-color: var(--focus-bg-color);
@@ -103,7 +102,6 @@
 .focus div{
   background-color: var(--focus-text-color);
 }
-
 .selectable{
   color: var(--main-alt-text-color);
   background-color: var(--main-alt-bg-color); 
@@ -116,14 +114,14 @@
   background-color: var(--focus-bg-color);
 }
 .expandable{
-  padding: 0px;
   color: var(--main-alt-text-color);
-  background-color: var(--main-alt-bg-color); 
+  background-color: var(--main-alt-bg-color);
+  border: 2px outset var(--main-bg-color);
 }
 .expandable:hover{
   color: var(--focus-text-color);
   background-color: var(--focus-bg-color);
 }
-.expandable form{
-  visibility: hidden;
+.expanded{
+  border: 2px inset var(--component-bg-color);
 }

@@ -4,7 +4,7 @@ import CheckBoxForm from '../../../components/Forms/CheckboxForm';
 import refineEvents from '../events/refineEvents';
 
 export default function EventStream(props) {
-    const { expanded } = refineEvents();
+    const { expanded, handleNearbyChange, handleLocationChange } = refineEvents();
     const _handleClassNames = (event) => {
         console.log(event.target.className)
         let className = "selectable"
@@ -18,11 +18,13 @@ export default function EventStream(props) {
                     category="locations"
                     classes={_handleClassNames}
                     expanded={expanded.locations}
+                    onChange={handleLocationChange}
                 />
                 <CheckBoxForm
                     category="nearby"
                     classes={_handleClassNames}
                     expanded={expanded.nearby}
+                    onChange={handleNearbyChange}
                 />
 
             </ul>
