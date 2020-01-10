@@ -1,9 +1,9 @@
 import React, { useEffect, Suspense } from "react";
-import CharacterListItem from "../../components/CharacterListItem";
-import { useSelectiveFocus } from "../useSelectiveFocus";
-import { useFirestore } from "../useFirestore";
-import AddListItem from "../../components/AddListItem";
-import StreamHeader from '../../components/StreamHeader';
+import CharacterListItem from "../../../components/CharacterListItem";
+import { useSelectiveFocus } from "../../useSelectiveFocus";
+import { useFirestore } from "../../useFirestore";
+import AddListItem from "../../../components/AddListItem";
+import StreamHeader from '../../../components/StreamHeader';
 
 
 export default function CharacterStream(props) {

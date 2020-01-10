@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import CharacterCardUpper from '../../components/CharacterCardUpper'
-import CharacterCardLower from '../../components/CharacterCardLower'
-import { useSelectiveFocus } from "../useSelectiveFocus";
-import CharacterViewOptions from "./CharacterViewOptions";
+import CharacterCardUpper from '../../../components/CharacterCardUpper'
+import CharacterCardLower from '../../../components/CharacterCardLower'
+import { useSelectiveFocus } from "../../useSelectiveFocus";
+import CharacterViewOptions from "./Options";
 export default function CharacterFocus(props) {
     const { characterView } = useSelectiveFocus();
     useEffect(() => {

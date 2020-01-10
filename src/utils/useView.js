@@ -45,9 +45,6 @@ export default function useProvideView() {
         setShowingUserAccount(true);
     })
 
-    React.useEffect(() => {
-    }, []);
-
     return {
         showCharacter,
         showEvent,

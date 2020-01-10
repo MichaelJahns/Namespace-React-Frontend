@@ -1,12 +1,10 @@
 import React from 'react';
-import FormButton from '../../components/FormButton';
+import FormButton from '../../../components/FormButton';
 import DeleteCharacter from './DeleteCharacter';
-import { useFirestore } from '../useFirestore';
-import { useSelectiveFocus } from '../useSelectiveFocus';
-import useFifthEdition from '../useFifthEdition';
-import validateDelete from "../validateDelete";
+import { useFirestore } from '../../useFirestore';
+import { useSelectiveFocus } from '../../useSelectiveFocus';
 
-export default function CharacterViewOptions(props) {
+export default function Options(props) {
 
     const firestore = useFirestore();
     const {
