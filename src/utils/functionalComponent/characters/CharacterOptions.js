@@ -4,7 +4,7 @@ import DeleteCharacter from './DeleteCharacter';
 import { useFirestore } from '../../useFirestore';
 import { useSelectiveFocus } from '../../useSelectiveFocus';
 
-export default function Options(props) {
+export default function CharacterOptions(props) {
 
     const firestore = useFirestore();
     const {

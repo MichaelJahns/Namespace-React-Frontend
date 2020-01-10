@@ -56,6 +56,7 @@
     min-width: 6vw;
     order: 0;
     min-height: 100vh;
+    max-height: 100vh;
 }
 .dashboardNavigation ul{
     width: 75px;
@@ -96,6 +97,7 @@
     min-height: 95vh;
     max-height: 95vh;
     min-width: 20vw;
+    max-width: 20vw;
     overflow-y: scroll;
     overflow-x: none;
 }
