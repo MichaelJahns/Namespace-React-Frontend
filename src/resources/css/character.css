@@ -21,6 +21,10 @@
   color: var(--main-alt-text-color);
   background-color: var(--component-text-color);
 }
+.characterStream li{
+  padding: 17px;
+  display: flex;
+}
 
 
 

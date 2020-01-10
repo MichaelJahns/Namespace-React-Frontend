@@ -20,6 +20,7 @@
 }
 
 .Navigation li{
+    padding: 17px;
     margin: auto;
     color: var(--component-text-color);
     border-radius: 20px;

@@ -22,17 +22,22 @@ Basic input element using psuedo classes
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    flex-wrap: wrap;
     background-color: var(--main-bg-color);
+    width: 100%;
+    padding: 0px;
+  }
+  .checkboxForm label{
+    display: flex;
+    justify-content: space-between;
+  }
+  .checkboxForm span{
     width: 100%;
   }
   .optionsBanner{
     height: 10%;
     max-height: 3vh;
     color: inherit;
-  }
-  input.checkbox{
-    display: inline-block;
-    width: 100%;
   }
   /* Question */
   input.question{

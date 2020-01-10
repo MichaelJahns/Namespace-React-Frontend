@@ -1,5 +1,11 @@
 .eventStream li{
-    height: 1vh;
     border-bottom: 3px solid var(--main-bg-color);
-
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding-bottom: 17px;
+}
+.eventStream h4{
+    border: 2px outset var(--main-bg-color);
+    text-align: center;
 }

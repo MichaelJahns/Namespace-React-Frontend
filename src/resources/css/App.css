@@ -116,6 +116,7 @@
   background-color: var(--focus-bg-color);
 }
 .expandable{
+  padding: 0px;
   color: var(--main-alt-text-color);
   background-color: var(--main-alt-bg-color); 
 }
@@ -124,5 +125,5 @@
   background-color: var(--focus-bg-color);
 }
 .expandable form{
-  /* visibility: hidden; */
+  visibility: hidden;
 }

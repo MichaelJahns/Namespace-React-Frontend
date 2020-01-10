@@ -15,10 +15,6 @@
     height: 150px;
     border-radius: 30%;
 }
-.dashboard li{
-    display: flex;
-    padding: 17px;
-}
 .dashboard li div {
     border-radius: 50%;
   

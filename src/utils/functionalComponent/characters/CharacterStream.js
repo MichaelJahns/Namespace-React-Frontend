@@ -49,7 +49,7 @@ export default function CharacterStream(props) {
     }, [characterView, characters])
 
     return (
-        <aside>
+        <aside className='characterStream'>
             <ul>
                 <Suspense fallback={<h1>Loading characters...</h1>}>
                     <StreamHeader header="Characters" />
