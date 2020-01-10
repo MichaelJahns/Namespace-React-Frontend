@@ -3,7 +3,7 @@ import '../../resources/css/signin.css'
 import { useView } from './../useView';
 
 export default function DashboardNavigation() {
-    const { showCharacter, showCampaign, showUserAccount } = useView();
+    const { showCharacter, showEvent, showCampaign, showUserAccount } = useView();
 
     return (
         <div className='dashboardNavigation'>
@@ -12,6 +12,11 @@ export default function DashboardNavigation() {
                     className="charactersIcon"
                     onClick={showCharacter}>
                     Character Viewer </li>
+
+                <li title="Event Viewer"
+                    className="eventIcon"
+                    onClick={showEvent}>
+                    Event Viewer</li>
 
                 <li title="Campaign Viewer"
                     className="campaignIcon"

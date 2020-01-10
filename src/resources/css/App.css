@@ -41,6 +41,22 @@
   background-color: var(--component-text-color);
 }
 
+.eventIcon {
+  background-image: url('../icons/event-orange.svg');
+  background-size: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  text-indent: -10000px;
+  margin: auto;
+
+}
+.eventIcon:hover { 
+  background-image: url('../icons/event-black.svg');
+  background-color: var(--component-text-color);
+}
+
 .campaignIcon {
   background-image: url('../icons/campaign-orange.svg');
   background-size: 40px;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DashboardNavigation from '../utils/functionalComponent/DashboardNavigation';
-import DashboardView from '../utils/functionalComponent/DashboardView';
+import DashboardView from '../utils/functionalComponent/views/DashboardView';
 import DashboardFooter from './DashboardFooter';
 import '../resources/css/dashboard.css';
 
