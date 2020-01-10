@@ -6,24 +6,22 @@
   flex-direction: row;
   width: 100%;
 }
-
-
-
-
-
 .characterBuilder section {
   width: 100%;
   padding: 20px;
   background-color: var(--main-bg-color);
 }
-
-
 .characterBuilder .characterCardLower div{
   margin-right: 20px;
 }
 .characterDemographics{
   width: 100%;
 }
+.characterSelectable div{
+  color: var(--main-alt-text-color);
+  background-color: var(--component-text-color);
+}
+
 
 
 

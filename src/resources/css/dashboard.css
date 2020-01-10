@@ -22,11 +22,9 @@
     line-height: 2em;
     max-height: 2em; */
 }
-
 .dashboard li {
     padding: 17px;
     display: flex;
-    color: var(--main-alt-text-color);
 }
 .dashboard li div {
     border-radius: 50%;
@@ -41,9 +39,6 @@
     margin-right: 10px;
 }
 
-.characterAvatar div{
-    background-color: var(--component-text-color);
-}
 .newCharacter div{
     background-color: var(--focus-bg-color);
     color: var(--focus-text-color);

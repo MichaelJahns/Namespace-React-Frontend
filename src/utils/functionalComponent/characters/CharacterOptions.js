@@ -5,8 +5,6 @@ import { useFirestore } from '../../useFirestore';
 import { useSelectiveFocus } from '../../useSelectiveFocus';
 
 export default function CharacterOptions(props) {
-
-    const firestore = useFirestore();
     const {
         isCharacterDeleteVisible,
         toggleCharacterBuilderVisible,

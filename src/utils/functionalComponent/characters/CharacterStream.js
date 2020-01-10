@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense } from "react";
-import CharacterListItem from "../../../components/CharacterListItem";
+import CharacterListItem from "./CharacterSelectable";
 import { useSelectiveFocus } from "../../useSelectiveFocus";
 import { useFirestore } from "../../useFirestore";
 import AddListItem from "../../../components/AddListItem";
@@ -9,12 +9,21 @@ import StreamHeader from '../../../components/StreamHeader';
 export default function CharacterStream(props) {
     const [rows, setRows] = React.useState([]);
     const { characters } = useFirestore();
-    const { characterView, toggleCharacterView, toggleNewCharacterBuilder, toggleCharacterBuilderVisible } = useSelectiveFocus();
+    const {
+        characterView,
+        toggleCharacterView,
+        toggleNewCharacterBuilder } = useSelectiveFocus();
 
 
-    const _adjustClassNames = () => {
-        //TODO:  I want to have the focused character a class so i can control when to highlight it
+    const _handleClassNames = (name) => {
+        let className = ""
+        if (characterView.name === name) {
+            return className += "focus ";
+        } else {
+            return className += "selectable ";
+        }
     }
+
     useEffect(() => {
         if (characters) {
             var rows = [];
@@ -31,7 +40,7 @@ export default function CharacterStream(props) {
                         key={i}
                         name={characters[i].name}
                         onClick={toggleCharacterView}
-                        className={_adjustClassNames}
+                        className={_handleClassNames(characters[i].name)}
                     />
                 );
             }

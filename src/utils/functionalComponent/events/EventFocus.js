@@ -5,6 +5,7 @@ import FormButton from '../../../components/FormButton';
 
 import '../../../resources/css/cardEffects.css';
 
+
 export default function EventFocus(props) {
     const [cards, setCards] = useState([]);
     const {
@@ -12,21 +13,21 @@ export default function EventFocus(props) {
         resetGrammars } = useTracery(restingPlace);
 
     const cardGenerator = ((story, iteration) => {
-        let eventType = "restingPlace";
+        let eventType = 'restingPlace';
         let card =
-            <div class={"eventCard " + eventType} id={"card" + iteration}>
-                <div class="image" id="i2">
-                    <div class="city">
+            <div className={`eventCard ` + eventType} id={`card` + iteration}>
+                <div className='image' id={`image` + iteration} >
+                    <div>
                         <p> {iteration} </p>
                     </div>
                 </div>
-                <div class={`story ` + eventType} id={"story" + iteration}>
-                    <div class="info">
+                <div className={`story ` + eventType} id={`story` + iteration}>
+                    <div>
                         <h3> Resting Place </h3>
                         <p> {story} </p>
                     </div>
                 </div>
-            </div>
+            </div >
         return card;
     });
 

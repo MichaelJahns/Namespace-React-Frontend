@@ -97,7 +97,21 @@
 }
 
 .focus{
-  color: var(--component-text-color);
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 1.2em;
+  color: var(--focus-text-color);
+  background-color: var(--focus-bg-color);
+}
+.focus div{
+  background-color: var(--focus-text-color);
+}
+
+.selectable{
+  color: var(--main-alt-text-color);
+  background-color: var(--main-alt-bg-color); 
+}
+.selectable div{
+  background-color: var(--component-text-color);
+}
+.selectable:hover{
+  color: var(--focus-text-color);
+  background-color: var(--focus-bg-color);
 }

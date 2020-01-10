@@ -8,7 +8,13 @@ export default function EventStream(props) {
             <ul>
                 <StreamHeader header="Events" />
                 <li> Chance Encounter </li>
-                <li> Important Place </li>
+                <li>
+                    Important Place
+                     <form>
+                        <input type="checkbox" />
+                    </form>
+                </li>
+
             </ul>
         </aside>
     )
