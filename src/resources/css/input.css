@@ -21,6 +21,11 @@ Basic input element using psuedo classes
   .checkboxForm{
     background-color: var(--main-bg-color);
   }
+  .optionsBanner{
+    height: 10%;
+    max-height: 3vh;
+    color: inherit;
+  }
   input.checkbox{
 
   }

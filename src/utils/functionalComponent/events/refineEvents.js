@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
 
 export default function useTracery(story) {
+    const [expanded, setExpanded] = useState({});
     const [locations, setLocations] = useState([]);
 
 
+    function handleExpansion(category) {
+        setExpanded({
+            ...expanded,
+            [category]: true
+        })
+    }
     function handleLocationChange(event) {
         setLocations({
             ...locations,
@@ -12,11 +19,14 @@ export default function useTracery(story) {
     }
 
     useEffect(() => {
-        console.log(locations)
-    }, [locations]);
+        // console.log(locations);
+        console.log(expanded);
+    }, [locations, expanded]);
 
     return {
+        expanded,
         locations,
+        handleExpansion,
         handleLocationChange
     }
 }

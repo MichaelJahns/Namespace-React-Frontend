@@ -3,10 +3,15 @@ import FancyCheckbox from './FancyCheckbox';
 import refineEvents from '../../utils/functionalComponent/events/refineEvents';
 
 export default function EventStream(props) {
-    const { locations, handleLocationChange } = refineEvents();
+    const { locations, handleExpansion, handleLocationChange } = refineEvents();
     return (
-        <li className="selectable" onClick={props.onClick}>
-            <h4> Locations </h4>
+        <li className={props.expanded ? "focus" : "selectable"} >
+            <h4
+                className="optionsBanner"
+                onClick={() => handleExpansion(props.category)}>
+                {props.category}
+            </h4>
+            {props.expanded}
             <form className="checkboxForm">
                 <FancyCheckbox
                     name='city'
@@ -25,6 +30,6 @@ export default function EventStream(props) {
                     value="village"
                 />
             </form>
-        </li>
+        </ li>
     )
 }

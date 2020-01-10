@@ -22,9 +22,9 @@
     line-height: 2em;
     max-height: 2em; */
 }
-.dashboard li {
-    padding: 17px;
+.dashboard li{
     display: flex;
+    padding: 17px;
 }
 .dashboard li div {
     border-radius: 50%;
@@ -43,35 +43,6 @@
     background-color: var(--focus-bg-color);
     color: var(--focus-text-color);
 }
-
-.dashboardNavigation{
-    background-color: var(--component-bg-color);
-    color: var(--component-text-color);
-    
-    min-width: 6vw;
-    order: 0;
-    min-height: 100vh;
-    max-height: 100vh;
-}
-.dashboardNavigation ul{
-    width: 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* align-content: center; */
-
-    height: 100%;
-}
-.dashboardNavigation li{
-    margin: auto;
-    color: var(--component-text-color);
-    border-radius: 20px;
-
-    box-shadow: 
-    -4px -4px 4px 0 #414754,
-    4px 4px 4px 0px #14161A;
-}
-
 .dashboardDynamic{
     width: 100%;
 }
@@ -110,23 +81,8 @@
 .dashboard section li {
     border-bottom: 3px solid var(--main-bg-color);
 }
-.streamHeader{
-    padding: 8px;
-    width: 100%;
-    order: 1;
-    border-bottom: 1px solid gray;
-}
 .dashboard h2{
     text-align: center;
-}
-.dashboardFooter{
-    border-top: 1px gray solid;
-    background-color: var(--main-alt-bg-color);
-    min-height: 5vh;
-    order: 4;
-}
-.dashboardFooter h2{
-    text-decoration: underline var(--component-bg-color);
 }
 
 .characterViewOptions{

@@ -59,3 +59,20 @@
     display: flex;
     justify-content: space-between;
 }
+
+.streamHeader{
+    padding: 8px;
+    width: 100%;
+    order: 1;
+    border-bottom: 1px solid gray;
+    background: linear-gradient(to right, var(--component-bg-color) 20%, #535573 80%);
+}
+.dashboardFooter{
+    border-top: 1px gray solid;
+    background: linear-gradient(to right, var(--component-bg-color) 20%, #535573 80%);
+    min-height: 5vh;
+    order: 4;
+}
+.dashboardFooter h2{
+    text-decoration: underline var(--component-bg-color);
+}

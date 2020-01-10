@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import '../resources/css/footer.css';
 
 
-export default class Footer extends Component {
+export default class DashboardFooter extends Component {
 
     render() {
         return (
