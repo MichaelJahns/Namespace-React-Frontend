@@ -46,7 +46,7 @@ export default function CharacterStream(props) {
             }
             setRows(rows)
         }
-    }, [characters])
+    }, [characterView, characters])
 
     return (
         <aside>
