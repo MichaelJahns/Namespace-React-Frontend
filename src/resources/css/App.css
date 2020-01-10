@@ -111,6 +111,9 @@
 .selectable div{
   background-color: var(--component-text-color);
 }
+.selectable form{
+  visibility: hidden;
+}
 .selectable:hover{
   color: var(--focus-text-color);
   background-color: var(--focus-bg-color);

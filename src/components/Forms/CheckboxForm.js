@@ -5,9 +5,9 @@ import refineEvents from '../../utils/functionalComponent/events/refineEvents';
 export default function EventStream(props) {
     const { locations, handleLocationChange } = refineEvents();
     return (
-        <li>
+        <li className="selectable" onClick={props.onClick}>
             <h4> Locations </h4>
-            <form>
+            <form className="checkboxForm">
                 <FancyCheckbox
                     name='city'
                     type='checkbox'

@@ -17,8 +17,14 @@ Basic input element using psuedo classes
   input:focus {
     outline: 0;
   }
+  /* Checkbox */
+  .checkboxForm{
+    background-color: var(--main-bg-color);
+  }
+  input.checkbox{
+
+  }
   /* Question */
-  
   input.question{
     font-size: 32px;
     font-weight: 300;
