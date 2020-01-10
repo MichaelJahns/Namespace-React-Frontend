@@ -1,0 +1,94 @@
+/* 
+    Heavily built upon Akhil Sai Ram's World Places Pen  https://codepen.io/akhil_001/pen/zoQdaO?editors=1100
+*/
+
+.cardField{
+    /* position: absolute; */
+    top: 10%;
+    left: 40%;
+    width: 100%;
+    height: 500px;
+    perspective: 900px;
+    color: var(--focus-text-color);
+
+}
+.eventCard{
+    position: absolute;
+    top: 0%;
+    width: 25vw;
+    height: 100%;
+    transition: .5s all ease;
+    transform: rotateX(60deg) scale(0.7);
+    perspective: 900px;
+    box-shadow: 
+    -5px -5px 20px -8px var(--component-text-color),
+    15px 15px 12px -10px var(--component-bg-color);
+
+    animation: entry 1s linear 1;
+    background: linear-gradient(to top, #535573 0%, #7b88d1 120%);
+
+}
+
+.eventCard:hover {
+    cursor: pointer;
+    transform: rotate(0deg) scale(1) translateY(10px);
+    transition: .5s all ease;
+    box-shadow: 0px 0px 0px 0px;
+    z-index: 1000;
+}
+.eventCard:hover * {
+    z-index: 1010;
+}
+
+.story {
+    position: absolute;
+    top: 45%;
+    left: 0%;
+    height: 55%;
+    width: 100%;
+    background: linear-gradient(to bottom, #535573 0%, var(--component-bg-color) 40%);
+    z-index: 30;
+}
+
+.story h3 {
+    text-align: center;
+    text-shadow: 0px 0px 10px #eee;
+    color: #eee;
+    letter-spacing: 2px;
+}
+.story p {
+    font-size: 14px;
+    padding: 0px 20px 20px 20px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.restingPlace{
+}
+
+/* IDs */
+#card0 {
+    left: 0%;
+    z-index: 0;
+}
+  
+#card1 {
+    left: 30%;
+    z-index: 0;
+}
+  
+#card2 {
+    left: 60%;
+    z-index: 0;
+}
+
+@keyframes entry {
+    0% {
+      top: -20%;
+      opacity: 0.1;
+    }
+    100% {
+      top: 0%;
+    }
+  }

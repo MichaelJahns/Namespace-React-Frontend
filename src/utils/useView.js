@@ -13,35 +13,45 @@ export const useView = () => {
 
 export default function useProvideView() {
     const [showingCharacter, setShowingCharacter] = useState(false);
+    const [showingEvent, setShowingEvent] = useState(true);
     const [showingCampaign, setShowingCampaign] = useState(false);
-    const [showingUserAccount, setShowingUserAccount] = useState(true);
+    const [showingUserAccount, setShowingUserAccount] = useState(false);
 
     const showCharacter = useCallback(() => {
         setShowingCharacter(true);
+        setShowingEvent(false);
         setShowingCampaign(false);
         setShowingUserAccount(false);
     });
 
+    const showEvent = useCallback(() => {
+        setShowingCharacter(false);
+        setShowingEvent(true);
+        setShowingCampaign(false);
+        setShowingUserAccount(false);
+    })
+
     const showCampaign = useCallback(() => {
         setShowingCharacter(false);
+        setShowingEvent(false);
         setShowingCampaign(true);
         setShowingUserAccount(false);
     })
 
     const showUserAccount = useCallback(() => {
         setShowingCharacter(false);
+        setShowingEvent(false);
         setShowingCampaign(false);
         setShowingUserAccount(true);
     })
 
-    React.useEffect(() => {
-    }, []);
-
     return {
         showCharacter,
+        showEvent,
         showCampaign,
         showUserAccount,
         showingCharacter,
+        showingEvent,
         showingCampaign,
         showingUserAccount
     }

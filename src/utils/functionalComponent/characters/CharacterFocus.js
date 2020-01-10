@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import CharacterCardUpper from '../../components/CharacterCardUpper'
-import CharacterCardLower from '../../components/CharacterCardLower'
-import { useSelectiveFocus } from "../useSelectiveFocus";
-import CharacterViewOptions from "./CharacterViewOptions";
+import CharacterCardUpper from '../../../components/CharacterCardUpper'
+import CharacterCardLower from '../../../components/CharacterCardLower'
+import { useSelectiveFocus } from "../../useSelectiveFocus";
+import CharacterOptions from "./CharacterOptions";
 export default function CharacterFocus(props) {
     const { characterView } = useSelectiveFocus();
     useEffect(() => {
@@ -16,7 +16,7 @@ export default function CharacterFocus(props) {
             <CharacterCardLower
                 notes={characterView.notes}
                 relationships={characterView.relationships} />
-            <CharacterViewOptions
+            <CharacterOptions
                 name={characterView.name} />
         </section>
     )

@@ -1,0 +1,28 @@
+{
+    "story": "#location#, #restingPlace#",
+    "location": [
+        "Atop a stone outcroppping",
+        "Nestled in a secret valley",
+        "Just up a river stream",
+        "Down a footpath off of the main road",
+        "Centered in a clearing"
+    ],
+    "restingPlace": "You chance upon #state# #restingPlaces#",
+    "restingPlaces": [
+        "carin",
+        "stone coffin",
+        "unmarked grave",
+        "mausoleum",
+        "memorial"
+    ],
+    "state": [
+        "a well-preserved",
+        "a timelost",
+        "a wind-worn",
+        "an antique",
+        "a decrepit",
+        "an overgrown",
+        "a well-tended",
+        "a decorated"
+    ]
+}

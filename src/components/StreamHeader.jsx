@@ -7,7 +7,7 @@ export default class Footer extends Component {
     render() {
         return (
             <div className='streamHeader'>
-                <h2> Character </h2>
+                <h2> {this.props.header} </h2>
             </div>
         );
     }

@@ -30,10 +30,11 @@ export default function useProvideSelectiveFocus() {
         isPortalVisible ? setPortalVisible(false) : setPortalVisible(true);
     }, [isPortalVisible]);
 
-    const toggleCharacterView = useCallback((desiredCharacter, id) => {
+    const toggleCharacterView = useCallback((desiredCharacter) => {
         setCharacterBuilderVisible(false);
         characters.forEach(character => {
             if (desiredCharacter === character.name) {
+                console.log(character)
                 setCharacterView(character);
             }
         });

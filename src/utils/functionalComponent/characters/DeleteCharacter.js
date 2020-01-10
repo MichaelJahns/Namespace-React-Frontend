@@ -1,9 +1,9 @@
 import React from "react";
-import useDeleteValidation from "../useDeleteValidation";
-import validateDelete from "../validateDelete";
-import { useSelectiveFocus } from '../useSelectiveFocus';
-import FormButton from "../../components/FormButton";
-import ComponentButton from "../../components/ComponentButton";
+import useDeleteValidation from "../../useDeleteValidation";
+import validateDelete from "../../validateDelete";
+import { useSelectiveFocus } from '../../useSelectiveFocus';
+import FormButton from "../../../components/FormButton";
+import ComponentButton from "../../../components/ComponentButton";
 
 const INITIAL_STATE = {
     deleteValidation: ""

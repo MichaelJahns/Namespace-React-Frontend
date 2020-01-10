@@ -1,20 +1,28 @@
 import React from "react";
 import CharacterView from './CharacterView';
+import EventView from './EventView';
 import CampaignView from './CampaignView';
-import Register from './Register';
-import { useView } from '../useView';
+import AccountView from './AccountView';
+
+import { useView } from '../../useView';
 
 export default function DashboardView() {
 
-    const { showingCharacter, showingCampaign, showingUserAccount } = useView();
+    const {
+        showingCharacter,
+        showingEvent,
+        showingCampaign,
+        showingUserAccount } = useView();
     return (
         <div className='dashboardView'>
             {showingCharacter &&
                 <CharacterView />}
+            {showingEvent &&
+                <EventView />}
             {showingCampaign &&
                 <CampaignView />}
             {showingUserAccount &&
-                <Register />}
+                <AccountView />}
         </div>
     );
 }

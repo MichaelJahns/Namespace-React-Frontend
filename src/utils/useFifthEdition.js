@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 export default function useFifthEdition(initialState, validate) {
-    const [values, setValues] = React.useState(initialState);
-    const [errors, setErrors] = React.useState({});
-    const [isSubmitting, setSubmitting] = React.useState(false);
+    const [values, setValues] = useState(initialState);
+    const [errors, setErrors] = useState({});
+    const [isSubmitting, setSubmitting] = useState(false);
 
     const handleSubmit = useCallback((event) => {
         const validationErrors = validate(values);

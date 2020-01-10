@@ -1,11 +1,11 @@
 import React from "react";
-import useFifthEdition from "../useFifthEdition";
-import validateFifthEdition from "../validateFifthEdition";
-import { useFirestore } from "../useFirestore";
-import { useSelectiveFocus } from "../useSelectiveFocus";
-import FormButton from "../../components/FormButton";
-import FancyInput from '../functionalComponent/FancyInput';
-import "../../resources/css/input.css"
+import useFifthEdition from "../../useFifthEdition";
+import validateFifthEdition from "../../validateFifthEdition";
+import { useFirestore } from "../../useFirestore";
+import { useSelectiveFocus } from "../../useSelectiveFocus";
+import FormButton from "../../../components/FormButton";
+import FancyInput from '../FancyInput';
+import "../../../resources/css/input.css"
 
 export default function CharacterView() {
     const { characterView, toggleCharacterBuilderHidden } = useSelectiveFocus();
