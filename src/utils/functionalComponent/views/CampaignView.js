@@ -1,9 +1,12 @@
 import React from 'react';
+import CampaignFocus from '../campaigns/CampaignFocus';
+import CampaignStream from '../campaigns/CampaignStream';
 
 export default function CampaignView() {
   return (
     <React.Fragment>
-      <p> Jacobs Awesome Campaign </p>
+      <CampaignStream />
+      <CampaignFocus />
     </React.Fragment>
   );
 }

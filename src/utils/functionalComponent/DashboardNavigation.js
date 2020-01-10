@@ -8,22 +8,22 @@ export default function DashboardNavigation() {
     return (
         <div className='dashboardNavigation'>
             <ul>
-                <li title="Character Viewer"
+                <li title="Characters"
                     className="charactersIcon"
                     onClick={showCharacter}>
                     Character Viewer </li>
 
-                <li title="Event Viewer"
+                <li title="Events"
                     className="eventIcon"
                     onClick={showEvent}>
                     Event Viewer</li>
 
-                <li title="Campaign Viewer"
+                <li title="Campaigns"
                     className="campaignIcon"
                     onClick={showCampaign}>
                     Campaign Viewer </li>
 
-                <li title="User Account Viewer"
+                <li title="Account"
                     className="userIcon"
                     onClick={showUserAccount}>
                     User Account Viewer

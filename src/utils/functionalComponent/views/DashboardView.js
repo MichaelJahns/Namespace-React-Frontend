@@ -2,7 +2,8 @@ import React from "react";
 import CharacterView from './CharacterView';
 import EventView from './EventView';
 import CampaignView from './CampaignView';
-import Register from '../Register';
+import AccountView from './AccountView';
+
 import { useView } from '../../useView';
 
 export default function DashboardView() {
@@ -21,7 +22,7 @@ export default function DashboardView() {
             {showingCampaign &&
                 <CampaignView />}
             {showingUserAccount &&
-                <Register />}
+                <AccountView />}
         </div>
     );
 }
