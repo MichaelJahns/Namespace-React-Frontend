@@ -35,7 +35,6 @@ export default function CharacterStream(props) {
                     />
                 );
             }
-
             setRows(rows)
         }
     }, [characters])
@@ -44,7 +43,7 @@ export default function CharacterStream(props) {
         <aside>
             <ul>
                 <Suspense fallback={<h1>Loading characters...</h1>}>
-                    <StreamHeader />
+                    <StreamHeader header="Characters" />
                     {rows}
                 </Suspense>
             </ul>
