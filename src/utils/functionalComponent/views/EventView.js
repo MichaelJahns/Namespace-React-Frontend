@@ -1,22 +1,18 @@
 import React from 'react';
-import CharacterStream from '../CharacterStream';
-import CharacterBuilder from '../CharacterBuilder'
-import CharacterFocus from '../CharacterFocus';
-import { useSelectiveFocus } from '../../useSelectiveFocus';
+const tracery = require('../../../vendor/tracery');
 
-export default function CharacterView() {
-
-    const { isCharacterBuilderVisible } = useSelectiveFocus();
+export default function EventView() {
+    const data = {
+        'story': 'There was once a calm and indirect dragon'
+    }
+    const grammar = tracery.createGrammar(data);
+    const result = grammar.flatten('#story#');
 
     return (
-        <React.Fragment>
-            <CharacterStream />
-            {isCharacterBuilderVisible ?
-                <CharacterBuilder />
-                :
-                <CharacterFocus />
-            }
-        </React.Fragment>
+        <div>
+            <p> There was once a calm and indirect dragon </p>
+            <p> {result} </p>
+        </div>
     );
 }
 

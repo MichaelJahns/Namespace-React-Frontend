@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CharacterView() {
+export default function CampaignView() {
   return (
     <React.Fragment>
       <p> Jacobs Awesome Campaign </p>

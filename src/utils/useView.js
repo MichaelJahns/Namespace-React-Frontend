@@ -54,6 +54,7 @@ export default function useProvideView() {
         showCampaign,
         showUserAccount,
         showingCharacter,
+        showingEvent,
         showingCampaign,
         showingUserAccount
     }
