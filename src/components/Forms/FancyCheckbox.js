@@ -4,13 +4,11 @@ export default function FancyCheckbox(props) {
 
     return (
         <React.Fragment>
-
-
             <label htmlFor={props.name}>
-                <span>{props.prompt}</span>
+                <span>{props.name}</span>
 
                 <input
-                    type={props.type}
+                    type='checkbox'
                     name={props.name}
                     class={props.classes}
                     id={props.name}

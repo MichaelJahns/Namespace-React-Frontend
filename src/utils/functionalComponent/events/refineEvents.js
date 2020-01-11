@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useTracery(story) {
+export default function useRefineEvents(story) {
     const [expanded, setExpanded] = useState([]);
     const [locations, setLocations] = useState([]);
     const [nearby, setNearby] = useState({});
@@ -27,8 +27,6 @@ export default function useTracery(story) {
     }
 
     useEffect(() => {
-        console.log(locations);
-        // console.log(expanded);
     }, [locations, expanded]);
 
     return {
