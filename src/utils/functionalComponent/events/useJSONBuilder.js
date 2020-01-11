@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 //JSON
 import locations from '../../../resources/events/parameters/locations';
 import naturalFeatures from '../../../resources/events/parameters/naturalFeatures';
@@ -8,18 +8,17 @@ export default function useJSONBuilder(props) {
 
     const buildFormFieldsFromJSON = useCallback(
         () => {
+            console.log('loop')
             const formFieldObj = {
-                ...parameters,
                 locations: locations,
                 naturalFeatures: naturalFeatures
             };
             setParameters(formFieldObj);
-            return formFieldObj;
-        })
+        }, [])
 
     useEffect(() => {
-        const formFields = buildFormFieldsFromJSON();
-    }, []);
+        buildFormFieldsFromJSON();
+    }, [buildFormFieldsFromJSON]);
     return {
         parameters
     }

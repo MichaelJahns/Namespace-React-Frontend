@@ -10,11 +10,9 @@ export default function FancyCheckbox(props) {
                 <input
                     type='checkbox'
                     name={props.name}
-                    class={props.classes}
+                    className={props.classes}
                     id={props.name}
-                    required
-                    onChange={props.onChange}
-                    select={true} />
+                    onChange={props.onChange} />
             </label>
         </React.Fragment>
     );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import EventFocus from '../events/EventFocus';
 import EventStream from '../events/EventStream'
 import '../../../resources/css/event.css';

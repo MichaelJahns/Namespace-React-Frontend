@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import useTracery from '../../useTracery';
 import restingPlace from '../../../resources/events/importantPlace/restingPlace';
 import FormButton from '../../../components/FormButton';
+import EventCard from './EventCard';
 
 import '../../../resources/css/cardEffects.css';
-
 
 export default function EventFocus(props) {
     const [cards, setCards] = useState([]);
@@ -12,35 +12,27 @@ export default function EventFocus(props) {
         stories,
         resetGrammars } = useTracery(restingPlace);
 
-    const cardGenerator = ((story, iteration) => {
-        let eventType = 'restingPlace';
-        let card =
-            <div className={`eventCard ` + eventType} id={`card` + iteration}>
-                <div className='image' id={`image` + iteration} >
-                    <div>
-                        <p> {iteration} </p>
-                    </div>
-                </div>
-                <div className={`story ` + eventType} id={`story` + iteration}>
-                    <div>
-                        <h3> Resting Place </h3>
-                        <p> {story} </p>
-                    </div>
-                </div>
-            </div >
-        return card;
-    });
+    const cardGenerator = useCallback(
+        (stories) => {
+            let eventType = 'restingPlace';
+            let cards = [];
+            for (let i = 0; i < stories.length; i++) {
+                cards.push(
+                    <EventCard
+                        key={i}
+                        iteration={i}
+                        eventType={eventType}
+                        story={stories[i]}
+                    />
+                )
+            }
+            return cards;
+        }, []);
 
     useEffect(() => {
-        let cards = [];
-        for (let i = 0; i < stories.length; i++) {
-            cards.push(cardGenerator(stories[i], i));
-        }
+        const cards = cardGenerator(stories)
         setCards(cards);
-    }, [stories]);
-
-
-
+    }, [stories, cardGenerator]);
 
     return (
         <section>

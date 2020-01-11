@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import FancyCheckbox from './FancyCheckbox';
 
 export default function CheckboxForm(props) {
-    const [fields, setFields] = useState(props.fields);
+    const [fields] = useState(props.fields);
     const [checkboxes, setCheckboxes] = useState([]);
 
     const createCheckboxes = useCallback(
@@ -11,8 +11,9 @@ export default function CheckboxForm(props) {
             for (let key in fields) {
                 checkboxes.push(
                     <FancyCheckbox
+                        key={key}
                         name={key}
-                        id={key}
+
                     />
                 )
             }
