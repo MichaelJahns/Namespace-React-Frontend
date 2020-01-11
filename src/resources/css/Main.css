@@ -16,10 +16,10 @@ h3{
     text-decoration: underline;
 }
 h4{
-    color: var(--component-text-color);
+    color: var(--main-text-color);
     font-family: 'Cinzel Decorative', cursive;
+
     font-size: 1.12em;
-    border-bottom: solid #666666ff 1px;
 }
 a{
     color: var(--component-text-color);

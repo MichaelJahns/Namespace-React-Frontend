@@ -10,12 +10,10 @@ import "../../../resources/css/input.css"
 export default function CharacterView() {
     const { characterView, toggleCharacterBuilderHidden } = useSelectiveFocus();
     const {
-        handleSubmit,
         handleChange,
         handleBlur,
         values,
         errors,
-        isSubmitting
     } = useFifthEdition(characterView, validateFifthEdition);
     const firestore = useFirestore();
     return (

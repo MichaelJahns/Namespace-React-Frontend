@@ -1,0 +1,9 @@
+.eventStream li{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    color: inherit;
+}
+.eventStream h4{
+    text-align: center;
+}

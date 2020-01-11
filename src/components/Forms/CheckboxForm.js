@@ -1,30 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import FancyCheckbox from './FancyCheckbox';
-import refineEvents from '../../utils/functionalComponent/events/refineEvents';
 
-export default function EventStream(props) {
-    const { locations, handleLocationChange } = refineEvents();
+export default function CheckboxForm(props) {
+    const [fields] = useState(props.fields);
+    const [checkboxes, setCheckboxes] = useState([]);
+
+    const createCheckboxes = useCallback(
+        (fields) => {
+            let checkboxes = [];
+            for (let key in fields) {
+                checkboxes.push(
+                    <FancyCheckbox
+                        key={key}
+                        name={key}
+
+                    />
+                )
+            }
+            return checkboxes;
+        }, [])
+    useEffect(() => {
+        const checkboxes = createCheckboxes(fields);
+        setCheckboxes(checkboxes);
+    }, [fields, createCheckboxes])
     return (
-        <li className="selectable" onClick={props.onClick}>
-            <h4> Locations </h4>
+        <li>
+            <h4
+                className={"optionsBanner expandable"}
+            >
+                {props.category}
+            </h4>
             <form className="checkboxForm">
-                <FancyCheckbox
-                    name='city'
-                    type='checkbox'
-                    prompt='City'
-                    classes='checkbox'
-                    onChange={handleLocationChange}
-                    value="city"
-                />
-                <FancyCheckbox
-                    name='village'
-                    type='checkbox'
-                    prompt='village'
-                    classes='checkbox'
-                    onChange={handleLocationChange}
-                    value="village"
-                />
+                {checkboxes}
             </form>
-        </li>
+        </ li>
     )
 }

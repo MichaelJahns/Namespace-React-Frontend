@@ -5,7 +5,7 @@ export default function AccountStream(props) {
     return (
         <aside>
             <ul>
-                <StreamHeader header="Account" />
+                <StreamHeader header="Campaigns" />
                 <li> My Campaigns </li>
                 <li> Browse </li>
                 <li> Other Things Maybe </li>
