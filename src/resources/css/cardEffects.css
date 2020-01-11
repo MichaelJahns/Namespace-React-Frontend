@@ -28,7 +28,6 @@
     background: linear-gradient(to top, #535573 0%, #7b88d1 120%);
 
 }
-
 .eventCard:hover {
     cursor: pointer;
     transform: rotate(0deg) scale(1) translateY(10px);
