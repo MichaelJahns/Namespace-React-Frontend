@@ -17,39 +17,41 @@ export default function useProvideView() {
     const [showingCampaign, setShowingCampaign] = useState(false);
     const [showingUserAccount, setShowingUserAccount] = useState(false);
 
-    const showCharacter = useCallback(() => {
-        setShowingCharacter(true);
-        setShowingEvent(false);
-        setShowingCampaign(false);
-        setShowingUserAccount(false);
-    });
-
-    const showEvent = useCallback(() => {
-        setShowingCharacter(false);
-        setShowingEvent(true);
-        setShowingCampaign(false);
-        setShowingUserAccount(false);
-    })
-
-    const showCampaign = useCallback(() => {
-        setShowingCharacter(false);
-        setShowingEvent(false);
-        setShowingCampaign(true);
-        setShowingUserAccount(false);
-    })
-
-    const showUserAccount = useCallback(() => {
-        setShowingCharacter(false);
-        setShowingEvent(false);
-        setShowingCampaign(false);
-        setShowingUserAccount(true);
-    })
+    const show = useCallback(
+        (key) => {
+            switch (key) {
+                case 0:
+                    setShowingCharacter(true);
+                    setShowingEvent(false);
+                    setShowingCampaign(false);
+                    setShowingUserAccount(false);
+                    break;
+                case 1:
+                    setShowingCharacter(false);
+                    setShowingEvent(true);
+                    setShowingCampaign(false);
+                    setShowingUserAccount(false);
+                    break;
+                case 2:
+                    setShowingCharacter(false);
+                    setShowingEvent(false);
+                    setShowingCampaign(true);
+                    setShowingUserAccount(false);
+                    break;
+                case 3:
+                    setShowingCharacter(false);
+                    setShowingEvent(false);
+                    setShowingCampaign(false);
+                    setShowingUserAccount(true);
+                    break;
+                default:
+                    console.log("Shits busted")
+                    break;
+            }
+        }, []);
 
     return {
-        showCharacter,
-        showEvent,
-        showCampaign,
-        showUserAccount,
+        show,
         showingCharacter,
         showingEvent,
         showingCampaign,

@@ -5,21 +5,17 @@ import useJSONBuilder from './useJSONBuilder';
 
 export default function EventStream(props) {
     const [forms, setForms] = useState([]);
-    const { param } = useJSONBuilder();
-    const [parameters] = useState(param)
+    const { jsonObject } = useJSONBuilder();
 
     const createForms = useCallback(
-        (parameters) => {
+        (jsonObject) => {
             let forms = []
-            console.log('Start here')
-            for (let categories in parameters) {
-                console.log(categories)
-                console.log(parameters[categories])
+            for (let categories in jsonObject) {
                 forms.push(
                     <CheckBoxForm
                         key={categories}
                         category={categories}
-                        fields={parameters[categories]}
+                        fields={jsonObject[categories]}
                     />
                 )
             }
@@ -27,8 +23,8 @@ export default function EventStream(props) {
         }, [])
 
     useEffect(() => {
-        createForms(parameters)
-    }, [parameters, createForms]);
+        createForms(jsonObject)
+    }, [jsonObject, createForms]);
     return (
         <aside className="eventStream">
             <ul>
