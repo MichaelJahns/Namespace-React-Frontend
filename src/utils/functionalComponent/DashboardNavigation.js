@@ -1,33 +1,32 @@
 import React from "react";
-import '../../resources/css/signin.css'
-import { useView } from './../useView';
+import { Link } from 'react-router-dom'
 
 export default function DashboardNavigation() {
-    const { show } = useView();
 
     return (
         <div className='Navigation'>
             <ul>
-                <li title="Characters"
-                    className="charactersIcon dashboardNavigationButton"
-                    onClick={() => show(0)}>
-                    Character Viewer </li>
+                <Link to="/characters">
+                    <li title="Characters"
+                        className="charactersIcon dashboardNavigationButton">
+                        Character Viewer </li>
+                </Link>
 
-                <li title="Events"
-                    className="eventIcon dashboardNavigationButton"
-                    onClick={() => show(1)}>
-                    Event Viewer</li>
-
-                <li title="Campaigns"
-                    className="campaignIcon dashboardNavigationButton"
-                    onClick={() => show(2)}>
-                    Campaign Viewer </li>
-
-                <li title="Account"
-                    className="userIcon dashboardNavigationButton"
-                    onClick={() => show(3)}>
-                    User Account Viewer
-                </li>
+                <Link to="/events">
+                    <li title="Events"
+                        className="eventIcon dashboardNavigationButton">
+                        Event Viewer</li>
+                </Link>
+                <Link to="/campaigns">
+                    <li title="Campaigns"
+                        className="campaignIcon dashboardNavigationButton">
+                        Campaign Viewer </li>
+                </Link>
+                <Link to="/account">
+                    <li title="Account"
+                        className="userIcon dashboardNavigationButton">
+                        User Account Viewer </li>
+                </Link>
             </ul>
         </div>
     );

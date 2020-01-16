@@ -7,7 +7,8 @@ import * as serviceWorker from './serviceWorker';
 import { ProvideFirebaseAuth } from './utils/useAuth';
 import { ProvideFirestore } from './utils/useFirestore'
 import { ProvideSelectiveContext } from './utils/useSelectiveFocus'
-import { ProvideView } from './utils/useView'
+import { BrowserRouter } from 'react-router-dom';
+
 
 // Required for side-effects
 require('dotenv').config();
@@ -15,11 +16,11 @@ require('dotenv').config();
 ReactDOM.render(
     <ProvideFirebaseAuth>
         <ProvideFirestore>
-            <ProvideView>
+            <BrowserRouter>
                 <ProvideSelectiveContext>
                     <App />
                 </ProvideSelectiveContext>
-            </ProvideView>
+            </BrowserRouter>
         </ProvideFirestore>
     </ProvideFirebaseAuth>,
     document.getElementById('root'));

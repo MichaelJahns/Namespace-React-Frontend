@@ -1,7 +1,7 @@
 import React from "react";
 
 import useFormValidation from "../useFormValidation";
-import validateAuth from "../validateAuth";
+import validateAuth from "../validators/validateAuth";
 import { useAuth } from '../useAuth'
 
 

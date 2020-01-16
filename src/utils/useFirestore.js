@@ -1,4 +1,5 @@
-import React, { useEffect, useContext, createContext } from 'react'
+import React, { useEffect, useContext, createContext } from 'react';
+import axios from 'axios';
 import * as firebase from 'firebase';
 import 'firebase/firestore'
 require("firebase/firestore");
@@ -62,18 +63,15 @@ function useProvideFireStore() {
     }
 
     const getAllCharacters = () => {
-        let allCharacters = [];
-        // TODO: De hardcode the campaign reference
-        db
-            .collection("characters").where("campaign", "==", "iqNOydMMd4hJY5uxmveW")
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    allCharacters.push(doc.data())
-                })
-                setCharacters(allCharacters);
+        axios
+            .get('/characters')
+            .then(response => {
+                console.log(response.data)
+                setCharacters(response.data)
             })
-
+            .catch(error => {
+                console.log(error);
+            });
     }
 
     return {
