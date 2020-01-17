@@ -68,6 +68,7 @@ function useProvideAuth() {
             "email": email,
             "password": password
         }
+        console.log(data)
         axios
             .post('/login', data)
             .then(response => {
