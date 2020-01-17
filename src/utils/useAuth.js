@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext, createContext } from 'react'
+import axios from 'axios';
 import * as firebase from 'firebase';
 import app from 'firebase/app'
 import 'firebase/firestore'
@@ -57,6 +58,20 @@ function useProvideAuth() {
                 return error
             });
     };
+    const signin2 = (email, password) => {
+        const data = {
+            "email": email,
+            "password": password
+        }
+        axios
+            .post('/login', data)
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    };
 
     const signup = (email, password) => {
         return firebase
@@ -89,6 +104,7 @@ function useProvideAuth() {
         user,
         firebaseError,
         signin,
+        signin2,
         signup,
         signout
     };

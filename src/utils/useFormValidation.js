@@ -23,7 +23,7 @@ function useFormValidation(initialState, validate, firebase) {
         const { email, password } = values;
 
         console.log("Attempting signin")
-        firebase.signin(email, password);
+        firebase.signin2(email, password);
     }
 
     function handleSignUp(event) {
