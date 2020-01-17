@@ -23,7 +23,7 @@ function useFormValidation(initialState, validate, firebase) {
         const { email, password } = values;
 
         console.log("Attempting signin")
-        firebase.signin2(email, password);
+        firebase.signin(email, password);
     }
 
     function handleSignUp(event) {
@@ -31,9 +31,7 @@ function useFormValidation(initialState, validate, firebase) {
         setErrors(validationErrors);
         setSubmitting(true);
         const { email, password } = values;
-
-        console.log("Attempting signout")
-        firebase.signup(email, password)
+        firebase.signup2(email, password)
     }
 
     function handleChange(event) {

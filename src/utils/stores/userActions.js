@@ -71,12 +71,20 @@ function useProvideAuth() {
         axios
             .post('/login', data)
             .then(response => {
-                console.log(response.data)
+                setAuthorizationHeader(response.data.token);
+                getUserData();
+            })
+            .then(reponse => {
+                setUser(reponse.data)
             })
             .catch(error => {
                 console.log(error);
             });
     };
+
+    const getUserData = (email) => {
+
+    }
 
     const signup = (email, password) => {
         return firebase
@@ -91,22 +99,7 @@ function useProvideAuth() {
                 return error
             });
     };
-    const signup2 = (email, password) => {
-        const data = {
-            email,
-            password: password,
-            confirmPassword: password,
-            displayName: "Jiner"
-        }
-        axios
-            .post('/signup', data)
-            .then(response => {
-                console.log(response.data)
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
+
     const signout = () => {
         return firebase
             .auth()
@@ -123,10 +116,8 @@ function useProvideAuth() {
     return {
         user,
         firebaseError,
-        signin,
         login,
         signup,
-        signup2,
         signout
     };
 }
