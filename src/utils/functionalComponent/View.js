@@ -5,11 +5,11 @@ import Dashboard from '../../components/Dashboard';
 import { useAuth } from '../useAuth';
 
 function View() {
-    const firebase = useAuth();
+    const { user } = useAuth();
 
     return (
         <main className="content">
-            {firebase.user ?
+            {user ?
                 <Dashboard />
                 :
                 <Landing />

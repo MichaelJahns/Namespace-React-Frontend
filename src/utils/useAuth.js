@@ -33,6 +33,7 @@ function useProvideAuth() {
 
 
     const setAuthorizationHeader = (token) => {
+        console.log(token);
         const FBIdToken = `Bearer ${token}`;
         axios.defaults.headers.common['Authorization'] = FBIdToken;
     };
@@ -50,29 +51,16 @@ function useProvideAuth() {
         return () => unsubscribe();
     }, []);
 
-    const signin = (email, password) => {
-        return firebase
-            .auth()
-            .signInWithEmailAndPassword(email, password)
-            .then(response => {
-                setUser(response.user);
-                return response.user;
-            })
-            .catch((error) => {
-                setFirebaseError(error);
-                return error
-            });
-    };
     const login = (email, password) => {
         const data = {
             "email": email,
             "password": password
         }
-        console.log(data)
         axios
             .post('/login', data)
             .then(response => {
-                console.log(response.data)
+                setAuthorizationHeader(response.data);
+                setUser(response.data);
             })
             .catch(error => {
                 console.log(error);
@@ -80,29 +68,17 @@ function useProvideAuth() {
     };
 
     const signup = (email, password) => {
-        return firebase
-            .auth()
-            .createUserWithEmailAndPassword(email, password)
-            .then(response => {
-                setUser(response.user);
-                return response.user;
-            })
-            .catch((error) => {
-                setFirebaseError(error);
-                return error
-            });
-    };
-    const signup2 = (email, password) => {
         const data = {
             email,
             password: password,
             confirmPassword: password,
-            displayName: "Jiner"
+            displayName: "Jinert"
         }
         axios
             .post('/signup', data)
             .then(response => {
-                console.log(response.data)
+                setAuthorizationHeader(response.data);
+                setUser(response.data);
             })
             .catch(error => {
                 console.log(error);
@@ -124,10 +100,8 @@ function useProvideAuth() {
     return {
         user,
         firebaseError,
-        signin,
         login,
         signup,
-        signup2,
         signout
     };
 }
