@@ -1,25 +1,17 @@
 import React, { useState } from "react";
 
+
 // MUI
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import useFormValidation from "../../useFormValidation";
 import validateAuth from "../../validators/validateAuth";
 
 import { useAuth } from '../../useAuth'
-
-const useStyles = makeStyles({
-    form: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-    }
-});
 
 const INITIAL_STATE = {
     email: "admin@admin.com",
@@ -29,6 +21,27 @@ const INITIAL_STATE = {
 };
 
 function Signup() {
+    const theme = useTheme();
+
+    const useStyles = makeStyles({
+        form: {
+            backgroundColor: theme.palette.component.contrastText,
+            boxShadow: `-5px 10px ${theme.palette.component.light}`,
+            // #888888
+
+            display: 'flex',
+            flexDirection: 'column',
+            padding: 20,
+            marginTop: 60,
+            marginBottom: 200,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            fontFamily: 'cursive'
+        },
+        input: {
+        }
+    });
+
     const firebase = useAuth();
 
     const {

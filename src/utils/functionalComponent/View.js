@@ -33,6 +33,28 @@ const theme = createMuiTheme({
         // E.g., shift from Red 500 to Red 300 or Red 700.
         tonalOffset: 0.2,
     },
+    // TODO: Some forms need to be case sensitive and our fun fantasy font isnt, forms especially need to have a font
+    typography: {
+        fontFamily: [
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+            'Cinzel Decorative',
+        ].join(','),
+
+        fancyFont: 'Cinzel Decorative',
+        h2: {
+            fontFamily: 'Cinzel Decorative',
+        }
+    }
+
 });
 
 function View() {
