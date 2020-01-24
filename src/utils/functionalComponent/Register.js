@@ -4,6 +4,9 @@ import useFormValidation from "../useFormValidation";
 import validateAuth from "../validators/validateAuth";
 import { useAuth } from '../useAuth'
 
+// MUI
+import Link from '@material-ui/core/Link'
+
 
 const INITIAL_STATE = {
     email: "admin@admin.com",
@@ -58,16 +61,12 @@ function Register() {
                     {errors.password && <p className="error-text"> {errors.password} </p>}
                     {firebase.firebaseError && <p className="error-text"> {firebase.firebaseError.message} </p>}
                 </label>
-
-                <p onClick={() => firebase.signout()}> signout </p>
-                <p onClick={() => firebase.signup(values.email, values.password)}> signup </p>
-
                 <button disabled={isSubmitting} onClick={handleSignIn}>
                     Sign in
                 </button>
-                <button disabled={isSubmitting} onClick={handleSignUp}>
-                    Sign up
-                </button>
+                <p>
+                    Don't have an account? <Link> Sign up! </Link>
+                </p>
             </form>
 
         </div>
