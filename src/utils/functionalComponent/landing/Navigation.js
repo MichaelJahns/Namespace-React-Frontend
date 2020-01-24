@@ -14,13 +14,13 @@ const useStyles = makeStyles({
         padding: 12,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        lineHeight: 2
+        height: "10vh"
     },
     title: {
         color: '#ff9900ff'
     }
 });
-export default function LandingNavigation() {
+export default function Navigation() {
     const classes = useStyles();
     return (
         <Navbar className={classes.nav}>

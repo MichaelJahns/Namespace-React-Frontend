@@ -1,6 +1,6 @@
 import React from "react";
-import LandingNavigation from '../landing/LandingNavigation';
-import Footer from "../../../components/Footer";
+import Navigation from '../landing/Navigation';
+import Footer from "../landing/Footer";
 
 //MUI
 
@@ -15,11 +15,10 @@ import About from '../landing/About';
 import Home from '../landing/Home';
 import Signup from '../landing/Signup';
 
-
 export default function LandingView() {
     return (
         <React.Fragment>
-            <LandingNavigation />
+            <Navigation />
             <div>
                 <Switch>
                     <Route exact path="/" component={Home} />
