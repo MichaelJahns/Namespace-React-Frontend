@@ -14,23 +14,22 @@ export default class Footer extends Component {
                         <div>
                             <Link to="/about">
                                 <h4> Discover Namespace </h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac quam lacus. Donec consequat, orci quis tempor tincidunt, felis lacus interdum magna, sit amet bibendum metus lacus et arcu. </p>
                             </Link>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac quam lacus. Donec consequat, orci quis tempor tincidunt, felis lacus interdum magna, sit amet bibendum metus lacus et arcu. </p>
                         </div>
                         <Divider orientation="vertical" />
                         <div>
                             <Link to="/">
-
                                 <h4> Make Namespace Yours </h4>
-                                <p>Nulla tortor ex, sagittis ut mi ac, sollicitudin placerat velit. Mauris justo orci, sodales eu libero ut, porttitor rutrum sem.</p>
                             </Link>
+                            <p>Nulla tortor ex, sagittis ut mi ac, sollicitudin placerat velit. Mauris justo orci, sodales eu libero ut, porttitor rutrum sem.</p>
                         </div>
                         <Divider orientation="vertical" />
                         <div>
                             <Link to="/signup">
                                 <h4> Become a Member </h4>
-                                <p> Aenean posuere, neque quis imperdiet facilisis, est metus lobortis justo, id tempus nunc ex sit amet mi. Nam sagittis commodo blandit. Nulla iaculis sit amet orci.</p>
                             </Link>
+                            <p> Aenean posuere, neque quis imperdiet facilisis, est metus lobortis justo, id tempus nunc ex sit amet mi. Nam sagittis commodo blandit. Nulla iaculis sit amet orci.</p>
                         </div>
                     </section>
                     <nav>

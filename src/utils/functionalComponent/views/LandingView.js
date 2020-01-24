@@ -1,9 +1,8 @@
 import React from "react";
-import LandingNavigation from '../../../components/LandingNavigation';
+import LandingNavigation from '../landing/LandingNavigation';
 import Footer from "../../../components/Footer";
 
 //MUI
-import Container from '@material-ui/core/Container'
 
 import {
     Route,
@@ -21,12 +20,15 @@ export default function LandingView() {
     return (
         <React.Fragment>
             <LandingNavigation />
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/signup" component={Signup} />
-                <Redirect to="/signup" />
-            </Switch>
+            <div>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/about" component={About} />
+                    <Route path="/signup" component={Signup} />
+                    <Redirect to="/signup" />
+                </Switch>
+            </div>
+
             <Footer />
         </React.Fragment>
     );

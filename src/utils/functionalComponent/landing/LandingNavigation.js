@@ -1,8 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
-
-import '../resources/css/navbar.css';
-import AccountNavigation from '../utils/functionalComponent/AccountNavigation'
+import AccountNavigation from '../AccountNavigation'
 
 // MUI
 import Navbar from '@material-ui/core/AppBar';
