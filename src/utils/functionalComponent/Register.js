@@ -65,7 +65,7 @@ function Register() {
                     Sign in
                 </button>
                 <p>
-                    Don't have an account? <Link> Sign up! </Link>
+                    Don't have an account? <Link to="/signup"> Sign up! </Link>
                 </p>
             </form>
 

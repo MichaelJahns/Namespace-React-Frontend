@@ -16,7 +16,7 @@ function AccountNavigation() {
                 :
                 <h4
                     onClick={togglePortal}
-                > Account </h4>
+                > Login </h4>
             }
             {isPortalVisible &&
                 <Register />

@@ -1,9 +1,8 @@
 import React from "react";
-import 
 
 function Signup() {
     return (
-        <div>Signup</div>
+        <div className="dashboardView">Signup</div>
     );
 }
 

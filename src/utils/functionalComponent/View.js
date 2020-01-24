@@ -1,6 +1,6 @@
 import React from "react";
+import LandingView from './views/LandingView';
 
-import Landing from './Landing';
 import Dashboard from '../../components/Dashboard';
 import { useAuth } from '../useAuth';
 
@@ -12,7 +12,7 @@ function View() {
             {user ?
                 <Dashboard />
                 :
-                <Landing />
+                <LandingView />
             }
         </main>
     );
