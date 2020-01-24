@@ -2,7 +2,10 @@ import React from "react";
 
 function Signup() {
     return (
-        <div className="dashboardView">Signup</div>
+        <div className="dashboardView">
+            Signup
+
+        </div>
     );
 }
 

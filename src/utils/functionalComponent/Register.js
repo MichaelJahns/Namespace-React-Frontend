@@ -4,8 +4,8 @@ import useFormValidation from "../useFormValidation";
 import validateAuth from "../validators/validateAuth";
 import { useAuth } from '../useAuth'
 
-// MUI
-import Link from '@material-ui/core/Link'
+import { Link } from 'react-router-dom'
+
 
 
 const INITIAL_STATE = {
@@ -64,10 +64,10 @@ function Register() {
                 <button disabled={isSubmitting} onClick={handleSignIn}>
                     Sign in
                 </button>
-                <p>
-                    Don't have an account? <Link to="/signup"> Sign up! </Link>
-                </p>
             </form>
+            <p>
+                Don't have an account? <Link to="/signup"> Sign up! </Link>
+            </p>
 
         </div>
 

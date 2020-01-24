@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import '../resources/css/footer.css';
+import { Divider } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 
 
 export default class Footer extends Component {
@@ -10,16 +12,25 @@ export default class Footer extends Component {
                 <main>
                     <section>
                         <div>
-                            <h4> Discover Namespace </h4>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac quam lacus. Donec consequat, orci quis tempor tincidunt, felis lacus interdum magna, sit amet bibendum metus lacus et arcu. </p>
+                            <Link to="/about">
+                                <h4> Discover Namespace </h4>
+                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac quam lacus. Donec consequat, orci quis tempor tincidunt, felis lacus interdum magna, sit amet bibendum metus lacus et arcu. </p>
+                            </Link>
                         </div>
+                        <Divider orientation="vertical" />
                         <div>
-                            <h4> Make Namespace Yours </h4>
-                            <p>Nulla tortor ex, sagittis ut mi ac, sollicitudin placerat velit. Mauris justo orci, sodales eu libero ut, porttitor rutrum sem.</p>
+                            <Link to="/">
+
+                                <h4> Make Namespace Yours </h4>
+                                <p>Nulla tortor ex, sagittis ut mi ac, sollicitudin placerat velit. Mauris justo orci, sodales eu libero ut, porttitor rutrum sem.</p>
+                            </Link>
                         </div>
+                        <Divider orientation="vertical" />
                         <div>
-                            <h4> Become a Member </h4>
-                            <p> Aenean posuere, neque quis imperdiet facilisis, est metus lobortis justo, id tempus nunc ex sit amet mi. Nam sagittis commodo blandit. Nulla iaculis sit amet orci.</p>
+                            <Link to="/signup">
+                                <h4> Become a Member </h4>
+                                <p> Aenean posuere, neque quis imperdiet facilisis, est metus lobortis justo, id tempus nunc ex sit amet mi. Nam sagittis commodo blandit. Nulla iaculis sit amet orci.</p>
+                            </Link>
                         </div>
                     </section>
                     <nav>
@@ -31,7 +42,7 @@ export default class Footer extends Component {
                             <a href="https://github.com/MichaelJahns"> Github </a>
                         </div>
                     </nav>
-                </main>
+                </main >
             </footer >
 
         );

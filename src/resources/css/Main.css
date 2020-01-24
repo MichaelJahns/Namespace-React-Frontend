@@ -16,7 +16,7 @@ h3{
     text-decoration: underline;
 }
 h4{
-    color: var(--main-text-color);
+    color: var(--component-text-color);
     font-family: 'Cinzel Decorative', cursive;
 
     font-size: 1.12em;
@@ -24,9 +24,6 @@ h4{
 a{
     color: var(--component-text-color);
     text-decoration: none;
-}
-a:visited{
-    color: #FFD700;
 }
 
 /* SCROLL BAR */
