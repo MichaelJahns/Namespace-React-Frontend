@@ -23,6 +23,9 @@ function Signup() {
     const theme = useTheme();
 
     const useStyles = makeStyles({
+        root: {
+
+        },
         form: {
             backgroundColor: theme.palette.component.contrastText,
             boxShadow: `-5px 10px ${theme.palette.component.light}`,
@@ -33,36 +36,54 @@ function Signup() {
             marginBottom: 200,
             marginLeft: 'auto',
             marginRight: 'auto',
-            fontFamily: 'cursive'
+            maxWidth: '40vw'
         },
-        submitField: {
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between'
+        title: {
+            letterSpacing: 15,
+            color: theme.palette.component.mainText,
+            [theme.breakpoints.down('sm')]: {
+                letterSpacing: 10,
+                fontSize: '6.5vw',
+            },
+            [theme.breakpoints.up('md')]: {
+                fontSize: '7.65vw',
+            },
+            [theme.breakpoints.up('lg')]: {
+                fontSize: '8vw',
+            },
         },
         signature: {
             fontFamily: theme.typography.handFont,
+            textShadow: 'none',
             color: theme.palette.main.contrastText,
             lineHeight: 2,
-            fontSize: '1.5em',
-
+            fontSize: '1.25em',
+            width: '30vw',
+        },
+        signatureLine: {
+            color: theme.palette.component.main
         },
         tack: {
-            backgroundColor: theme.palette.component.light,
-            boxShadow: `-2.5px 5.5px 5.5px -2px ${theme.palette.component.dark}, inset -1px 2px 1px ${theme.palette.component.lighter}`,
-            alignSelf: 'center',
-            position: 'absolute',
-            borderRadius: 100,
-            width: 20,
-            height: 20
+            [theme.breakpoints.up('md')]: {
+                backgroundColor: theme.palette.component.light,
+                boxShadow:
+                    `-2.5px 4.5px 10px -2px ${theme.palette.component.dark},
+                    inset -1px 2px 1px ${theme.palette.component.lighter}`,
+                alignSelf: 'center',
+                position: 'absolute',
+                borderRadius: 9,
+                width: 20,
+                height: 20
+            },
+        },
+        submit: {
+            display: 'inline-block'
         }
 
-    });
-
+    })
     const firebase = useAuth();
 
     const {
-        handleSignIn,
         handleSignUp,
         handleChange,
         handleBlur,
@@ -76,7 +97,7 @@ function Signup() {
         <div>
             <form className={classes.form}>
                 <p className={classes.tack}> </p>
-                <Typography variant="h2">
+                <Typography variant="h2" className={classes.title}>
                     Signup
                 </Typography>
                 <Divider />
@@ -122,12 +143,12 @@ function Signup() {
                     error={!!errors.cpassword, !!errors.matchingPassword} />
 
                 <br />
-                <div className={classes.submitField}>
-                    <Typography className={classes.signature}>
-                        {values.username}
+                <Typography variant="caption" className={classes.signatureLine}>
+                    Hereby I, <span className={classes.signature}> {values.username}, </span>
+                    do apply to
                     </Typography>
-                    <Button type='submit'> Join Namespace </Button>
-                </div>
+                <Button className={classes.submit} type='submit'> Join Namespace </Button>
+
             </form>
         </div >
     );

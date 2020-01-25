@@ -9,9 +9,9 @@ const theme = createMuiTheme({
         component: {
             lighter: '#B3B3B3',
             light: '#666666ff', //Formerly component-border
-            main: '#282c34', //Formerly component-text
+            main: '#282c34', //Formerly component-bg
             dark: '#575757',
-            mainText: '#ff9900ff', //Formerly component-bg
+            mainText: '#ff9900ff', //Formerly component-text
             contrastText: '#F2EFC4' //Formerly main-bg
         },
         main: {
@@ -50,10 +50,26 @@ const theme = createMuiTheme({
             'Cinzel Decorative',
         ].join(','),
 
-        fancyFont: 'Cinzel Decorative',
+        fancyFont: 'Cinzel Decorative:700',
         handFont: 'Satisfy',
+        h1: {
+            fontFamily: 'Cinzel Decorative, cursive',
+            fontWeight: 'bold',
+            fontSize: '3em'
+        },
         h2: {
-            fontFamily: 'Cinzel Decorative'
+            fontFamily: 'Cinzel Decorative, cursive',
+            fontWeight: 'bold',
+            fontSize: '4.75em'
+        },
+        h3: {
+            fontSize: '4vw',
+            backgroundColor: 'blue',
+        },
+        caption: {
+            fontSize: "2.5em",
+            fontFamily: 'Cinzel Decorative, cursive',
+            fontWeight: 'normal',
         },
         input: {
 

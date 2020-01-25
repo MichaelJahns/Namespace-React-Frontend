@@ -1,4 +1,4 @@
-h1{
+/* h1{
     color: var(--component-text-color);
     font-family: 'Cinzel Decorative', cursive;
     font-size: 1.8em;
@@ -14,7 +14,7 @@ h3{
     font-family: 'Cinzel Decorative', cursive;
     font-size: 1.5em;
     text-decoration: underline;
-}
+} */
 h4{
     color: var(--component-text-color);
     font-family: 'Cinzel Decorative', cursive;
