@@ -32,7 +32,7 @@ function Signup() {
             display: 'flex',
             flexDirection: 'column',
             padding: 20,
-            marginTop: 60,
+            marginTop: '10vh',
             marginBottom: 200,
             marginLeft: 'auto',
             marginRight: 'auto',
@@ -56,7 +56,7 @@ function Signup() {
 
     const classes = useStyles();
     return (
-        <div className="dashboardView">
+        <div>
             <form className={classes.form}>
                 <Typography variant="h2">
                     Signup

@@ -14,7 +14,8 @@ const useStyles = makeStyles({
         padding: 12,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        height: "10vh"
+        height: "10vh",
+        position: 'static'
     },
     title: {
         color: '#ff9900ff'

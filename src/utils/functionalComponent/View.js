@@ -7,15 +7,14 @@ import { useAuth } from '../useAuth';
 const theme = createMuiTheme({
     palette: {
         component: {
-            light: '#666666ff',
-            main: '#282c34',
-            // dark: will be calculated from palette.primary.main,
-            mainText: '#ff9900ff',
-            contrastText: '#F2EFC4'
+            light: '#666666ff', //Formerly component-border
+            main: '#282c34', //Formerly component-text
+            mainText: '#ff9900ff', //Formerly component-bg
+            contrastText: '#F2EFC4' //Formerly main-bg
         },
         main: {
             // light: '#0066ff',
-            main: '#282c34',
+            main: '#DBD2A7',
             // dark: will be calculated from palette.secondary.main,
             // contrastText: '#ffcc00',
         },
