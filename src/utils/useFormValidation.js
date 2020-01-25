@@ -1,9 +1,12 @@
 import React from "react";
+import { useAuth } from './useAuth';
 
 function useFormValidation(initialState, validate, firebase) {
     const [values, setValues] = React.useState(initialState);
     const [errors, setErrors] = React.useState({});
     const [isSubmitting, setSubmitting] = React.useState(false);
+
+    const { signin, signup, signout } = useAuth();
 
     React.useEffect(() => {
         if (isSubmitting) {
@@ -20,18 +23,15 @@ function useFormValidation(initialState, validate, firebase) {
         const validationErrors = validate(values);
         setErrors(validationErrors);
         setSubmitting(true);
-        const { email, password } = values;
-
-        console.log("Attempting signin")
-        firebase.login(email, password);
+        firebase.login(values);
     }
 
     function handleSignUp(event) {
+        console.log("one")
         const validationErrors = validate(values);
         setErrors(validationErrors);
         setSubmitting(true);
-        const { email, password } = values;
-        firebase.signup2(email, password)
+        signup(values);
     }
 
     function handleChange(event) {

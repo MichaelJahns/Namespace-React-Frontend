@@ -81,7 +81,7 @@ function Signup() {
         }
 
     })
-    const firebase = useAuth();
+    const { firebase, serverError } = useAuth();
 
     const {
         handleSignUp,
@@ -143,11 +143,16 @@ function Signup() {
                     error={!!errors.cpassword, !!errors.matchingPassword} />
 
                 <br />
+                <p> Would be here. {serverError} </p>
+
                 <Typography variant="caption" className={classes.signatureLine}>
                     Hereby I, <span className={classes.signature}> {values.username}, </span>
                     do apply to
                     </Typography>
-                <Button className={classes.submit} type='submit'> Join Namespace </Button>
+                <Button
+                    onClick={handleSignUp}
+                    className={classes.submit}
+                > Join Namespace </Button>
 
             </form>
         </div >

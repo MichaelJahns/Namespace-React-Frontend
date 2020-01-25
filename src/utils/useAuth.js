@@ -29,8 +29,7 @@ export const useAuth = () => {
 
 function useProvideAuth() {
     const [user, setUser] = useState(null)
-    const [firebaseError, setFirebaseError] = useState(null);
-
+    const [serverError, setServerError] = useState(null);
 
     const setAuthorizationHeader = (token) => {
         console.log(token);
@@ -40,7 +39,7 @@ function useProvideAuth() {
 
     useEffect(() => {
         const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-            setFirebaseError(null);
+            setServerError(null);
             if (user) {
                 console.log(user);
                 setUser(user);
@@ -60,6 +59,7 @@ function useProvideAuth() {
         axios
             .post('/login', data)
             .then(response => {
+                console.log("three")
                 setAuthorizationHeader(response.data);
                 setUser(response.data);
             })
@@ -68,13 +68,8 @@ function useProvideAuth() {
             });
     };
 
-    const signup = (email, password) => {
-        const data = {
-            email,
-            password: password,
-            confirmPassword: password,
-            displayName: "Jinert"
-        }
+    const signup = (data) => {
+        console.log("two")
         axios
             .post('/signup', data)
             .then(response => {
@@ -82,7 +77,8 @@ function useProvideAuth() {
                 setUser(response.data);
             })
             .catch(error => {
-                console.log(error);
+                console.log(error)
+                setServerError(error.code)
             });
     }
     const signout = () => {
@@ -93,14 +89,14 @@ function useProvideAuth() {
                 setUser(false);
             })
             .catch((error) => {
-                setFirebaseError(error);
+                setServerError(error);
                 return error;
             })
     };
 
     return {
         user,
-        firebaseError,
+        firebaseError: serverError,
         login,
         signup,
         signout
