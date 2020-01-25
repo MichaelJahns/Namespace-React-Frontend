@@ -37,7 +37,7 @@
 }
 .dashboardView{
     display: flex;
-    min-height: 95vh;
+    min-height: 100vh;
     background-color: var(--main-alt-bg-color);
 }
 .dashboardView aside {

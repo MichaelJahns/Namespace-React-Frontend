@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-
 // MUI
+import { withStyles, makeStyles, useTheme } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-
-
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import useFormValidation from "../../useFormValidation";
 import validateAuth from "../../validators/validateAuth";
@@ -14,10 +13,10 @@ import validateAuth from "../../validators/validateAuth";
 import { useAuth } from '../../useAuth'
 
 const INITIAL_STATE = {
-    email: "admin@admin.com",
-    username: "fatFred",
-    password: "troubleshoot",
-    confirmPassword: "troubleshoot"
+    email: "tester@test.com",
+    username: "Locke",
+    password: "qwerqwer",
+    confirmPassword: "qwerqwer"
 };
 
 function Signup() {
@@ -27,8 +26,6 @@ function Signup() {
         form: {
             backgroundColor: theme.palette.component.contrastText,
             boxShadow: `-5px 10px ${theme.palette.component.light}`,
-            // #888888
-
             display: 'flex',
             flexDirection: 'column',
             padding: 20,
@@ -38,8 +35,28 @@ function Signup() {
             marginRight: 'auto',
             fontFamily: 'cursive'
         },
-        input: {
+        submitField: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between'
+        },
+        signature: {
+            fontFamily: theme.typography.handFont,
+            color: theme.palette.main.contrastText,
+            lineHeight: 2,
+            fontSize: '1.5em',
+
+        },
+        tack: {
+            backgroundColor: theme.palette.component.light,
+            boxShadow: `-2.5px 5.5px 5.5px -2px ${theme.palette.component.dark}, inset -1px 2px 1px ${theme.palette.component.lighter}`,
+            alignSelf: 'center',
+            position: 'absolute',
+            borderRadius: 100,
+            width: 20,
+            height: 20
         }
+
     });
 
     const firebase = useAuth();
@@ -58,29 +75,61 @@ function Signup() {
     return (
         <div>
             <form className={classes.form}>
+                <p className={classes.tack}> </p>
                 <Typography variant="h2">
                     Signup
                 </Typography>
+                <Divider />
                 <TextField
+                    name='email'
                     label='E-mail'
                     value={values.email}
-                    onChange={handleChange} />
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    helperText={errors.email}
+                    error={!!errors.email}
+                />
                 <TextField
+                    name='username'
                     label='Username'
                     value={values.username}
-                    onChange={handleChange} />
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    helperText={errors.username}
+                    error={!!errors.username}
+                />
                 <TextField
+                    name='password'
                     type="password"
                     label='Password'
                     value={values.password}
-                    onChange={handleChange} />
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    helperText={errors.password}
+                    error={!!errors.password}
+                />
                 <TextField
+                    name='confirmPassword'
                     type="password"
-                    label='Confirm your Password'
+                    label='Confirm Password'
                     value={values.confirmPassword}
-                    onChange={handleChange} />
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    // This works fine it seems and eslint complains about the commas
+                    // eslint-disable-next-line no-sequences
+                    helperText={errors.cpassword, errors.matchingPassword}
+                    // eslint-disable-next-line no-sequences
+                    error={!!errors.cpassword, !!errors.matchingPassword} />
+
+                <br />
+                <div className={classes.submitField}>
+                    <Typography className={classes.signature}>
+                        {values.username}
+                    </Typography>
+                    <Button type='submit'> Join Namespace </Button>
+                </div>
             </form>
-        </div>
+        </div >
     );
 }
 

@@ -19,7 +19,7 @@ export default function DashboardView() {
                 <Route path="/events" component={EventView} />
                 <Route path="/campaigns" component={CampaignView} />
                 <Route path="/account" component={AccountView} />
-                <Redirect to="/" />
+                <Redirect to="/characters" />
             </Switch>
         </div>
     );

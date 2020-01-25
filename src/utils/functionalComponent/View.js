@@ -7,8 +7,10 @@ import { useAuth } from '../useAuth';
 const theme = createMuiTheme({
     palette: {
         component: {
+            lighter: '#B3B3B3',
             light: '#666666ff', //Formerly component-border
             main: '#282c34', //Formerly component-text
+            dark: '#575757',
             mainText: '#ff9900ff', //Formerly component-bg
             contrastText: '#F2EFC4' //Formerly main-bg
         },
@@ -16,7 +18,7 @@ const theme = createMuiTheme({
             // light: '#0066ff',
             main: '#DBD2A7',
             // dark: will be calculated from palette.secondary.main,
-            // contrastText: '#ffcc00',
+            contrastText: '#551700',
         },
         secondary: {
             // light: '#0066ff',
@@ -49,8 +51,17 @@ const theme = createMuiTheme({
         ].join(','),
 
         fancyFont: 'Cinzel Decorative',
+        handFont: 'Satisfy',
         h2: {
-            fontFamily: 'Cinzel Decorative',
+            fontFamily: 'Cinzel Decorative'
+        },
+        input: {
+
+        },
+        button: {
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            // background: 'linear-gradient(45deg, #FE6B8B 30%, var(--component-text-color) 90%)',
+            // background: 'linear-gradient(45deg, var(--component-text-color) 30%, #FF8E53 90%)',
         }
     }
 

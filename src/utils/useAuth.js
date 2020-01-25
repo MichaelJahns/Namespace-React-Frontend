@@ -42,6 +42,7 @@ function useProvideAuth() {
         const unsubscribe = firebase.auth().onAuthStateChanged(user => {
             setFirebaseError(null);
             if (user) {
+                console.log(user);
                 setUser(user);
             } else {
                 setUser(null);
