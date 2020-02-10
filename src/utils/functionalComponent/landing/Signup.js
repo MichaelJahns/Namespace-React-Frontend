@@ -57,11 +57,12 @@ function Signup() {
             textShadow: 'none',
             color: theme.palette.main.contrastText,
             lineHeight: 2,
-            fontSize: '1.25em',
+            fontSize: '1.5em',
             width: '30vw',
         },
         signatureLine: {
-            color: theme.palette.component.main
+            color: theme.palette.component.main,
+            fontSize: '2.0em'
         },
         tack: {
             [theme.breakpoints.up('md')]: {
@@ -151,8 +152,11 @@ function Signup() {
                     </Typography>
                 <Button
                     onClick={handleSignUp}
-                    className={classes.submit}
-                > Join Namespace </Button>
+                    className={classes.submit}>
+                    Join Namespace
+                </Button>
+
+                <span> Already have an account? Login</span>
 
             </form>
         </div >

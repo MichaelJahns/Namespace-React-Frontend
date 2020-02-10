@@ -6,7 +6,7 @@ function useFormValidation(initialState, validate, firebase) {
     const [errors, setErrors] = React.useState({});
     const [isSubmitting, setSubmitting] = React.useState(false);
 
-    const { signin, signup, signout } = useAuth();
+    const { signup, signout, login } = useAuth();
 
     React.useEffect(() => {
         if (isSubmitting) {
@@ -19,11 +19,11 @@ function useFormValidation(initialState, validate, firebase) {
         }
     }, [values, errors, isSubmitting]);
 
-    function handleSignIn(event) {
+    function handleLogin(event) {
         const validationErrors = validate(values);
         setErrors(validationErrors);
         setSubmitting(true);
-        firebase.login(values);
+        login(values);
     }
 
     function handleSignUp(event) {
@@ -47,7 +47,7 @@ function useFormValidation(initialState, validate, firebase) {
     }
 
     return {
-        handleSignIn,
+        handleSignIn: handleLogin,
         handleSignUp,
         handleChange,
         handleBlur,

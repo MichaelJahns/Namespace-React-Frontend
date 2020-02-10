@@ -51,11 +51,8 @@ function useProvideAuth() {
         return () => unsubscribe();
     }, []);
 
-    const login = (email, password) => {
-        const data = {
-            "email": email,
-            "password": password
-        }
+    const login = (data) => {
+        console.log(data)
         axios
             .post('/login', data)
             .then(response => {
@@ -70,17 +67,20 @@ function useProvideAuth() {
 
     const signup = (data) => {
         console.log("two")
+        console.log(data);
         axios
-            .post('/signup', data)
+            .post('/createUser', data)
             .then(response => {
                 setAuthorizationHeader(response.data);
                 setUser(response.data);
+                console.log("success")
             })
             .catch(error => {
                 console.log(error)
                 setServerError(error.code)
             });
     }
+
     const signout = () => {
         return firebase
             .auth()
