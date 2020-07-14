@@ -33,8 +33,8 @@ function useProvideAuth() {
 
     const setAuthorizationHeader = (token) => {
         console.log(token);
-        const FBIdToken = `Bearer ${token}`;
-        axios.defaults.headers.common['Authorization'] = FBIdToken;
+        // const FBIdToken = `Bearer ${token}`;
+        // axios.defaults.headers.common['Authorization'] = FBIdToken;
     };
 
     useEffect(() => {
@@ -66,8 +66,8 @@ function useProvideAuth() {
     };
 
     const signup = (data) => {
-        console.log("two")
         console.log(data);
+        axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
         axios
             .post('/createUser', data)
             .then(response => {

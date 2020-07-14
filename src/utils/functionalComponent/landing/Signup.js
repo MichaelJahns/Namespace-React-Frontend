@@ -14,7 +14,7 @@ import { useAuth } from '../../useAuth'
 
 const INITIAL_STATE = {
     email: "tester@test.com",
-    username: "Locke",
+    displayName: "Locke",
     password: "qwerqwer",
     confirmPassword: "qwerqwer"
 };
@@ -112,13 +112,13 @@ function Signup() {
                     error={!!errors.email}
                 />
                 <TextField
-                    name='username'
+                    name='displayName'
                     label='Username'
-                    value={values.username}
+                    value={values.displayName}
                     onBlur={handleBlur}
                     onChange={handleChange}
-                    helperText={errors.username}
-                    error={!!errors.username}
+                    helperText={errors.displayName}
+                    error={!!errors.displayName}
                 />
                 <TextField
                     name='password'
@@ -147,7 +147,7 @@ function Signup() {
                 <p> Would be here. {serverError} </p>
 
                 <Typography variant="caption" className={classes.signatureLine}>
-                    Hereby I, <span className={classes.signature}> {values.username}, </span>
+                    Hereby I, <span className={classes.signature}> {values.displayName}, </span>
                     do apply to
                     </Typography>
                 <Button
