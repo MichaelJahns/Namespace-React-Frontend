@@ -21,7 +21,6 @@ function AccountNavigation() {
             
          
                 <Register />
-            
         </React.Fragment>
 
     );
