@@ -14,7 +14,7 @@ export default function EventFocus(props) {
 
     const cardGenerator = useCallback(
         (stories) => {
-            let eventType = 'restingPlace';
+            let eventType = 'Resting Place';
             let cards = [];
             for (let i = 0; i < stories.length; i++) {
                 cards.push(

@@ -29,19 +29,18 @@ export const useAuth = () => {
 
 function useProvideAuth() {
     const [user, setUser] = useState(null)
-    const [serverError, setServerError] = useState(null);
+    const [firebaseError, setFirebaseError] = useState(null);
+
 
     const setAuthorizationHeader = (token) => {
-        console.log(token);
-        // const FBIdToken = `Bearer ${token}`;
-        // axios.defaults.headers.common['Authorization'] = FBIdToken;
+        const FBIdToken = `Bearer ${token}`;
+        axios.defaults.headers.common['Authorization'] = FBIdToken;
     };
 
     useEffect(() => {
         const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-            setServerError(null);
+            setFirebaseError(null);
             if (user) {
-                console.log(user);
                 setUser(user);
             } else {
                 setUser(null);
@@ -51,35 +50,55 @@ function useProvideAuth() {
         return () => unsubscribe();
     }, []);
 
-    const login = (data) => {
-        console.log(data)
+    const signin = (email, password) => {
+        return firebase
+            .auth()
+            .signInWithEmailAndPassword(email, password)
+            .then(response => {
+                setUser(response.user);
+                return response.user;
+            })
+            .catch((error) => {
+                setFirebaseError(error);
+                return error
+            });
+    };
+    const login = (email, password) => {
+        const data = {
+            "email": email,
+            "password": password
+        }
         axios
             .post('/login', data)
             .then(response => {
-                console.log("three")
-                setAuthorizationHeader(response.data);
-                setUser(response.data);
+                setAuthorizationHeader(response.data.token);
+                getUserData();
+            })
+            .then(reponse => {
+                setUser(reponse.data)
             })
             .catch(error => {
                 console.log(error);
             });
     };
 
-    const signup = (data) => {
-        console.log(data);
-        axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
-        axios
-            .post('/createUser', data)
-            .then(response => {
-                setAuthorizationHeader(response.data);
-                setUser(response.data);
-                console.log("success")
-            })
-            .catch(error => {
-                console.log(error)
-                setServerError(error.code)
-            });
+    const getUserData = (email) => {
+
     }
+
+    const signup = (email, password) => {
+        return firebase
+            .auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(response => {
+                setUser(response.user);
+                return response.user;
+            })
+            .catch((error) => {
+                setFirebaseError(error);
+                return error
+            });
+    };
 
     const signout = () => {
         return firebase
@@ -89,14 +108,14 @@ function useProvideAuth() {
                 setUser(false);
             })
             .catch((error) => {
-                setServerError(error);
+                setFirebaseError(error);
                 return error;
             })
     };
 
     return {
         user,
-        firebaseError: serverError,
+        firebaseError,
         login,
         signup,
         signout

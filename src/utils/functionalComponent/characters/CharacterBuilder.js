@@ -1,6 +1,6 @@
 import React from "react";
 import useFifthEdition from "../../useFifthEdition";
-import validateFifthEdition from "../../validateFifthEdition";
+import validateFifthEdition from "../../validators/validateFifthEdition";
 import { useFirestore } from "../../useFirestore";
 import { useSelectiveFocus } from "../../useSelectiveFocus";
 import FormButton from "../../../components/FormButton";

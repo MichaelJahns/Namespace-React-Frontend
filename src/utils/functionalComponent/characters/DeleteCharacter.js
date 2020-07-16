@@ -1,6 +1,6 @@
 import React from "react";
 import useDeleteValidation from "../../useDeleteValidation";
-import validateDelete from "../../validateDelete";
+import validateDelete from "../../validators/validateDelete";
 import { useSelectiveFocus } from '../../useSelectiveFocus';
 import FormButton from "../../../components/FormButton";
 import ComponentButton from "../../../components/ComponentButton";

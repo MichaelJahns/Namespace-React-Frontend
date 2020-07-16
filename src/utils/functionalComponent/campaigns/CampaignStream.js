@@ -1,15 +1,25 @@
 import React from 'react';
 import StreamHeader from '../../../components/StreamHeader';
 
+// MUI
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+
+
 export default function AccountStream(props) {
     return (
         <aside>
-            <ul>
+            <List>
                 <StreamHeader header="Campaigns" />
-                <li> My Campaigns </li>
-                <li> Browse </li>
-                <li> Other Things Maybe </li>
-            </ul>
+                <ListItem> My Campaigns </ListItem>
+                <Divider />
+                <ListItem> Browse </ListItem>
+                <Divider />
+                <ListItem> Other Things Maybe </ListItem>
+                <Divider />
+            </List>
         </aside>
     )
 }

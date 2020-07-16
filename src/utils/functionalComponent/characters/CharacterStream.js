@@ -4,6 +4,7 @@ import { useSelectiveFocus } from "../../useSelectiveFocus";
 import { useFirestore } from "../../useFirestore";
 import AddListItem from "../../../components/AddListItem";
 import StreamHeader from '../../../components/StreamHeader';
+import StreamFooter from '../../../components/StreamFooter';
 
 
 export default function CharacterStream(props) {
@@ -56,6 +57,7 @@ export default function CharacterStream(props) {
             <ul>
                 <Suspense fallback={<h1>Loading characters...</h1>}>
                     <StreamHeader header="Characters" />
+
                     {roster}
                 </Suspense>
             </ul>

@@ -1,35 +1,67 @@
 import React from "react";
-import '../../resources/css/signin.css'
-import { useView } from './../useView';
+import { Link } from 'react-router-dom'
+import '../../resources/css/navbar.css'
+
+import { makeStyles, useTheme } from '@material-ui/core/styles'
+
 
 export default function DashboardNavigation() {
-    const { show } = useView();
+    const theme = useTheme();
+    const useStyles = makeStyles({
+        bar: {
+            backgroundColor: theme.palette.component.main,
+            // color: theme.palette.component.,
+            minWidth: '6vw',
+            order: 0,
+            minHeight: '100vh',
+            maxHeight: '100vh',
+        },
+        list: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-evenly',
+            overflowX: 'hidden',
+            /* align-content: center; */
 
+            height: '100%'
+        },
+        listItem: {
+            padding: 17,
+            margin: 'auto',
+            color: theme.palette.component.mainText,
+            borderRadius: 20,
+            boxShadow:
+                '-3px -3px 3px 0 #414754, 3px 3px 3px 0px #14161A'
+        }
+    })
+    const classes = useStyles();
     return (
-        <div className='Navigation'>
-            <ul>
-                <li title="Characters"
-                    className="charactersIcon dashboardNavigationButton"
-                    onClick={() => show(0)}>
-                    Character Viewer </li>
+        // <div className="Navigation" >
+        <div className={classes.bar}>
+            <ul className={classes.list}>
+                <Link to="/characters">
+                    <li title="Characters"
+                        className={"charactersIcon " + classes.listItem}>
+                        Character Viewer </li>
+                </Link>
 
-                <li title="Events"
-                    className="eventIcon dashboardNavigationButton"
-                    onClick={() => show(1)}>
-                    Event Viewer</li>
-
-                <li title="Campaigns"
-                    className="campaignIcon dashboardNavigationButton"
-                    onClick={() => show(2)}>
-                    Campaign Viewer </li>
-
-                <li title="Account"
-                    className="userIcon dashboardNavigationButton"
-                    onClick={() => show(3)}>
-                    User Account Viewer
-                </li>
+                <Link to="/events">
+                    <li title="Events"
+                        className={"eventIcon " + classes.listItem}>
+                        Event Viewer</li>
+                </Link>
+                <Link to="/campaigns">
+                    <li title="Campaigns"
+                        className={"campaignIcon " + classes.listItem}>
+                        Campaign Viewer </li>
+                </Link>
+                <Link to="/account">
+                    <li title="Account"
+                        className={"userIcon " + classes.listItem}>
+                        User Account Viewer </li>
+                </Link>
             </ul>
-        </div>
+        </div >
     );
 }
 
