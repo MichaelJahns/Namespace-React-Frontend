@@ -4,7 +4,7 @@ import './resources/css/Main.css'
 import Head from './components/Head';
 import View from './utils/functionalComponent/View';
 
-function App() {
+export function App() {
   return (
     <React.Fragment>
       <header className="App-Header">
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+

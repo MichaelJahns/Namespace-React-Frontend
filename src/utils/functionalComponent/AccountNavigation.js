@@ -1,26 +1,27 @@
 import React from "react";
-import { useAuth } from '../useAuth';
 import useSelectiveFocus from "../useSelectiveFocus";
 import Register from "./Register";
 import '../../resources/css/signin.css'
 
 function AccountNavigation() {
-    const firebase = useAuth();
-    const { isPortalVisible, togglePortal } = useSelectiveFocus();
+
+    function togglePortal(){
+        console.log("toggle")
+    }
     return (
         <React.Fragment>
-            {firebase.user ?
+         
                 <h4
                     onClick={togglePortal}
-                > {firebase.user.email} </h4>
-                :
+                > User Email </h4>
+                
                 <h4
                     onClick={togglePortal}
                 > Account </h4>
-            }
-            {isPortalVisible &&
+            
+         
                 <Register />
-            }
+            
         </React.Fragment>
 
     );

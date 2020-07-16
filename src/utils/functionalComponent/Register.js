@@ -2,7 +2,6 @@ import React from "react";
 
 import useFormValidation from "../useFormValidation";
 import validateAuth from "../validateAuth";
-import { useAuth } from '../useAuth'
 
 
 const INITIAL_STATE = {
@@ -11,7 +10,6 @@ const INITIAL_STATE = {
 };
 
 function Register() {
-    const firebase = useAuth();
     const {
         handleSignIn,
         handleSignUp,
@@ -20,7 +18,7 @@ function Register() {
         values,
         errors,
         isSubmitting
-    } = useFormValidation(INITIAL_STATE, validateAuth, firebase);
+    } = useFormValidation(INITIAL_STATE, validateAuth);
 
     return (
         <div className="signIn">
@@ -56,11 +54,11 @@ function Register() {
                     />
                     Password
                     {errors.password && <p className="error-text"> {errors.password} </p>}
-                    {firebase.firebaseError && <p className="error-text"> {firebase.firebaseError.message} </p>}
+                    {/* {firebase.firebaseError && <p className="error-text"> {firebase.firebaseError.message} </p>} */}
                 </label>
 
-                <p onClick={() => firebase.signout()}> signout </p>
-                <p onClick={() => firebase.signup(values.email, values.password)}> signup </p>
+                {/* <p onClick={() => firebase.signout()}> signout </p> */}
+                {/* <p onClick={() => firebase.signup(values.email, values.password)}> signup </p> */}
 
                 <button disabled={isSubmitting} onClick={handleSignIn}>
                     Sign in

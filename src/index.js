@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './resources/css/index.css';
 import './resources/css/reset.css';
-import App from './App';
+import { App } from './App';
 import * as serviceWorker from './serviceWorker';
-import { ProvideFirebaseAuth } from './utils/useAuth';
-import { ProvideFirestore } from './utils/useFirestore'
+// import { ProvideFirebaseAuth } from './utils/useAuth';
+// import { ProvideFirestore } from './utils/useFirestore'
 import { ProvideSelectiveContext } from './utils/useSelectiveFocus'
 import { ProvideView } from './utils/useView'
 
@@ -13,15 +13,11 @@ import { ProvideView } from './utils/useView'
 require('dotenv').config();
 
 ReactDOM.render(
-    <ProvideFirebaseAuth>
-        <ProvideFirestore>
             <ProvideView>
-                <ProvideSelectiveContext>
+                {/* <ProvideSelectiveContext> */}
                     <App />
-                </ProvideSelectiveContext>
-            </ProvideView>
-        </ProvideFirestore>
-    </ProvideFirebaseAuth>,
+                {/* </ProvideSelectiveContext> */}
+            </ProvideView>,
     document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

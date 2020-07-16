@@ -1,14 +1,14 @@
 import React, { useState, useCallback, useContext, createContext } from "react";
 
-const View = createContext()
+const ViewContext = createContext()
 
 export function ProvideView({ children }) {
     const view = useProvideView();
-    return <View.Provider value={view}>  {children}  </View.Provider>
+    return <ViewContext.Provider value={view}>  {children}  </ViewContext.Provider>
 };
 
 export const useView = () => {
-    return useContext(View);
+    return useContext(ViewContext);
 };
 
 export default function useProvideView() {
