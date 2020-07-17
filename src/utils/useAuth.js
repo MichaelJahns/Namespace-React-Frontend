@@ -65,21 +65,7 @@
 //             });
 //     };
 
-//     const signup = (data) => {
-//         console.log(data);
-//         axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
-//         axios
-//             .post('/createUser', data)
-//             .then(response => {
-//                 setAuthorizationHeader(response.data);
-//                 setUser(response.data);
-//                 console.log("success")
-//             })
-//             .catch(error => {
-//                 console.log(error)
-//                 setServerError(error.code)
-//             });
-//     }
+
 
 //     const signout = () => {
 //         return firebase

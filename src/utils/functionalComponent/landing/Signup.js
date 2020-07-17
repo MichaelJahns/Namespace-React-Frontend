@@ -8,7 +8,6 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
 import useFormValidation from "../../useFormValidation";
-import validateAuth from "../../validators/validateAuth";
 
 const INITIAL_STATE = {
     email: "tester@test.com",
@@ -87,7 +86,7 @@ function Signup() {
         handleBlur,
         values,
         errors
-        } = useFormValidation(INITIAL_STATE, validateAuth);
+        } = useFormValidation(INITIAL_STATE);
 
     const classes = useStyles();
     return (
