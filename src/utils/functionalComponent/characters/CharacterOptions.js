@@ -1,27 +1,18 @@
 import React from 'react';
 import FormButton from '../../../components/FormButton';
 import DeleteCharacter from './DeleteCharacter';
-import { useSelectiveFocus } from '../../useSelectiveFocus';
 
 export default function CharacterOptions(props) {
-    const {
-        isCharacterDeleteVisible,
-        toggleCharacterBuilderVisible,
-        toggleCharacterDeleteVisible } = useSelectiveFocus();
-
     return (
         <div className="characterViewOptions">
             <FormButton
-                name='edit'
-                onClick={toggleCharacterBuilderVisible} />
+                name='edit' />
             <FormButton
-                name="delete"
-                onClick={() => toggleCharacterDeleteVisible()} />
+                name="delete" />
 
-            {isCharacterDeleteVisible &&
                 <DeleteCharacter
                     name={props.name} />
-            }
+            
 
         </div>
     );

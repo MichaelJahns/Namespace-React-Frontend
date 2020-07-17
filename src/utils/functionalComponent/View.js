@@ -2,7 +2,6 @@ import React from "react";
 import LandingView from './views/LandingView';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import Dashboard from '../../components/Dashboard';
-import { useAuth } from '../useAuth';
 
 const theme = createMuiTheme({
     palette: {
@@ -84,16 +83,14 @@ const theme = createMuiTheme({
 });
 
 function View() {
-    const { user } = useAuth();
 
     return (
         <ThemeProvider theme={theme} >
             <main className="content">
-                {user ?
-                    <Dashboard />
-                    :
+                    {/* <Dashboard /> */}
+                    
                     <LandingView />
-                }
+                
             </main>
         </ThemeProvider>
     );

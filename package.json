@@ -46,7 +46,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MichaelJahns/Namespace-Frontend/issues"
-  },
-  "homepage": "https://github.com/MichaelJahns/Namespace-Frontend#readme",
-  "proxy": "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
+  }
 }

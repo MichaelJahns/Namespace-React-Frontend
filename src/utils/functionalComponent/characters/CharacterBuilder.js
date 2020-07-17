@@ -1,25 +1,21 @@
 import React from "react";
-import useFifthEdition from "../../useFifthEdition";
-import validateFifthEdition from "../../validators/validateFifthEdition";
-import { useFirestore } from "../../useFirestore";
-import { useSelectiveFocus } from "../../useSelectiveFocus";
-import FormButton from "../../../components/FormButton";
-import FancyInput from '../FancyInput';
+// import useFifthEdition from "../../useFifthEdition";
+// import validateFifthEdition from "../../validators/validateFifthEdition";
+// import FormButton from "../../../components/FormButton";
+// import FancyInput from '../FancyInput';
 import "../../../resources/css/input.css"
 
 export default function CharacterView() {
-    const { characterView, toggleCharacterBuilderHidden } = useSelectiveFocus();
-    const {
-        handleChange,
-        handleBlur,
-        values,
-        errors,
-    } = useFifthEdition(characterView, validateFifthEdition);
-    const firestore = useFirestore();
+    // const {
+    //     handleChange,
+    //     handleBlur,
+    //     values,
+    //     errors,
+    // } = useFifthEdition(characterView, validateFifthEdition);
     return (
         <section>
             <form>
-                <FancyInput
+                {/* <FancyInput
                     name="name"
                     type="text"
                     prompt="What is your characters name"
@@ -50,7 +46,7 @@ export default function CharacterView() {
                         )
                     }}
                     disabled={errors}
-                />
+                /> */}
             </form>
 
         </section >
