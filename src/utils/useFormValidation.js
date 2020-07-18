@@ -58,7 +58,6 @@ function useFormValidation(initialState) {
                     console.log(response);
                     setAuthorizationHeader(response.data);
                     setUser(response.data);
-                    console.log("success")
                 })
                 .catch(error => {
                     console.log(error)
