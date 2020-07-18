@@ -2,7 +2,6 @@ import React from "react";
 
 import useFormValidation from "../useFormValidation";
 import validateAuth from "../validators/validateAuth";
-import { useAuth } from '../useAuth'
 
 import { Link } from 'react-router-dom'
 
@@ -17,7 +16,6 @@ function Register() {
     const firebase = useAuth();
     const {
         handleSignIn,
-        handleSignUp,
         handleChange,
         handleBlur,
         values,

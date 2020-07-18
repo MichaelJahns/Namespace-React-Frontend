@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 // MUI
-import { withStyles, makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
 import useFormValidation from "../../useFormValidation";
-import validateAuth from "../../validators/validateAuth";
-
-import { useAuth } from '../../useAuth'
 
 const INITIAL_STATE = {
     email: "tester@test.com",
@@ -82,7 +79,6 @@ function Signup() {
         }
 
     })
-    const { firebase, serverError } = useAuth();
 
     const {
         handleSignUp,
@@ -90,8 +86,8 @@ function Signup() {
         handleBlur,
         values,
         errors,
-        isSubmitting
-    } = useFormValidation(INITIAL_STATE, validateAuth, firebase);
+        serverError
+        } = useFormValidation(INITIAL_STATE);
 
     const classes = useStyles();
     return (
@@ -144,6 +140,7 @@ function Signup() {
                     error={!!errors.cpassword, !!errors.matchingPassword} />
 
                 <br />
+
                 <p> Would be here. {serverError} </p>
 
                 <Typography variant="caption" className={classes.signatureLine}>

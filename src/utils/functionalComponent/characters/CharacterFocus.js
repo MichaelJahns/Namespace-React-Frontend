@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CharacterCardUpper from '../../../components/CharacterCardUpper'
 import CharacterCardLower from '../../../components/CharacterCardLower'
-import { useSelectiveFocus } from "../../useSelectiveFocus";
 import CharacterOptions from "./CharacterOptions";
 export default function CharacterFocus(props) {
-    const { characterView } = useSelectiveFocus();
-    useEffect(() => {
-    }, [])
+    const characterView = {
+        name : "chad",
+        title: "friend",
+        notes: "friendly",
+        relationships: "seeking"
+    }
 
     return (
         <section className="scrollable">

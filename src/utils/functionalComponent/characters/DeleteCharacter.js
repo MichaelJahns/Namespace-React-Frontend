@@ -1,27 +1,26 @@
 import React from "react";
-import useDeleteValidation from "../../useDeleteValidation";
-import validateDelete from "../../validators/validateDelete";
-import { useSelectiveFocus } from '../../useSelectiveFocus';
-import FormButton from "../../../components/FormButton";
-import ComponentButton from "../../../components/ComponentButton";
+// import useDeleteValidation from "../../useDeleteValidation";
+// import validateDelete from "../../validators/validateDelete";
+// import { useSelectiveFocus } from '../../useSelectiveFocus';
+// import FormButton from "../../../components/FormButton";
+// import ComponentButton from "../../../components/ComponentButton";
 
-const INITIAL_STATE = {
-    deleteValidation: ""
-};
+// const INITIAL_STATE = {
+//     deleteValidation: ""
+// };
 
 export default function DeleteCharacter(props) {
-    const { characterView, toggleCharacterDeleteVisible } = useSelectiveFocus();
-    const {
-        handleDelete,
-        handleChange,
-        handleBlur,
-        value,
-        errors,
-    } = useDeleteValidation(INITIAL_STATE, validateDelete, characterView.name);
+    // const {
+    //     handleDelete,
+    //     handleChange,
+    //     handleBlur,
+    //     value,
+    //     errors,
+    // } = useDeleteValidation(INITIAL_STATE, validateDelete, characterView.name);
 
     return (
         <div className="deleteModule">
-            <form>
+            {/* <form>
                 <div className="deleteModuleTitle">
                     <h3> DELETE </h3>
                     <ComponentButton
@@ -50,7 +49,7 @@ export default function DeleteCharacter(props) {
                         }}
                     />
                 }
-            </form>
+            </form> */}
         </div>
 
     );

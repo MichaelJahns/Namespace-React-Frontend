@@ -1,12 +1,26 @@
-import React from "react";
-import { useAuth } from './useAuth';
+import React, {useState} from "react";
+import validateAuth from "../utils/validators/validateAuth"
 
-function useFormValidation(initialState, validate, firebase) {
+
+import axios from 'axios';
+
+
+
+function useFormValidation(initialState) {
     const [values, setValues] = React.useState(initialState);
     const [errors, setErrors] = React.useState({});
     const [isSubmitting, setSubmitting] = React.useState(false);
 
-    const { signup, signout, login } = useAuth();
+
+    const [user, setUser] = useState(null)
+    const [serverError, setServerError] = useState(null);
+
+
+    const setAuthorizationHeader = (token) => {
+        console.log(token);
+        // const FBIdToken = `Bearer ${token}`;
+        // axios.defaults.headers.common['Authorization'] = FBIdToken;
+    };
 
     React.useEffect(() => {
         if (isSubmitting) {
@@ -20,19 +34,39 @@ function useFormValidation(initialState, validate, firebase) {
     }, [values, errors, isSubmitting]);
 
     function handleLogin(event) {
-        const validationErrors = validate(values);
+        const validationErrors = validateAuth(values);
         setErrors(validationErrors);
         setSubmitting(true);
-        login(values);
+        // login(values);
     }
 
     function handleSignUp(event) {
         console.log("one")
-        const validationErrors = validate(values);
+        const validationErrors = validateAuth(values);
         setErrors(validationErrors);
         setSubmitting(true);
         signup(values);
     }
+
+    const signup = (data) => {
+        console.log("two")
+            console.log(data);
+            axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
+            axios
+                .post('/createUser', data)
+                .then(response => {
+                    console.log(response);
+                    setAuthorizationHeader(response.data);
+                    setUser(response.data);
+                    console.log("success")
+                })
+                .catch(error => {
+                    console.log(error)
+                    console.log(error.message)
+                    setServerError(error.message)
+                });
+        }
+        
 
     function handleChange(event) {
         setValues({
@@ -42,7 +76,7 @@ function useFormValidation(initialState, validate, firebase) {
     }
 
     function handleBlur(event) {
-        const validationErrors = validate(values);
+        const validationErrors = validateAuth(values);
         setErrors(validationErrors);
     }
 
@@ -53,7 +87,8 @@ function useFormValidation(initialState, validate, firebase) {
         handleBlur,
         values,
         errors,
-        isSubmitting
+        isSubmitting,
+        serverError
     }
 }
 
