@@ -1,96 +1,13 @@
-[debug] [2019-11-27T21:51:58.881Z] ----------------------------------------------------------------------
-[debug] [2019-11-27T21:51:58.885Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2019-11-27T21:51:58.886Z] CLI Version:   7.0.0
-[debug] [2019-11-27T21:51:58.886Z] Platform:      linux
-[debug] [2019-11-27T21:51:58.887Z] Node Version:  v10.13.0
-[debug] [2019-11-27T21:51:58.890Z] Time:          Wed Nov 27 2019 13:51:58 GMT-0800 (Pacific Standard Time)
-[debug] [2019-11-27T21:51:58.890Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2019-11-27T21:51:58.916Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-11-27T21:51:58.918Z] > authorizing via signed-in user
-[debug] [2019-11-27T21:51:58.919Z] [iam] checking project namespace-88d70 for permissions ["firebase.projects.get"]
-[debug] [2019-11-27T21:51:58.924Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/namespace-88d70:testIamPermissions  
-
-[debug] [2019-11-27T21:51:59.216Z] <<< HTTP RESPONSE 200
-[debug] [2019-11-27T21:51:59.220Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/namespace-88d70  
+[debug] [2020-07-17T23:55:41.256Z] ----------------------------------------------------------------------
+[debug] [2020-07-17T23:55:41.257Z] Command:       /home/michorjay/.nvm/versions/node/v14.5.0/bin/node /home/michorjay/.nvm/versions/node/v14.5.0/bin/firebase use --add
+[debug] [2020-07-17T23:55:41.258Z] CLI Version:   8.4.3
+[debug] [2020-07-17T23:55:41.258Z] Platform:      linux
+[debug] [2020-07-17T23:55:41.258Z] Node Version:  v14.5.0
+[debug] [2020-07-17T23:55:41.258Z] Time:          Fri Jul 17 2020 16:55:41 GMT-0700 (Pacific Daylight Time)
+[debug] [2020-07-17T23:55:41.259Z] ----------------------------------------------------------------------
+[debug] [2020-07-17T23:55:41.259Z] 
+[debug] [2020-07-17T23:55:41.264Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-07-17T23:55:41.265Z] > authorizing via signed-in user
+[debug] [2020-07-17T23:55:41.268Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=1000  
  
-[debug] [2019-11-27T21:51:59.474Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/mnt/c/Users/jahns/projects/javascript/Personal Projects/my-app'...
-[info] 
-[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
-[debug] [2019-11-27T21:51:59.538Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301430840067/clients/_:getWebAppConfig  
- 
-[debug] [2019-11-27T21:51:59.540Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301430840067:getServerAppConfig  
- 
-[debug] [2019-11-27T21:51:59.822Z] <<< HTTP RESPONSE 200
-[info] ✔  functions: Emulator started at http://localhost:5001
-[debug] [2019-11-27T21:52:00.037Z] <<< HTTP RESPONSE 200
-[info] i  functions: Watching "/mnt/c/Users/jahns/projects/javascript/Personal Projects/my-app/functions" for Cloud Functions...
-[info] i  hosting: Serving hosting files from: public
-[info] ✔  hosting: Local server: http://localhost:5000
-[debug] [2019-11-27T21:52:01.044Z] Functions runtime initialized.
-[debug] [2019-11-27T21:52:01.045Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
-[debug] [2019-11-27T21:52:01.289Z] firebase-admin has been stubbed.
-[warn] ⚠  Error: Cannot find module '/mnt/c/Users/jahns/projects/javascript/Personal Projects/my-app/functions'
-    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:580:15)
-    at Function.Module._load (internal/modules/cjs/loader.js:506:25)
-    at Module.require (internal/modules/cjs/loader.js:636:17)
-    at require (internal/modules/cjs/helpers.js:20:18)
-    at /usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:532:33
-    at Generator.next (<anonymous>)
-    at fulfilled (/usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:4:58)
-    at process._tickCallback (internal/process/next_tick.js:68:7)
-    at Function.Module.runMain (internal/modules/cjs/loader.js:744:11)
-    at startup (internal/bootstrap/node.js:285:19)
-[warn] ⚠  We were unable to load your functions code. (see above)
-   - It appears your code is written in Typescript, which must be compiled before emulation.
-   - You may be able to run "npm run build" in your functions directory to resolve this.
-[debug] [2019-11-27T21:58:51.336Z] ----------------------------------------------------------------------
-[debug] [2019-11-27T21:58:51.339Z] Command:       /usr/bin/node /usr/bin/firebase serve
-[debug] [2019-11-27T21:58:51.340Z] CLI Version:   7.0.0
-[debug] [2019-11-27T21:58:51.340Z] Platform:      linux
-[debug] [2019-11-27T21:58:51.341Z] Node Version:  v10.13.0
-[debug] [2019-11-27T21:58:51.343Z] Time:          Wed Nov 27 2019 13:58:51 GMT-0800 (Pacific Standard Time)
-[debug] [2019-11-27T21:58:51.343Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2019-11-27T21:58:51.365Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-11-27T21:58:51.367Z] > authorizing via signed-in user
-[debug] [2019-11-27T21:58:51.367Z] [iam] checking project namespace-88d70 for permissions ["firebase.projects.get"]
-[debug] [2019-11-27T21:58:51.372Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/namespace-88d70:testIamPermissions  
-
-[debug] [2019-11-27T21:58:52.044Z] <<< HTTP RESPONSE 200
-[debug] [2019-11-27T21:58:52.050Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/namespace-88d70  
- 
-[debug] [2019-11-27T21:58:52.251Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from '/mnt/c/Users/jahns/projects/javascript/Personal Projects/my-app'...
-[info] 
-[warn] ⚠  Your requested "node" version "8" doesn't match your global version "10"
-[debug] [2019-11-27T21:58:52.318Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301430840067/clients/_:getWebAppConfig  
- 
-[debug] [2019-11-27T21:58:52.320Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/301430840067:getServerAppConfig  
- 
-[debug] [2019-11-27T21:58:52.789Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: public
-[info] ✔  hosting: Local server: http://localhost:5000
-[debug] [2019-11-27T21:58:57.546Z] <<< HTTP RESPONSE 200
-[info] ✔  functions: Emulator started at http://localhost:5001
-[info] i  functions: Watching "/mnt/c/Users/jahns/projects/javascript/Personal Projects/my-app/functions" for Cloud Functions...
-[debug] [2019-11-27T21:58:58.429Z] Functions runtime initialized.
-[debug] [2019-11-27T21:58:58.429Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
-[debug] [2019-11-27T21:58:58.650Z] firebase-admin has been stubbed.
-[warn] ⚠  Error: Cannot find module '/mnt/c/Users/jahns/projects/javascript/Personal Projects/my-app/functions'
-    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:580:15)
-    at Function.Module._load (internal/modules/cjs/loader.js:506:25)
-    at Module.require (internal/modules/cjs/loader.js:636:17)
-    at require (internal/modules/cjs/helpers.js:20:18)
-    at /usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:532:33
-    at Generator.next (<anonymous>)
-    at fulfilled (/usr/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:4:58)
-    at process._tickCallback (internal/process/next_tick.js:68:7)
-    at Function.Module.runMain (internal/modules/cjs/loader.js:744:11)
-    at startup (internal/bootstrap/node.js:285:19)
-[warn] ⚠  We were unable to load your functions code. (see above)
-   - It appears your code is written in Typescript, which must be compiled before emulation.
-   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-07-17T23:55:41.548Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 17 Jul 2020 23:55:41 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}

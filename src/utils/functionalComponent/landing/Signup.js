@@ -85,7 +85,8 @@ function Signup() {
         handleChange,
         handleBlur,
         values,
-        errors
+        errors,
+        serverError
         } = useFormValidation(INITIAL_STATE);
 
     const classes = useStyles();
@@ -139,6 +140,8 @@ function Signup() {
                     error={!!errors.cpassword, !!errors.matchingPassword} />
 
                 <br />
+
+                <p> Would be here. {serverError} </p>
 
                 <Typography variant="caption" className={classes.signatureLine}>
                     Hereby I, <span className={classes.signature}> {values.displayName}, </span>

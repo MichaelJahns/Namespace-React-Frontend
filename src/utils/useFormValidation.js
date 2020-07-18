@@ -48,9 +48,6 @@ function useFormValidation(initialState) {
         signup(values);
     }
 
-
-
-
     const signup = (data) => {
         console.log("two")
             console.log(data);
@@ -58,13 +55,15 @@ function useFormValidation(initialState) {
             axios
                 .post('/createUser', data)
                 .then(response => {
+                    console.log(response);
                     setAuthorizationHeader(response.data);
                     setUser(response.data);
                     console.log("success")
                 })
                 .catch(error => {
                     console.log(error)
-                    setServerError(error.code)
+                    console.log(error.message)
+                    setServerError(error.message)
                 });
         }
         
@@ -88,7 +87,8 @@ function useFormValidation(initialState) {
         handleBlur,
         values,
         errors,
-        isSubmitting
+        isSubmitting,
+        serverError
     }
 }
 
