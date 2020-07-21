@@ -1,5 +1,4 @@
 // import React, { useState, useEffect, useContext, createContext } from 'react'
-// import axios from 'axios';
 // import * as firebase from 'firebase';
 // import app from 'firebase/app'
 // import 'firebase/firestore'
@@ -29,7 +28,6 @@
 
 // function useProvideAuth() {
 //     const [user, setUser] = useState(null)
-//     const [serverError, setServerError] = useState(null);
 
 //     const setAuthorizationHeader = (token) => {
 //         console.log(token);

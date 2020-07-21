@@ -55,9 +55,21 @@ function useFormValidation(initialState) {
             axios
                 .post('/createUser', data)
                 .then(response => {
-                    console.log(response);
-                    setAuthorizationHeader(response.data);
-                    setUser(response.data);
+                    console.log(response)
+                    console.log(response.status);
+                    switch(response.status) {
+                        case 200:
+                         console.log("response but no new character")
+                         setServerError(response.data.error)
+                          break;
+                        case 201:
+                          console.log("character created")
+                          setAuthorizationHeader(response.data);
+                          setUser(response.data);
+                          break;
+                        default:
+                          console.log("Unhandled exception")
+                      }
                 })
                 .catch(error => {
                     console.log(error)
