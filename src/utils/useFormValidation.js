@@ -92,7 +92,7 @@ function useFormValidation(initialState) {
     }
 
     return {
-        handleSignIn: handleLogin,
+        handleLogin,
         handleSignUp,
         handleChange,
         handleBlur,

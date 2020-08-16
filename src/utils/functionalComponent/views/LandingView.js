@@ -15,6 +15,7 @@ import {
 import About from '../landing/About';
 import Home from '../landing/Home';
 import Signup from '../landing/Signup';
+import Login from '../landing/Login';
 
 export default function LandingView() {
     const theme = useTheme();
@@ -35,7 +36,8 @@ export default function LandingView() {
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={About} />
                     <Route path="/signup" component={Signup} />
-                    <Redirect to="/signup" />
+                    <Route path="/login" component={Login} />
+                    <Redirect to="/" />
                 </Switch>
             </div>
 
