@@ -12,8 +12,8 @@ import { Link } from 'react-router-dom';
 import useFormValidation from "../../useFormValidation";
 
 const INITIAL_STATE = {
-    email: "tester@test.com",
-    password: "qwerqwer"
+    email: "dev@dev.dev",
+    password: "devlyfe"
 };
 
 function Login() {

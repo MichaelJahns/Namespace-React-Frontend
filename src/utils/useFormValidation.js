@@ -34,10 +34,11 @@ function useFormValidation(initialState) {
     }, [values, errors, isSubmitting]);
 
     function handleLogin(event) {
+        console.log("attempting login")
         const validationErrors = validateAuth(values);
         setErrors(validationErrors);
         setSubmitting(true);
-        // login(values);
+        login(values);
     }
 
     function handleSignUp(event) {
@@ -49,14 +50,10 @@ function useFormValidation(initialState) {
     }
 
     const signup = (data) => {
-        console.log("two")
-            console.log(data);
             axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
             axios
                 .post('/createUser', data)
                 .then(response => {
-                    console.log(response)
-                    console.log(response.status);
                     switch(response.status) {
                         case 200:
                          console.log("response but no new character")
@@ -77,6 +74,20 @@ function useFormValidation(initialState) {
                     setServerError(error.message)
                 });
         }
+
+        const login = (data) => {
+            axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
+                axios
+                    .post('/login', data)
+                    .then(response => {
+                        setUser(response.data.token)
+                    })
+                    .catch(error => {
+                        console.log(error)
+                        console.log(error.message)
+                        setServerError(error.message)
+                    });
+            }
         
 
     function handleChange(event) {
