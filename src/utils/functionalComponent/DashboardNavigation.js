@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import '../../resources/css/navbar.css'
 
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 
@@ -12,6 +11,7 @@ export default function DashboardNavigation() {
             backgroundColor: theme.palette.component.main,
             // color: theme.palette.component.,
             minWidth: '6vw',
+            maxWidth: '10vw',
             order: 0,
             minHeight: '100vh',
             maxHeight: '100vh',
@@ -36,7 +36,6 @@ export default function DashboardNavigation() {
     })
     const classes = useStyles();
     return (
-        // <div className="Navigation" >
         <div className={classes.bar}>
             <ul className={classes.list}>
                 <Link to="/characters">

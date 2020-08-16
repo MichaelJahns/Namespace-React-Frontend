@@ -12,13 +12,11 @@ import { Link } from 'react-router-dom';
 import useFormValidation from "../../useFormValidation";
 
 const INITIAL_STATE = {
-    email: "tester@test.com",
-    displayName: "Locke",
-    password: "qwerqwer",
-    confirmPassword: "qwerqwer"
+    email: "dev@dev.dev",
+    password: "devlyfe"
 };
 
-function Signup() {
+function Login() {
     const theme = useTheme();
 
     const useStyles = makeStyles({
@@ -83,7 +81,7 @@ function Signup() {
     })
 
     const {
-        handleSignUp,
+        handleLogin,
         handleChange,
         handleBlur,
         values,
@@ -97,7 +95,7 @@ function Signup() {
             <form className={classes.form}>
                 <p className={classes.tack}> </p>
                 <Typography variant="h2" className={classes.title}>
-                    Signup
+                    Login
                 </Typography>
                 <Divider />
                 <TextField
@@ -109,15 +107,7 @@ function Signup() {
                     helperText={errors.email}
                     error={!!errors.email}
                 />
-                <TextField
-                    name='displayName'
-                    label='Username'
-                    value={values.displayName}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    helperText={errors.displayName}
-                    error={!!errors.displayName}
-                />
+
                 <TextField
                     name='password'
                     type="password"
@@ -128,36 +118,19 @@ function Signup() {
                     helperText={errors.password}
                     error={!!errors.password}
                 />
-                <TextField
-                    name='confirmPassword'
-                    type="password"
-                    label='Confirm Password'
-                    value={values.confirmPassword}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    // This works fine it seems and eslint complains about the commas
-                    // eslint-disable-next-line no-sequences
-                    helperText={errors.cpassword, errors.matchingPassword}
-                    // eslint-disable-next-line no-sequences
-                    error={!!errors.cpassword, !!errors.matchingPassword} />
-
                 <br />
 
                 <p> Would be here. {serverError} </p>
 
-                <Typography variant="caption" className={classes.signatureLine}>
-                    Hereby I, <span className={classes.signature}> {values.displayName}, </span>
-                    do apply to
-                    </Typography>
                 <Button
-                    onClick={handleSignUp}
+                    onClick={handleLogin}
                     className={classes.submit}>
                     Join Namespace
                 </Button>
 
-            <Link to="/login" > 
+            <Link to="/signup" > 
                 <span> 
-                    Already have an account? Login 
+                    Need an Account? Signup!
                 </span>
             </Link>
 
@@ -166,6 +139,6 @@ function Signup() {
     );
 }   
 
-export default Signup;
+export default Login;
 
 

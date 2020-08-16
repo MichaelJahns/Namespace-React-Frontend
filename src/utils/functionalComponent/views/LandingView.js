@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from '../landing/Navigation';
 import Footer from "../landing/Footer";
 
 //MUI
@@ -15,6 +14,7 @@ import {
 import About from '../landing/About';
 import Home from '../landing/Home';
 import Signup from '../landing/Signup';
+import Login from '../landing/Login';
 
 export default function LandingView() {
     const theme = useTheme();
@@ -29,13 +29,13 @@ export default function LandingView() {
     const classes = useStyles();
     return (
         <React.Fragment>
-            <Navigation />
             <div className={classes.view}>
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={About} />
                     <Route path="/signup" component={Signup} />
-                    <Redirect to="/signup" />
+                    <Route path="/login" component={Login} />
+                    <Redirect to="/" />
                 </Switch>
             </div>
 

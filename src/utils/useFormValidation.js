@@ -34,10 +34,11 @@ function useFormValidation(initialState) {
     }, [values, errors, isSubmitting]);
 
     function handleLogin(event) {
+        console.log("attempting login")
         const validationErrors = validateAuth(values);
         setErrors(validationErrors);
         setSubmitting(true);
-        // login(values);
+        login(values);
     }
 
     function handleSignUp(event) {
@@ -49,15 +50,23 @@ function useFormValidation(initialState) {
     }
 
     const signup = (data) => {
-        console.log("two")
-            console.log(data);
             axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
             axios
                 .post('/createUser', data)
                 .then(response => {
-                    console.log(response);
-                    setAuthorizationHeader(response.data);
-                    setUser(response.data);
+                    switch(response.status) {
+                        case 200:
+                         console.log("response but no new character")
+                         setServerError(response.data.error)
+                          break;
+                        case 201:
+                          console.log("character created")
+                          setAuthorizationHeader(response.data);
+                          setUser(response.data);
+                          break;
+                        default:
+                          console.log("Unhandled exception")
+                      }
                 })
                 .catch(error => {
                     console.log(error)
@@ -65,6 +74,21 @@ function useFormValidation(initialState) {
                     setServerError(error.message)
                 });
         }
+
+        const login = (data) => {
+            axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
+                axios
+                    .post('/login', data)
+                    .then(response => {
+                        console.log(response.data.token)
+                        setUser(response.data.token)
+                    })
+                    .catch(error => {
+                        console.log(error)
+                        console.log(error.message)
+                        setServerError(error.message)
+                    });
+            }
         
 
     function handleChange(event) {
@@ -80,7 +104,8 @@ function useFormValidation(initialState) {
     }
 
     return {
-        handleSignIn: handleLogin,
+        user,
+        handleLogin,
         handleSignUp,
         handleChange,
         handleBlur,
