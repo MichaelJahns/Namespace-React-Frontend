@@ -80,6 +80,7 @@ function useFormValidation(initialState) {
                 axios
                     .post('/login', data)
                     .then(response => {
+                        console.log(response.data.token)
                         setUser(response.data.token)
                     })
                     .catch(error => {
@@ -103,6 +104,7 @@ function useFormValidation(initialState) {
     }
 
     return {
+        user,
         handleLogin,
         handleSignUp,
         handleChange,

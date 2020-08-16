@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from '../landing/Navigation';
 import Footer from "../landing/Footer";
 
 //MUI
@@ -30,7 +29,6 @@ export default function LandingView() {
     const classes = useStyles();
     return (
         <React.Fragment>
-            <Navigation />
             <div className={classes.view}>
                 <Switch>
                     <Route exact path="/" component={Home} />

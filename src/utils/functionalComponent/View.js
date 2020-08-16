@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LandingView from './views/LandingView';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
-import Dashboard from '../../components/Dashboard';
+import DashboardView from '../functionalComponent/views/DashboardView'
+import useFormValidation from '../useFormValidation';
+import Navigation from '../functionalComponent/landing/Navigation';
 
 const theme = createMuiTheme({
     palette: {
@@ -83,14 +85,21 @@ const theme = createMuiTheme({
 });
 
 function View() {
+    let {user} = useFormValidation();  
+
+    useEffect(() => {
+        console.log(user)
+    });
 
     return (
         <ThemeProvider theme={theme} >
             <main className="content">
-                    {/* <Dashboard /> */}
-                    
-                    <LandingView />
-                
+            <Navigation />
+                {user ?
+                <DashboardView />
+                :
+                <LandingView />
+                }   
             </main>
         </ThemeProvider>
     );

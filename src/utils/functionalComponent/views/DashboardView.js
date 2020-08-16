@@ -4,6 +4,7 @@ import CharacterView from './CharacterView';
 import EventView from './EventView';
 import CampaignView from './CampaignView';
 import AccountView from './AccountView';
+import DashboardNavigation from '../DashboardNavigation';
 
 import {
     Route,
@@ -14,6 +15,7 @@ import {
 export default function DashboardView() {
     return (
         <div className='dashboardView'>
+            <DashboardNavigation />
             <Switch>
                 <Route path="/characters" component={CharacterView} />
                 <Route path="/events" component={EventView} />
