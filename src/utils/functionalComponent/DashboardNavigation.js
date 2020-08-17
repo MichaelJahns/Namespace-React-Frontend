@@ -15,6 +15,7 @@ export default function DashboardNavigation() {
             order: 0,
             minHeight: '100vh',
             maxHeight: '100vh',
+            marginRight: '0'
         },
         list: {
             display: 'flex',

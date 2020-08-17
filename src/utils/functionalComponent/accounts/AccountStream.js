@@ -6,12 +6,16 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 
+import useFormValidation from '../../useFormValidation';
+
 export default function AccountStream(props) {
     // TODO: Create Two Stream patterns, one stream with options for authed users, another 
     // stream with non-authed users options
 
+    const {getUser} = useFormValidation();
+
     return (
-        <aside>
+        <React.Fragment>
             <List>
                 <StreamHeader header="Account" />
                 <ListItem> Profile </ListItem>
@@ -19,8 +23,8 @@ export default function AccountStream(props) {
                 <ListItem> Settings </ListItem>
 
                 <Divider />
-                {/* <ListItem onClick={() => signout()}> Log Out </ListItem> */}
+                <ListItem onClick={() => getUser('Dev')}> Test </ListItem>
             </List>
-        </aside >
+        </React.Fragment>
     )
 }

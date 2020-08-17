@@ -15,7 +15,6 @@ import {
 export default function DashboardView() {
     return (
         <div className='dashboardView'>
-            <DashboardNavigation />
             <Switch>
                 <Route path="/characters" component={CharacterView} />
                 <Route path="/events" component={EventView} />
@@ -23,6 +22,8 @@ export default function DashboardView() {
                 <Route path="/account" component={AccountView} />
                 <Redirect to="/characters" />
             </Switch>
+            <DashboardNavigation />
+
         </div>
     );
 }

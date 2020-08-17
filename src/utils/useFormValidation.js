@@ -41,6 +41,26 @@ function useFormValidation(initialState) {
         signup(values);
     }
 
+    const getUser = (data) =>{
+        axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
+        axios
+        .post('/getUser', data)
+        .then(response => {
+            switch(response.status) {
+                case 200:
+                 console.log("response")
+                  break;
+                case 201:
+                  console.log("character created")
+                  break;
+                default:
+                  console.log("Unhandled exception")
+              }
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
     const signup = (data) => {
             axios.defaults.baseURL = "https://us-central1-namespace-fa5e1.cloudfunctions.net/api"
             axios
@@ -90,6 +110,7 @@ function useFormValidation(initialState) {
     }
 
     return {
+        getUser,
         handleLogin,
         handleSignUp,
         handleChange,
