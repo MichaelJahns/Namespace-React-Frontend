@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import validateAuth from "../utils/validators/validateAuth"
+import{useAuth} from "../utils/useAuth";
 
 
 import axios from 'axios';
-
-
 
 function useFormValidation(initialState) {
     const [values, setValues] = React.useState(initialState);
@@ -12,15 +11,9 @@ function useFormValidation(initialState) {
     const [isSubmitting, setSubmitting] = React.useState(false);
 
 
-    const [user, setUser] = useState(null)
     const [serverError, setServerError] = useState(null);
 
-
-    const setAuthorizationHeader = (token) => {
-        console.log(token);
-        // const FBIdToken = `Bearer ${token}`;
-        // axios.defaults.headers.common['Authorization'] = FBIdToken;
-    };
+    const {setUser} = useAuth();
 
     React.useEffect(() => {
         if (isSubmitting) {
@@ -42,7 +35,6 @@ function useFormValidation(initialState) {
     }
 
     function handleSignUp(event) {
-        console.log("one")
         const validationErrors = validateAuth(values);
         setErrors(validationErrors);
         setSubmitting(true);
@@ -61,16 +53,13 @@ function useFormValidation(initialState) {
                           break;
                         case 201:
                           console.log("character created")
-                          setAuthorizationHeader(response.data);
-                          setUser(response.data);
+                          setUser(response.data.token)
                           break;
                         default:
                           console.log("Unhandled exception")
                       }
                 })
                 .catch(error => {
-                    console.log(error)
-                    console.log(error.message)
                     setServerError(error.message)
                 });
         }
@@ -80,12 +69,9 @@ function useFormValidation(initialState) {
                 axios
                     .post('/login', data)
                     .then(response => {
-                        console.log(response.data.token)
-                        setUser(response.data.token)
+                        setUser(response.data.token);
                     })
                     .catch(error => {
-                        console.log(error)
-                        console.log(error.message)
                         setServerError(error.message)
                     });
             }
@@ -104,7 +90,6 @@ function useFormValidation(initialState) {
     }
 
     return {
-        user,
         handleLogin,
         handleSignUp,
         handleChange,

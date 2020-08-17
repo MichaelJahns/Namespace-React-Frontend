@@ -1,88 +1,24 @@
-// import React, { useState, useEffect, useContext, createContext } from 'react'
-// import * as firebase from 'firebase';
-// import app from 'firebase/app'
-// import 'firebase/firestore'
-// require("firebase/firestore");
+import React, { useState, useEffect, useContext, createContext } from 'react'
 
-// if (!app.apps.length) {
-//     firebase.initializeApp({
-//         apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-//         authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-//         databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-//         projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-//         storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-//         appId: process.env.REACT_APP_FIREBASE_APP_ID,
-//         messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-//     })
-// }
-// const FirebaseContext = createContext()
+const AuthContext = createContext()
 
-// export function ProvideFirebaseAuth({ children }) {
-//     const auth = useProvideAuth();
-//     return <FirebaseContext.Provider value={auth}>  {children}  </FirebaseContext.Provider>
-// };
+export function ProvideAuth({ children }) {
+    const auth = useProvideAuth();
+    return <AuthContext.Provider value={auth}>  {children}  </AuthContext.Provider>
+};
 
-// export const useAuth = () => {
-//     return useContext(FirebaseContext);
-// };
+export const useAuth = () => {
+    return useContext(AuthContext);
+};
 
-// function useProvideAuth() {
-//     const [user, setUser] = useState(null)
+function useProvideAuth() {
+    const [user, setUser] = useState(null)
 
-//     const setAuthorizationHeader = (token) => {
-//         console.log(token);
-//         // const FBIdToken = `Bearer ${token}`;
-//         // axios.defaults.headers.common['Authorization'] = FBIdToken;
-//     };
+    useEffect(() => {
+    }, [user]);
 
-//     useEffect(() => {
-//         const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-//             setServerError(null);
-//             if (user) {
-//                 console.log(user);
-//                 setUser(user);
-//             } else {
-//                 setUser(null);
-//             }
-//         });
-
-//         return () => unsubscribe();
-//     }, []);
-
-//     const login = (data) => {
-//         console.log(data)
-//         axios
-//             .post('/login', data)
-//             .then(response => {
-//                 console.log("three")
-//                 setAuthorizationHeader(response.data);
-//                 setUser(response.data);
-//             })
-//             .catch(error => {
-//                 console.log(error);
-//             });
-//     };
-
-
-
-//     const signout = () => {
-//         return firebase
-//             .auth()
-//             .signOut()
-//             .then(() => {
-//                 setUser(false);
-//             })
-//             .catch((error) => {
-//                 setServerError(error);
-//                 return error;
-//             })
-//     };
-
-//     return {
-//         user,
-//         firebaseError: serverError,
-//         login,
-//         signup,
-//         signout
-//     };
-// }
+    return {
+        user,
+        setUser
+    };
+}
